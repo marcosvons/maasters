@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "363155223436",
+    "project_id": "maasters-dev",
+    "storage_bucket": "maasters-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:363155223436:android:805ca9aed13a64a1415ca9",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.maasters.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "363155223436-6cnegalk10abn7pq4g3bn0n4e7fgmls8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDettmz7d9o8H90A_FASlhx4PxuUsTtHNk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "363155223436-6cnegalk10abn7pq4g3bn0n4e7fgmls8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "363155223436-e6ln2iiupqj9qf9b8rocfnube4qt47jc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.verygoodcore.maasters.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

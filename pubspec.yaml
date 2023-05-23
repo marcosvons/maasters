@@ -1,0 +1,43 @@
+name: maasters
+description: A Very Good Project created by Very Good CLI.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  bloc: ^8.1.1
+  cloud_firestore: ^4.7.1
+  dartz: ^0.10.1
+  dio: ^5.1.2
+  firebase_auth: ^4.6.1
+  firebase_core: ^2.4.0
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.2
+  flutter_localizations:
+    sdk: flutter
+  formz: ^0.6.0
+  freezed_annotation: ^2.2.0
+  get_it: ^7.6.0
+  intl: ^0.17.0
+  json_annotation: ^4.7.0
+
+dev_dependencies:
+  bloc_test: ^9.1.1
+  build_runner: ^2.3.0
+  flutter_test:
+    sdk: flutter
+  freezed: ^2.2.0
+  json_serializable: ^6.5.4
+  mocktail: ^0.3.0
+  very_good_analysis: ^3.1.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  
+  assets:
+    - assets/images/
+    - assets/icons/

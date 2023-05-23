@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "509674632325",
+    "project_id": "maasters-stg",
+    "storage_bucket": "maasters-stg.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509674632325:android:f6997b52f2ee17440825ec",
+        "android_client_info": {
+          "package_name": "com.example.verygoodcore.maasters.stg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509674632325-nsvbpp1f0t14ni5pnn4bgvjrtfad5g59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqoF3aNf2Nb1fUZmLBZuv9ptD_ZALAqKw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509674632325-nsvbpp1f0t14ni5pnn4bgvjrtfad5g59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
