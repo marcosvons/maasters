@@ -3,14 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
 
-class SignInForm extends StatefulWidget {
-  const SignInForm();
+class SignUpForm extends StatefulWidget {
+  const SignUpForm();
 
   @override
-  State<SignInForm> createState() => _SignInFormState();
+  State<SignUpForm> createState() => _SignUpFormState();
 }
 
-class _SignInFormState extends State<SignInForm> {
+class _SignUpFormState extends State<SignUpForm> {
   late final PageController _pageController;
 
   @override
@@ -32,12 +32,13 @@ class _SignInFormState extends State<SignInForm> {
         return Column(
           children: [
             SizedBox(
-              height: context.height * 0.15,
+              height: 200,
               child: PageView(
                 physics: const NeverScrollableScrollPhysics(),
                 controller: _pageController,
                 children: [
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -76,10 +77,13 @@ class _SignInFormState extends State<SignInForm> {
                           ),
                         ),
                       ),
+                      const SizedBox(height: Dimens.medium),
+                      const Text(''),
                     ],
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         'Password',
@@ -87,6 +91,8 @@ class _SignInFormState extends State<SignInForm> {
                       ),
                       const SizedBox(height: Dimens.medium),
                       TextFormField(
+                        onChanged: (value) =>
+                            context.read<SignUpCubit>().passwordChanged(value),
                         obscureText: !state.showPassword,
                         decoration: InputDecoration(
                           suffixIcon: InkWell(
@@ -98,6 +104,19 @@ class _SignInFormState extends State<SignInForm> {
                             onTap: () => context
                                 .read<SignUpCubit>()
                                 .passwordVisibilityChanged(),
+                          ),
+                          errorText: state.isPasswordValid != null &&
+                                  !state.isPasswordValid! &&
+                                  state.password.isNotValid
+                              ? 'La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una minúscula, un número y un carácter especial'
+                              : null,
+                          errorMaxLines: 4,
+                          errorBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                              color: state.password.isNotValid
+                                  ? context.colorScheme.error
+                                  : context.colorScheme.onTertiaryContainer,
+                            ),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(Dimens.xSmall),
@@ -132,7 +151,7 @@ class _SignInFormState extends State<SignInForm> {
                 ],
               ),
             ),
-            const SizedBox(height: Dimens.xLarge),
+            // const SizedBox(height: Dimens.xLarge),
             SizedBox(
               width: context.width * 0.3,
               height: context.height * 0.075,
@@ -145,6 +164,13 @@ class _SignInFormState extends State<SignInForm> {
                         duration: const Duration(milliseconds: 500),
                         curve: Curves.easeIn,
                       );
+                    }
+                  }
+                  if (_pageController.page == 1) {
+                    context.read<SignUpCubit>().validatePassword();
+                    if (state.password.isValid) {
+                      //show snackbar with message
+                      context.read<SignUpCubit>().signUpWithEmailAndPassword();
                     }
                   }
                 },

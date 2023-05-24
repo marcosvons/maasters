@@ -6,7 +6,7 @@ class ThemeManager {
   static ThemeData light = ThemeData.light().copyWith(
     scaffoldBackgroundColor: Colors.white,
     textSelectionTheme: const TextSelectionThemeData(
-      selectionColor: Colors.transparent,
+      selectionColor: Color(0xFFE3E6EA),
       cursorColor: Color(0xff383838),
     ),
     appBarTheme: const AppBarTheme(

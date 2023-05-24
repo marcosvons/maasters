@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:auth/auth.dart';
 import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -9,7 +10,11 @@ part 'sign_up_state.dart';
 part 'sign_up_cubit.freezed.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
-  SignUpCubit() : super(const _Initial());
+  SignUpCubit({required IAuthRepository authRepository})
+      : _authRepository = authRepository,
+        super(const _Initial());
+
+  final IAuthRepository _authRepository;
 
   FutureOr<void> emailChanged(String value) async {
     final email = Email.dirty(value);
@@ -49,5 +54,46 @@ class SignUpCubit extends Cubit<SignUpState> {
               isEmailValid: true,
             ),
           );
+  }
+
+  FutureOr<void> validatePassword() async {
+    return state.password.isNotValid
+        ? emit(
+            state.copyWith(
+              isPasswordValid: false,
+            ),
+          )
+        : emit(
+            state.copyWith(
+              isPasswordValid: true,
+            ),
+          );
+  }
+
+  FutureOr<void> signUpWithEmailAndPassword() async {
+    emit(
+      state.copyWith(
+        status: FormzSubmissionStatus.inProgress,
+      ),
+    );
+    final successOrFailure = await _authRepository.signUpWithEmailAndPassword(
+      email: state.email.value,
+      password: state.password.value,
+    );
+
+    return successOrFailure.fold(
+      (failure) => emit(state.copyWith(status: FormzSubmissionStatus.failure)),
+      (success) => emit(state.copyWith(status: FormzSubmissionStatus.success)),
+    );
+  }
+
+  FutureOr<void> signUpWithGoogle() async {
+    emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
+    final successOrFailure = await _authRepository.loginWithGoogle();
+
+    return successOrFailure.fold(
+      (failure) => emit(state.copyWith(status: FormzSubmissionStatus.failure)),
+      (success) => emit(state.copyWith(status: FormzSubmissionStatus.success)),
+    );
   }
 }
