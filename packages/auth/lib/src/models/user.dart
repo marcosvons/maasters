@@ -4,11 +4,12 @@ import 'package:auth/auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user.freezed.dart';
+part 'user.g.dart';
 
 @freezed
 class User with _$User {
   const factory User({
-    required int id,
+    required String id,
     required String mail,
     required String firstName,
     required String lastName,
@@ -20,6 +21,10 @@ class User with _$User {
     @Default('') String phoneNumber,
     @Default('') String? company,
   }) = _User;
+
+  const User._();
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
 
 enum Seniority {

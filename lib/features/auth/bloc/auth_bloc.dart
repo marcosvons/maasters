@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:auth/auth.dart';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'auth_bloc.freezed.dart';
@@ -27,11 +26,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     Emitter<AuthState> emit,
   ) async {
     await emit.forEach(
-      _authRepository.firebaseUser,
-      onData: (Option<firebase_auth.User> possibleFailureOrUser) {
+      _authRepository.user,
+      onData: (Option<User> possibleFailureOrUser) {
         return possibleFailureOrUser.fold(
           () => const _Unauthenticated(),
-          (user) => const _Authenticated(user),
+          (user) => _Authenticated(user: user),
         );
       },
     );

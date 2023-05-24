@@ -9,7 +9,7 @@ part 'user_dto.g.dart';
 @freezed
 class UserDto with _$UserDto {
   const factory UserDto({
-    required int id,
+    required String id,
     required String mail,
     required String firstName,
     required String lastName,

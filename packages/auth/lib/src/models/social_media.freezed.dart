@@ -14,11 +14,16 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+SocialMedia _$SocialMediaFromJson(Map<String, dynamic> json) {
+  return _SocialMedia.fromJson(json);
+}
+
 /// @nodoc
 mixin _$SocialMedia {
   String get name => throw _privateConstructorUsedError;
   String get url => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SocialMediaCopyWith<SocialMedia> get copyWith =>
       throw _privateConstructorUsedError;
@@ -101,9 +106,12 @@ class __$$_SocialMediaCopyWithImpl<$Res>
 }
 
 /// @nodoc
+@JsonSerializable()
+class _$_SocialMedia extends _SocialMedia {
+  const _$_SocialMedia({required this.name, required this.url}) : super._();
 
-class _$_SocialMedia implements _SocialMedia {
-  const _$_SocialMedia({required this.name, required this.url});
+  factory _$_SocialMedia.fromJson(Map<String, dynamic> json) =>
+      _$$_SocialMediaFromJson(json);
 
   @override
   final String name;
@@ -124,6 +132,7 @@ class _$_SocialMedia implements _SocialMedia {
             (identical(other.url, url) || other.url == url));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, url);
 
@@ -132,11 +141,22 @@ class _$_SocialMedia implements _SocialMedia {
   @pragma('vm:prefer-inline')
   _$$_SocialMediaCopyWith<_$_SocialMedia> get copyWith =>
       __$$_SocialMediaCopyWithImpl<_$_SocialMedia>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_SocialMediaToJson(
+      this,
+    );
+  }
 }
 
-abstract class _SocialMedia implements SocialMedia {
+abstract class _SocialMedia extends SocialMedia {
   const factory _SocialMedia(
       {required final String name, required final String url}) = _$_SocialMedia;
+  const _SocialMedia._() : super._();
+
+  factory _SocialMedia.fromJson(Map<String, dynamic> json) =
+      _$_SocialMedia.fromJson;
 
   @override
   String get name;

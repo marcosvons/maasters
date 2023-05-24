@@ -20,7 +20,7 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserDto {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get mail => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
       _$UserDtoCopyWithImpl<$Res, UserDto>;
   @useResult
-  $Res call({int id, String mail, String firstName, String lastName});
+  $Res call({String id, String mail, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -60,7 +60,7 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       mail: null == mail
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
@@ -83,7 +83,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       __$$_UserCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String mail, String firstName, String lastName});
+  $Res call({String id, String mail, String firstName, String lastName});
 }
 
 /// @nodoc
@@ -104,7 +104,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res, _$_User>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       mail: null == mail
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
@@ -134,7 +134,7 @@ class _$_User extends _User {
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
   @override
-  final int id;
+  final String id;
   @override
   final String mail;
   @override
@@ -180,7 +180,7 @@ class _$_User extends _User {
 
 abstract class _User extends UserDto {
   const factory _User(
-      {required final int id,
+      {required final String id,
       required final String mail,
       required final String firstName,
       required final String lastName}) = _$_User;
@@ -189,7 +189,7 @@ abstract class _User extends UserDto {
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
-  int get id;
+  String get id;
   @override
   String get mail;
   @override

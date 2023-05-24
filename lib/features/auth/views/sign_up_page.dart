@@ -21,7 +21,7 @@ class SignUpPage extends StatelessWidget {
       child: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           state.whenOrNull(
-            authenticated: () {
+            authenticated: (_) {
               Navigator.of(context)
                   .pushReplacement<void, void>(OnboardingPage.route());
             },

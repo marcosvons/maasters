@@ -6,7 +6,7 @@ import 'package:errors/errors.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 
 abstract class IAuthRepository {
-  Stream<Option<firebase_auth.User>> get firebaseUser;
+  Stream<Option<User>> get user;
   Future<Either<AuthFailure, Unit>> loginWithEmailAndPassword({
     required String email,
     required String password,
@@ -33,11 +33,13 @@ class AuthRepository implements IAuthRepository {
   final IAuthLocalService _authLocalService;
 
   @override
-  Stream<Option<firebase_auth.User>> get firebaseUser =>
+  Stream<Option<User>> get user =>
       _firebaseAuth.authStateChanges().map((firebase_auth.User? user) {
         if (user != null) {
-          //get user from firestore and return it
-          return some(user);
+          //fetch user from firestore
+          return some(
+            const User(firstName: '', lastName: '', mail: '', id: ''),
+          );
         } else {
           return none();
         }
