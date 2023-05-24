@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:maasters/core/core.dart';
+import 'package:maasters/features/features.dart';
 import 'package:maasters/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -7,15 +9,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: const AppBarTheme(color: Color(0xFF13B9FF)),
-        colorScheme: ColorScheme.fromSwatch(
-          accentColor: const Color(0xFF13B9FF),
-        ),
-      ),
+      theme: ThemeManager.light,
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const Scaffold(),
+      home: const SignUpPage(),
     );
   }
 }

@@ -18,6 +18,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^1.1.6
   formz: ^0.6.0
   freezed_annotation: ^2.2.0
   get_it: ^7.6.0
@@ -41,3 +42,22 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter/Inter-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Inter/Inter-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Inter/Inter-Regular.ttf
+        - asset: assets/fonts/Inter/Inter-Medium.ttf
+          weight: 400
+        - asset: assets/fonts/Inter/Inter-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Inter/Inter-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Inter/Inter-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Inter/Inter-Black.ttf
+          weight: 900

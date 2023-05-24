@@ -1,3 +1,4 @@
 abstract class AppIcons {
-  static const String _blueLogo = 'assets/icons/blue_logo.svg';
+  static const String blueLogo = 'assets/icons/logo_blue.svg';
+  static const String googleLogo = 'icons/google_logo.svg';
 }
