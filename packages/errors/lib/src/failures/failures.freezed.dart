@@ -19,6 +19,7 @@ mixin _$Failure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -40,6 +41,7 @@ mixin _$Failure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -61,6 +63,7 @@ mixin _$Failure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -83,6 +86,7 @@ mixin _$Failure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -107,6 +111,7 @@ mixin _$Failure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -129,6 +134,7 @@ mixin _$Failure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -206,6 +212,7 @@ class _$ParseModelFailure implements ParseModelFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -230,6 +237,7 @@ class _$ParseModelFailure implements ParseModelFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -254,6 +262,7 @@ class _$ParseModelFailure implements ParseModelFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -282,6 +291,7 @@ class _$ParseModelFailure implements ParseModelFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -309,6 +319,7 @@ class _$ParseModelFailure implements ParseModelFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -334,6 +345,7 @@ class _$ParseModelFailure implements ParseModelFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -361,6 +373,208 @@ class _$ParseModelFailure implements ParseModelFailure {
 
 abstract class ParseModelFailure implements Failure {
   const factory ParseModelFailure() = _$ParseModelFailure;
+}
+
+/// @nodoc
+abstract class _$$UpdateUserFailureCopyWith<$Res> {
+  factory _$$UpdateUserFailureCopyWith(
+          _$UpdateUserFailure value, $Res Function(_$UpdateUserFailure) then) =
+      __$$UpdateUserFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateUserFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$UpdateUserFailure>
+    implements _$$UpdateUserFailureCopyWith<$Res> {
+  __$$UpdateUserFailureCopyWithImpl(
+      _$UpdateUserFailure _value, $Res Function(_$UpdateUserFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$UpdateUserFailure implements UpdateUserFailure {
+  const _$UpdateUserFailure();
+
+  @override
+  String toString() {
+    return 'Failure.updateUser()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UpdateUserFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() parseModel,
+    required TResult Function() updateUser,
+    required TResult Function() http,
+    required TResult Function() cache,
+    required TResult Function() jsonDes,
+    required TResult Function() jsonDec,
+    required TResult Function() invalidData,
+    required TResult Function() unauthorized,
+    required TResult Function() noConnection,
+    required TResult Function() cancelRequest,
+    required TResult Function() connectTimeout,
+    required TResult Function() deniedPermissions,
+    required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
+  }) {
+    return updateUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
+    TResult? Function()? http,
+    TResult? Function()? cache,
+    TResult? Function()? jsonDes,
+    TResult? Function()? jsonDec,
+    TResult? Function()? invalidData,
+    TResult? Function()? unauthorized,
+    TResult? Function()? noConnection,
+    TResult? Function()? cancelRequest,
+    TResult? Function()? connectTimeout,
+    TResult? Function()? deniedPermissions,
+    TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
+  }) {
+    return updateUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? parseModel,
+    TResult Function()? updateUser,
+    TResult Function()? http,
+    TResult Function()? cache,
+    TResult Function()? jsonDes,
+    TResult Function()? jsonDec,
+    TResult Function()? invalidData,
+    TResult Function()? unauthorized,
+    TResult Function()? noConnection,
+    TResult Function()? cancelRequest,
+    TResult Function()? connectTimeout,
+    TResult Function()? deniedPermissions,
+    TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (updateUser != null) {
+      return updateUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
+    required TResult Function(HttpFailure value) http,
+    required TResult Function(CacheFailure value) cache,
+    required TResult Function(JsonDesFailure value) jsonDes,
+    required TResult Function(JsonDecFailure value) jsonDec,
+    required TResult Function(InvalidDataFailure value) invalidData,
+    required TResult Function(UnauthorizedFailure value) unauthorized,
+    required TResult Function(NoConnectionFailure value) noConnection,
+    required TResult Function(CancelRequestFailure value) cancelRequest,
+    required TResult Function(ConnectTimeoutFailure value) connectTimeout,
+    required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
+    required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+  }) {
+    return updateUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
+    TResult? Function(HttpFailure value)? http,
+    TResult? Function(CacheFailure value)? cache,
+    TResult? Function(JsonDesFailure value)? jsonDes,
+    TResult? Function(JsonDecFailure value)? jsonDec,
+    TResult? Function(InvalidDataFailure value)? invalidData,
+    TResult? Function(UnauthorizedFailure value)? unauthorized,
+    TResult? Function(NoConnectionFailure value)? noConnection,
+    TResult? Function(CancelRequestFailure value)? cancelRequest,
+    TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+  }) {
+    return updateUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
+    TResult Function(HttpFailure value)? http,
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(JsonDesFailure value)? jsonDes,
+    TResult Function(JsonDecFailure value)? jsonDec,
+    TResult Function(InvalidDataFailure value)? invalidData,
+    TResult Function(UnauthorizedFailure value)? unauthorized,
+    TResult Function(NoConnectionFailure value)? noConnection,
+    TResult Function(CancelRequestFailure value)? cancelRequest,
+    TResult Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (updateUser != null) {
+      return updateUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateUserFailure implements Failure {
+  const factory UpdateUserFailure() = _$UpdateUserFailure;
 }
 
 /// @nodoc
@@ -402,6 +616,7 @@ class _$HttpFailure implements HttpFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -426,6 +641,7 @@ class _$HttpFailure implements HttpFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -450,6 +666,7 @@ class _$HttpFailure implements HttpFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -478,6 +695,7 @@ class _$HttpFailure implements HttpFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -505,6 +723,7 @@ class _$HttpFailure implements HttpFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -530,6 +749,7 @@ class _$HttpFailure implements HttpFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -598,6 +818,7 @@ class _$CacheFailure implements CacheFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -622,6 +843,7 @@ class _$CacheFailure implements CacheFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -646,6 +868,7 @@ class _$CacheFailure implements CacheFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -674,6 +897,7 @@ class _$CacheFailure implements CacheFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -701,6 +925,7 @@ class _$CacheFailure implements CacheFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -726,6 +951,7 @@ class _$CacheFailure implements CacheFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -794,6 +1020,7 @@ class _$JsonDesFailure implements JsonDesFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -818,6 +1045,7 @@ class _$JsonDesFailure implements JsonDesFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -842,6 +1070,7 @@ class _$JsonDesFailure implements JsonDesFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -870,6 +1099,7 @@ class _$JsonDesFailure implements JsonDesFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -897,6 +1127,7 @@ class _$JsonDesFailure implements JsonDesFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -922,6 +1153,7 @@ class _$JsonDesFailure implements JsonDesFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -990,6 +1222,7 @@ class _$JsonDecFailure implements JsonDecFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -1014,6 +1247,7 @@ class _$JsonDecFailure implements JsonDecFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -1038,6 +1272,7 @@ class _$JsonDecFailure implements JsonDecFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -1066,6 +1301,7 @@ class _$JsonDecFailure implements JsonDecFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -1093,6 +1329,7 @@ class _$JsonDecFailure implements JsonDecFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -1118,6 +1355,7 @@ class _$JsonDecFailure implements JsonDecFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -1186,6 +1424,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -1210,6 +1449,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -1234,6 +1474,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -1262,6 +1503,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -1289,6 +1531,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -1314,6 +1557,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -1382,6 +1626,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -1406,6 +1651,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -1430,6 +1676,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -1458,6 +1705,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -1485,6 +1733,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -1510,6 +1759,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -1578,6 +1828,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -1602,6 +1853,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -1626,6 +1878,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -1654,6 +1907,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -1681,6 +1935,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -1706,6 +1961,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -1774,6 +2030,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -1798,6 +2055,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -1822,6 +2080,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -1850,6 +2109,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -1877,6 +2137,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -1902,6 +2163,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -1970,6 +2232,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -1994,6 +2257,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -2018,6 +2282,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -2046,6 +2311,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -2073,6 +2339,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -2098,6 +2365,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -2167,6 +2435,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -2191,6 +2460,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -2215,6 +2485,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -2243,6 +2514,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -2270,6 +2542,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -2295,6 +2568,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -2363,6 +2637,7 @@ class _$UnknownFailure implements UnknownFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -2387,6 +2662,7 @@ class _$UnknownFailure implements UnknownFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -2411,6 +2687,7 @@ class _$UnknownFailure implements UnknownFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -2439,6 +2716,7 @@ class _$UnknownFailure implements UnknownFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -2466,6 +2744,7 @@ class _$UnknownFailure implements UnknownFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -2491,6 +2770,7 @@ class _$UnknownFailure implements UnknownFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -2562,6 +2842,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -2586,6 +2867,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -2610,6 +2892,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -2638,6 +2921,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -2665,6 +2949,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -2690,6 +2975,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -2761,6 +3047,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -2785,6 +3072,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -2809,6 +3097,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -2837,6 +3126,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -2864,6 +3154,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -2889,6 +3180,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -2958,6 +3250,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -2982,6 +3275,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -3006,6 +3300,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -3034,6 +3329,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -3061,6 +3357,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -3086,6 +3383,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -3157,6 +3455,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -3181,6 +3480,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -3205,6 +3505,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -3233,6 +3534,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -3260,6 +3562,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -3285,6 +3588,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,
@@ -3354,6 +3658,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() parseModel,
+    required TResult Function() updateUser,
     required TResult Function() http,
     required TResult Function() cache,
     required TResult Function() jsonDes,
@@ -3378,6 +3683,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
     TResult? Function()? http,
     TResult? Function()? cache,
     TResult? Function()? jsonDes,
@@ -3402,6 +3708,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? parseModel,
+    TResult Function()? updateUser,
     TResult Function()? http,
     TResult Function()? cache,
     TResult Function()? jsonDes,
@@ -3430,6 +3737,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
     required TResult Function(HttpFailure value) http,
     required TResult Function(CacheFailure value) cache,
     required TResult Function(JsonDesFailure value) jsonDes,
@@ -3457,6 +3765,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
     TResult? Function(HttpFailure value)? http,
     TResult? Function(CacheFailure value)? cache,
     TResult? Function(JsonDesFailure value)? jsonDes,
@@ -3482,6 +3791,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
     TResult Function(HttpFailure value)? http,
     TResult Function(CacheFailure value)? cache,
     TResult Function(JsonDesFailure value)? jsonDes,

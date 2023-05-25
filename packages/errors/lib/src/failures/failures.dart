@@ -8,6 +8,7 @@ part 'failures.freezed.dart';
 class Failure with _$Failure {
   //General Errors
   const factory Failure.parseModel() = ParseModelFailure;
+  const factory Failure.updateUser() = UpdateUserFailure;
   const factory Failure.http() = HttpFailure;
   const factory Failure.cache() = CacheFailure;
   const factory Failure.jsonDes() = JsonDesFailure;
