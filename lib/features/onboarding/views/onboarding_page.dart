@@ -14,7 +14,7 @@ class OnboardingPage extends StatelessWidget {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         state.whenOrNull(
-          unauthenticated: () => Navigator.of(context)
+          unauthenticated: (_) => Navigator.of(context)
               .pushReplacement<void, void>(SignUpPage.route()),
         );
       },

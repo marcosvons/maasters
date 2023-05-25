@@ -14,16 +14,11 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
-}
-
 /// @nodoc
 mixin _$User {
   String get id => throw _privateConstructorUsedError;
   String get mail => throw _privateConstructorUsedError;
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   List<SpecificInterest> get areasOfInterest =>
       throw _privateConstructorUsedError;
   List<SocialMedia> get socialMedia => throw _privateConstructorUsedError;
@@ -33,7 +28,6 @@ mixin _$User {
   String get phoneNumber => throw _privateConstructorUsedError;
   String? get company => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
@@ -46,8 +40,7 @@ abstract class $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String mail,
-      String firstName,
-      String lastName,
+      String name,
       List<SpecificInterest> areasOfInterest,
       List<SocialMedia> socialMedia,
       ProfileType profileType,
@@ -72,8 +65,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? id = null,
     Object? mail = null,
-    Object? firstName = null,
-    Object? lastName = null,
+    Object? name = null,
     Object? areasOfInterest = null,
     Object? socialMedia = null,
     Object? profileType = null,
@@ -91,13 +83,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       areasOfInterest: null == areasOfInterest
           ? _value.areasOfInterest
@@ -140,8 +128,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String mail,
-      String firstName,
-      String lastName,
+      String name,
       List<SpecificInterest> areasOfInterest,
       List<SocialMedia> socialMedia,
       ProfileType profileType,
@@ -162,8 +149,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
   $Res call({
     Object? id = null,
     Object? mail = null,
-    Object? firstName = null,
-    Object? lastName = null,
+    Object? name = null,
     Object? areasOfInterest = null,
     Object? socialMedia = null,
     Object? profileType = null,
@@ -181,13 +167,9 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       areasOfInterest: null == areasOfInterest
           ? _value._areasOfInterest
@@ -222,13 +204,12 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_User extends _User {
+
+class _$_User implements _User {
   const _$_User(
       {required this.id,
       required this.mail,
-      required this.firstName,
-      required this.lastName,
+      this.name = '',
       final List<SpecificInterest> areasOfInterest = const [],
       final List<SocialMedia> socialMedia = const [],
       this.profileType = ProfileType.unknown,
@@ -237,19 +218,15 @@ class _$_User extends _User {
       this.phoneNumber = '',
       this.company = ''})
       : _areasOfInterest = areasOfInterest,
-        _socialMedia = socialMedia,
-        super._();
-
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+        _socialMedia = socialMedia;
 
   @override
   final String id;
   @override
   final String mail;
   @override
-  final String firstName;
-  @override
-  final String lastName;
+  @JsonKey()
+  final String name;
   final List<SpecificInterest> _areasOfInterest;
   @override
   @JsonKey()
@@ -284,7 +261,7 @@ class _$_User extends _User {
 
   @override
   String toString() {
-    return 'User(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company)';
+    return 'User(id: $id, mail: $mail, name: $name, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company)';
   }
 
   @override
@@ -294,10 +271,7 @@ class _$_User extends _User {
             other is _$_User &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.mail, mail) || other.mail == mail) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
+            (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
                 .equals(other._areasOfInterest, _areasOfInterest) &&
             const DeepCollectionEquality()
@@ -313,14 +287,12 @@ class _$_User extends _User {
             (identical(other.company, company) || other.company == company));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       id,
       mail,
-      firstName,
-      lastName,
+      name,
       const DeepCollectionEquality().hash(_areasOfInterest),
       const DeepCollectionEquality().hash(_socialMedia),
       profileType,
@@ -334,21 +306,13 @@ class _$_User extends _User {
   @pragma('vm:prefer-inline')
   _$$_UserCopyWith<_$_User> get copyWith =>
       __$$_UserCopyWithImpl<_$_User>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_UserToJson(
-      this,
-    );
-  }
 }
 
-abstract class _User extends User {
+abstract class _User implements User {
   const factory _User(
       {required final String id,
       required final String mail,
-      required final String firstName,
-      required final String lastName,
+      final String name,
       final List<SpecificInterest> areasOfInterest,
       final List<SocialMedia> socialMedia,
       final ProfileType profileType,
@@ -356,18 +320,13 @@ abstract class _User extends User {
       final bool onboardingCompleted,
       final String phoneNumber,
       final String? company}) = _$_User;
-  const _User._() : super._();
-
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
   String get id;
   @override
   String get mail;
   @override
-  String get firstName;
-  @override
-  String get lastName;
+  String get name;
   @override
   List<SpecificInterest> get areasOfInterest;
   @override

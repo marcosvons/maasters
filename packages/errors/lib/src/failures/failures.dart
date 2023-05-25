@@ -6,6 +6,7 @@ part 'failures.freezed.dart';
 
 @freezed
 class Failure with _$Failure {
+  //General Errors
   const factory Failure.parseModel() = ParseModelFailure;
   const factory Failure.http() = HttpFailure;
   const factory Failure.cache() = CacheFailure;
@@ -18,4 +19,11 @@ class Failure with _$Failure {
   const factory Failure.connectTimeout() = ConnectTimeoutFailure;
   const factory Failure.deniedPermissions() = DeniedPermissionsFailure;
   const factory Failure.unknown() = UnknownFailure;
+
+  //Firestore Errors
+  const factory Failure.firestoreUserCreation() = FirestoreUserCreationFailure;
+  const factory Failure.firestoreUserUpdate() = FirestoreUserUpdateFailure;
+  const factory Failure.firestoreGetUser() = FirestoreGetUserFailure;
+  const factory Failure.firestoreDeleteUser() = FirestoreDeleteUserFailure;
+  const factory Failure.firestoreGetUsers() = FirestoreGetUsersFailure;
 }

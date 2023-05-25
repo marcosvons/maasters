@@ -30,6 +30,11 @@ mixin _$Failure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,6 +51,11 @@ mixin _$Failure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +72,11 @@ mixin _$Failure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -79,6 +94,14 @@ mixin _$Failure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -95,6 +118,12 @@ mixin _$Failure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -111,6 +140,11 @@ mixin _$Failure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -183,6 +217,11 @@ class _$ParseModelFailure implements ParseModelFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return parseModel();
   }
@@ -202,6 +241,11 @@ class _$ParseModelFailure implements ParseModelFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return parseModel?.call();
   }
@@ -221,6 +265,11 @@ class _$ParseModelFailure implements ParseModelFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (parseModel != null) {
@@ -244,6 +293,14 @@ class _$ParseModelFailure implements ParseModelFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return parseModel(this);
   }
@@ -263,6 +320,12 @@ class _$ParseModelFailure implements ParseModelFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return parseModel?.call(this);
   }
@@ -282,6 +345,11 @@ class _$ParseModelFailure implements ParseModelFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (parseModel != null) {
@@ -345,6 +413,11 @@ class _$HttpFailure implements HttpFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return http();
   }
@@ -364,6 +437,11 @@ class _$HttpFailure implements HttpFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return http?.call();
   }
@@ -383,6 +461,11 @@ class _$HttpFailure implements HttpFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -406,6 +489,14 @@ class _$HttpFailure implements HttpFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return http(this);
   }
@@ -425,6 +516,12 @@ class _$HttpFailure implements HttpFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return http?.call(this);
   }
@@ -444,6 +541,11 @@ class _$HttpFailure implements HttpFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -507,6 +609,11 @@ class _$CacheFailure implements CacheFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return cache();
   }
@@ -526,6 +633,11 @@ class _$CacheFailure implements CacheFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return cache?.call();
   }
@@ -545,6 +657,11 @@ class _$CacheFailure implements CacheFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (cache != null) {
@@ -568,6 +685,14 @@ class _$CacheFailure implements CacheFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return cache(this);
   }
@@ -587,6 +712,12 @@ class _$CacheFailure implements CacheFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return cache?.call(this);
   }
@@ -606,6 +737,11 @@ class _$CacheFailure implements CacheFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (cache != null) {
@@ -669,6 +805,11 @@ class _$JsonDesFailure implements JsonDesFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return jsonDes();
   }
@@ -688,6 +829,11 @@ class _$JsonDesFailure implements JsonDesFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return jsonDes?.call();
   }
@@ -707,6 +853,11 @@ class _$JsonDesFailure implements JsonDesFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (jsonDes != null) {
@@ -730,6 +881,14 @@ class _$JsonDesFailure implements JsonDesFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return jsonDes(this);
   }
@@ -749,6 +908,12 @@ class _$JsonDesFailure implements JsonDesFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return jsonDes?.call(this);
   }
@@ -768,6 +933,11 @@ class _$JsonDesFailure implements JsonDesFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (jsonDes != null) {
@@ -831,6 +1001,11 @@ class _$JsonDecFailure implements JsonDecFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return jsonDec();
   }
@@ -850,6 +1025,11 @@ class _$JsonDecFailure implements JsonDecFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return jsonDec?.call();
   }
@@ -869,6 +1049,11 @@ class _$JsonDecFailure implements JsonDecFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (jsonDec != null) {
@@ -892,6 +1077,14 @@ class _$JsonDecFailure implements JsonDecFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return jsonDec(this);
   }
@@ -911,6 +1104,12 @@ class _$JsonDecFailure implements JsonDecFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return jsonDec?.call(this);
   }
@@ -930,6 +1129,11 @@ class _$JsonDecFailure implements JsonDecFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (jsonDec != null) {
@@ -993,6 +1197,11 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return invalidData();
   }
@@ -1012,6 +1221,11 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return invalidData?.call();
   }
@@ -1031,6 +1245,11 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (invalidData != null) {
@@ -1054,6 +1273,14 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return invalidData(this);
   }
@@ -1073,6 +1300,12 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return invalidData?.call(this);
   }
@@ -1092,6 +1325,11 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (invalidData != null) {
@@ -1155,6 +1393,11 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return unauthorized();
   }
@@ -1174,6 +1417,11 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return unauthorized?.call();
   }
@@ -1193,6 +1441,11 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (unauthorized != null) {
@@ -1216,6 +1469,14 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return unauthorized(this);
   }
@@ -1235,6 +1496,12 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return unauthorized?.call(this);
   }
@@ -1254,6 +1521,11 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (unauthorized != null) {
@@ -1317,6 +1589,11 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return noConnection();
   }
@@ -1336,6 +1613,11 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return noConnection?.call();
   }
@@ -1355,6 +1637,11 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -1378,6 +1665,14 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return noConnection(this);
   }
@@ -1397,6 +1692,12 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return noConnection?.call(this);
   }
@@ -1416,6 +1717,11 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -1479,6 +1785,11 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return cancelRequest();
   }
@@ -1498,6 +1809,11 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return cancelRequest?.call();
   }
@@ -1517,6 +1833,11 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (cancelRequest != null) {
@@ -1540,6 +1861,14 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return cancelRequest(this);
   }
@@ -1559,6 +1888,12 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return cancelRequest?.call(this);
   }
@@ -1578,6 +1913,11 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (cancelRequest != null) {
@@ -1641,6 +1981,11 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return connectTimeout();
   }
@@ -1660,6 +2005,11 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return connectTimeout?.call();
   }
@@ -1679,6 +2029,11 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (connectTimeout != null) {
@@ -1702,6 +2057,14 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return connectTimeout(this);
   }
@@ -1721,6 +2084,12 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return connectTimeout?.call(this);
   }
@@ -1740,6 +2109,11 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (connectTimeout != null) {
@@ -1804,6 +2178,11 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return deniedPermissions();
   }
@@ -1823,6 +2202,11 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return deniedPermissions?.call();
   }
@@ -1842,6 +2226,11 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (deniedPermissions != null) {
@@ -1865,6 +2254,14 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return deniedPermissions(this);
   }
@@ -1884,6 +2281,12 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return deniedPermissions?.call(this);
   }
@@ -1903,6 +2306,11 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (deniedPermissions != null) {
@@ -1966,6 +2374,11 @@ class _$UnknownFailure implements UnknownFailure {
     required TResult Function() connectTimeout,
     required TResult Function() deniedPermissions,
     required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
   }) {
     return unknown();
   }
@@ -1985,6 +2398,11 @@ class _$UnknownFailure implements UnknownFailure {
     TResult? Function()? connectTimeout,
     TResult? Function()? deniedPermissions,
     TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
   }) {
     return unknown?.call();
   }
@@ -2004,6 +2422,11 @@ class _$UnknownFailure implements UnknownFailure {
     TResult Function()? connectTimeout,
     TResult Function()? deniedPermissions,
     TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -2027,6 +2450,14 @@ class _$UnknownFailure implements UnknownFailure {
     required TResult Function(ConnectTimeoutFailure value) connectTimeout,
     required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
     required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
   }) {
     return unknown(this);
   }
@@ -2046,6 +2477,12 @@ class _$UnknownFailure implements UnknownFailure {
     TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
   }) {
     return unknown?.call(this);
   }
@@ -2065,6 +2502,11 @@ class _$UnknownFailure implements UnknownFailure {
     TResult Function(ConnectTimeoutFailure value)? connectTimeout,
     TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
     TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -2076,4 +2518,995 @@ class _$UnknownFailure implements UnknownFailure {
 
 abstract class UnknownFailure implements Failure {
   const factory UnknownFailure() = _$UnknownFailure;
+}
+
+/// @nodoc
+abstract class _$$FirestoreUserCreationFailureCopyWith<$Res> {
+  factory _$$FirestoreUserCreationFailureCopyWith(
+          _$FirestoreUserCreationFailure value,
+          $Res Function(_$FirestoreUserCreationFailure) then) =
+      __$$FirestoreUserCreationFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FirestoreUserCreationFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$FirestoreUserCreationFailure>
+    implements _$$FirestoreUserCreationFailureCopyWith<$Res> {
+  __$$FirestoreUserCreationFailureCopyWithImpl(
+      _$FirestoreUserCreationFailure _value,
+      $Res Function(_$FirestoreUserCreationFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
+  const _$FirestoreUserCreationFailure();
+
+  @override
+  String toString() {
+    return 'Failure.firestoreUserCreation()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FirestoreUserCreationFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() parseModel,
+    required TResult Function() http,
+    required TResult Function() cache,
+    required TResult Function() jsonDes,
+    required TResult Function() jsonDec,
+    required TResult Function() invalidData,
+    required TResult Function() unauthorized,
+    required TResult Function() noConnection,
+    required TResult Function() cancelRequest,
+    required TResult Function() connectTimeout,
+    required TResult Function() deniedPermissions,
+    required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
+  }) {
+    return firestoreUserCreation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? parseModel,
+    TResult? Function()? http,
+    TResult? Function()? cache,
+    TResult? Function()? jsonDes,
+    TResult? Function()? jsonDec,
+    TResult? Function()? invalidData,
+    TResult? Function()? unauthorized,
+    TResult? Function()? noConnection,
+    TResult? Function()? cancelRequest,
+    TResult? Function()? connectTimeout,
+    TResult? Function()? deniedPermissions,
+    TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
+  }) {
+    return firestoreUserCreation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? parseModel,
+    TResult Function()? http,
+    TResult Function()? cache,
+    TResult Function()? jsonDes,
+    TResult Function()? jsonDec,
+    TResult Function()? invalidData,
+    TResult Function()? unauthorized,
+    TResult Function()? noConnection,
+    TResult Function()? cancelRequest,
+    TResult Function()? connectTimeout,
+    TResult Function()? deniedPermissions,
+    TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreUserCreation != null) {
+      return firestoreUserCreation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(HttpFailure value) http,
+    required TResult Function(CacheFailure value) cache,
+    required TResult Function(JsonDesFailure value) jsonDes,
+    required TResult Function(JsonDecFailure value) jsonDec,
+    required TResult Function(InvalidDataFailure value) invalidData,
+    required TResult Function(UnauthorizedFailure value) unauthorized,
+    required TResult Function(NoConnectionFailure value) noConnection,
+    required TResult Function(CancelRequestFailure value) cancelRequest,
+    required TResult Function(ConnectTimeoutFailure value) connectTimeout,
+    required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
+    required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+  }) {
+    return firestoreUserCreation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(HttpFailure value)? http,
+    TResult? Function(CacheFailure value)? cache,
+    TResult? Function(JsonDesFailure value)? jsonDes,
+    TResult? Function(JsonDecFailure value)? jsonDec,
+    TResult? Function(InvalidDataFailure value)? invalidData,
+    TResult? Function(UnauthorizedFailure value)? unauthorized,
+    TResult? Function(NoConnectionFailure value)? noConnection,
+    TResult? Function(CancelRequestFailure value)? cancelRequest,
+    TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+  }) {
+    return firestoreUserCreation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(HttpFailure value)? http,
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(JsonDesFailure value)? jsonDes,
+    TResult Function(JsonDecFailure value)? jsonDec,
+    TResult Function(InvalidDataFailure value)? invalidData,
+    TResult Function(UnauthorizedFailure value)? unauthorized,
+    TResult Function(NoConnectionFailure value)? noConnection,
+    TResult Function(CancelRequestFailure value)? cancelRequest,
+    TResult Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreUserCreation != null) {
+      return firestoreUserCreation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FirestoreUserCreationFailure implements Failure {
+  const factory FirestoreUserCreationFailure() = _$FirestoreUserCreationFailure;
+}
+
+/// @nodoc
+abstract class _$$FirestoreUserUpdateFailureCopyWith<$Res> {
+  factory _$$FirestoreUserUpdateFailureCopyWith(
+          _$FirestoreUserUpdateFailure value,
+          $Res Function(_$FirestoreUserUpdateFailure) then) =
+      __$$FirestoreUserUpdateFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FirestoreUserUpdateFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$FirestoreUserUpdateFailure>
+    implements _$$FirestoreUserUpdateFailureCopyWith<$Res> {
+  __$$FirestoreUserUpdateFailureCopyWithImpl(
+      _$FirestoreUserUpdateFailure _value,
+      $Res Function(_$FirestoreUserUpdateFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
+  const _$FirestoreUserUpdateFailure();
+
+  @override
+  String toString() {
+    return 'Failure.firestoreUserUpdate()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FirestoreUserUpdateFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() parseModel,
+    required TResult Function() http,
+    required TResult Function() cache,
+    required TResult Function() jsonDes,
+    required TResult Function() jsonDec,
+    required TResult Function() invalidData,
+    required TResult Function() unauthorized,
+    required TResult Function() noConnection,
+    required TResult Function() cancelRequest,
+    required TResult Function() connectTimeout,
+    required TResult Function() deniedPermissions,
+    required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
+  }) {
+    return firestoreUserUpdate();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? parseModel,
+    TResult? Function()? http,
+    TResult? Function()? cache,
+    TResult? Function()? jsonDes,
+    TResult? Function()? jsonDec,
+    TResult? Function()? invalidData,
+    TResult? Function()? unauthorized,
+    TResult? Function()? noConnection,
+    TResult? Function()? cancelRequest,
+    TResult? Function()? connectTimeout,
+    TResult? Function()? deniedPermissions,
+    TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
+  }) {
+    return firestoreUserUpdate?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? parseModel,
+    TResult Function()? http,
+    TResult Function()? cache,
+    TResult Function()? jsonDes,
+    TResult Function()? jsonDec,
+    TResult Function()? invalidData,
+    TResult Function()? unauthorized,
+    TResult Function()? noConnection,
+    TResult Function()? cancelRequest,
+    TResult Function()? connectTimeout,
+    TResult Function()? deniedPermissions,
+    TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreUserUpdate != null) {
+      return firestoreUserUpdate();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(HttpFailure value) http,
+    required TResult Function(CacheFailure value) cache,
+    required TResult Function(JsonDesFailure value) jsonDes,
+    required TResult Function(JsonDecFailure value) jsonDec,
+    required TResult Function(InvalidDataFailure value) invalidData,
+    required TResult Function(UnauthorizedFailure value) unauthorized,
+    required TResult Function(NoConnectionFailure value) noConnection,
+    required TResult Function(CancelRequestFailure value) cancelRequest,
+    required TResult Function(ConnectTimeoutFailure value) connectTimeout,
+    required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
+    required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+  }) {
+    return firestoreUserUpdate(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(HttpFailure value)? http,
+    TResult? Function(CacheFailure value)? cache,
+    TResult? Function(JsonDesFailure value)? jsonDes,
+    TResult? Function(JsonDecFailure value)? jsonDec,
+    TResult? Function(InvalidDataFailure value)? invalidData,
+    TResult? Function(UnauthorizedFailure value)? unauthorized,
+    TResult? Function(NoConnectionFailure value)? noConnection,
+    TResult? Function(CancelRequestFailure value)? cancelRequest,
+    TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+  }) {
+    return firestoreUserUpdate?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(HttpFailure value)? http,
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(JsonDesFailure value)? jsonDes,
+    TResult Function(JsonDecFailure value)? jsonDec,
+    TResult Function(InvalidDataFailure value)? invalidData,
+    TResult Function(UnauthorizedFailure value)? unauthorized,
+    TResult Function(NoConnectionFailure value)? noConnection,
+    TResult Function(CancelRequestFailure value)? cancelRequest,
+    TResult Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreUserUpdate != null) {
+      return firestoreUserUpdate(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FirestoreUserUpdateFailure implements Failure {
+  const factory FirestoreUserUpdateFailure() = _$FirestoreUserUpdateFailure;
+}
+
+/// @nodoc
+abstract class _$$FirestoreGetUserFailureCopyWith<$Res> {
+  factory _$$FirestoreGetUserFailureCopyWith(_$FirestoreGetUserFailure value,
+          $Res Function(_$FirestoreGetUserFailure) then) =
+      __$$FirestoreGetUserFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FirestoreGetUserFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$FirestoreGetUserFailure>
+    implements _$$FirestoreGetUserFailureCopyWith<$Res> {
+  __$$FirestoreGetUserFailureCopyWithImpl(_$FirestoreGetUserFailure _value,
+      $Res Function(_$FirestoreGetUserFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
+  const _$FirestoreGetUserFailure();
+
+  @override
+  String toString() {
+    return 'Failure.firestoreGetUser()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FirestoreGetUserFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() parseModel,
+    required TResult Function() http,
+    required TResult Function() cache,
+    required TResult Function() jsonDes,
+    required TResult Function() jsonDec,
+    required TResult Function() invalidData,
+    required TResult Function() unauthorized,
+    required TResult Function() noConnection,
+    required TResult Function() cancelRequest,
+    required TResult Function() connectTimeout,
+    required TResult Function() deniedPermissions,
+    required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
+  }) {
+    return firestoreGetUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? parseModel,
+    TResult? Function()? http,
+    TResult? Function()? cache,
+    TResult? Function()? jsonDes,
+    TResult? Function()? jsonDec,
+    TResult? Function()? invalidData,
+    TResult? Function()? unauthorized,
+    TResult? Function()? noConnection,
+    TResult? Function()? cancelRequest,
+    TResult? Function()? connectTimeout,
+    TResult? Function()? deniedPermissions,
+    TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
+  }) {
+    return firestoreGetUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? parseModel,
+    TResult Function()? http,
+    TResult Function()? cache,
+    TResult Function()? jsonDes,
+    TResult Function()? jsonDec,
+    TResult Function()? invalidData,
+    TResult Function()? unauthorized,
+    TResult Function()? noConnection,
+    TResult Function()? cancelRequest,
+    TResult Function()? connectTimeout,
+    TResult Function()? deniedPermissions,
+    TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreGetUser != null) {
+      return firestoreGetUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(HttpFailure value) http,
+    required TResult Function(CacheFailure value) cache,
+    required TResult Function(JsonDesFailure value) jsonDes,
+    required TResult Function(JsonDecFailure value) jsonDec,
+    required TResult Function(InvalidDataFailure value) invalidData,
+    required TResult Function(UnauthorizedFailure value) unauthorized,
+    required TResult Function(NoConnectionFailure value) noConnection,
+    required TResult Function(CancelRequestFailure value) cancelRequest,
+    required TResult Function(ConnectTimeoutFailure value) connectTimeout,
+    required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
+    required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+  }) {
+    return firestoreGetUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(HttpFailure value)? http,
+    TResult? Function(CacheFailure value)? cache,
+    TResult? Function(JsonDesFailure value)? jsonDes,
+    TResult? Function(JsonDecFailure value)? jsonDec,
+    TResult? Function(InvalidDataFailure value)? invalidData,
+    TResult? Function(UnauthorizedFailure value)? unauthorized,
+    TResult? Function(NoConnectionFailure value)? noConnection,
+    TResult? Function(CancelRequestFailure value)? cancelRequest,
+    TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+  }) {
+    return firestoreGetUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(HttpFailure value)? http,
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(JsonDesFailure value)? jsonDes,
+    TResult Function(JsonDecFailure value)? jsonDec,
+    TResult Function(InvalidDataFailure value)? invalidData,
+    TResult Function(UnauthorizedFailure value)? unauthorized,
+    TResult Function(NoConnectionFailure value)? noConnection,
+    TResult Function(CancelRequestFailure value)? cancelRequest,
+    TResult Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreGetUser != null) {
+      return firestoreGetUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FirestoreGetUserFailure implements Failure {
+  const factory FirestoreGetUserFailure() = _$FirestoreGetUserFailure;
+}
+
+/// @nodoc
+abstract class _$$FirestoreDeleteUserFailureCopyWith<$Res> {
+  factory _$$FirestoreDeleteUserFailureCopyWith(
+          _$FirestoreDeleteUserFailure value,
+          $Res Function(_$FirestoreDeleteUserFailure) then) =
+      __$$FirestoreDeleteUserFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FirestoreDeleteUserFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$FirestoreDeleteUserFailure>
+    implements _$$FirestoreDeleteUserFailureCopyWith<$Res> {
+  __$$FirestoreDeleteUserFailureCopyWithImpl(
+      _$FirestoreDeleteUserFailure _value,
+      $Res Function(_$FirestoreDeleteUserFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
+  const _$FirestoreDeleteUserFailure();
+
+  @override
+  String toString() {
+    return 'Failure.firestoreDeleteUser()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FirestoreDeleteUserFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() parseModel,
+    required TResult Function() http,
+    required TResult Function() cache,
+    required TResult Function() jsonDes,
+    required TResult Function() jsonDec,
+    required TResult Function() invalidData,
+    required TResult Function() unauthorized,
+    required TResult Function() noConnection,
+    required TResult Function() cancelRequest,
+    required TResult Function() connectTimeout,
+    required TResult Function() deniedPermissions,
+    required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
+  }) {
+    return firestoreDeleteUser();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? parseModel,
+    TResult? Function()? http,
+    TResult? Function()? cache,
+    TResult? Function()? jsonDes,
+    TResult? Function()? jsonDec,
+    TResult? Function()? invalidData,
+    TResult? Function()? unauthorized,
+    TResult? Function()? noConnection,
+    TResult? Function()? cancelRequest,
+    TResult? Function()? connectTimeout,
+    TResult? Function()? deniedPermissions,
+    TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
+  }) {
+    return firestoreDeleteUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? parseModel,
+    TResult Function()? http,
+    TResult Function()? cache,
+    TResult Function()? jsonDes,
+    TResult Function()? jsonDec,
+    TResult Function()? invalidData,
+    TResult Function()? unauthorized,
+    TResult Function()? noConnection,
+    TResult Function()? cancelRequest,
+    TResult Function()? connectTimeout,
+    TResult Function()? deniedPermissions,
+    TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreDeleteUser != null) {
+      return firestoreDeleteUser();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(HttpFailure value) http,
+    required TResult Function(CacheFailure value) cache,
+    required TResult Function(JsonDesFailure value) jsonDes,
+    required TResult Function(JsonDecFailure value) jsonDec,
+    required TResult Function(InvalidDataFailure value) invalidData,
+    required TResult Function(UnauthorizedFailure value) unauthorized,
+    required TResult Function(NoConnectionFailure value) noConnection,
+    required TResult Function(CancelRequestFailure value) cancelRequest,
+    required TResult Function(ConnectTimeoutFailure value) connectTimeout,
+    required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
+    required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+  }) {
+    return firestoreDeleteUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(HttpFailure value)? http,
+    TResult? Function(CacheFailure value)? cache,
+    TResult? Function(JsonDesFailure value)? jsonDes,
+    TResult? Function(JsonDecFailure value)? jsonDec,
+    TResult? Function(InvalidDataFailure value)? invalidData,
+    TResult? Function(UnauthorizedFailure value)? unauthorized,
+    TResult? Function(NoConnectionFailure value)? noConnection,
+    TResult? Function(CancelRequestFailure value)? cancelRequest,
+    TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+  }) {
+    return firestoreDeleteUser?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(HttpFailure value)? http,
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(JsonDesFailure value)? jsonDes,
+    TResult Function(JsonDecFailure value)? jsonDec,
+    TResult Function(InvalidDataFailure value)? invalidData,
+    TResult Function(UnauthorizedFailure value)? unauthorized,
+    TResult Function(NoConnectionFailure value)? noConnection,
+    TResult Function(CancelRequestFailure value)? cancelRequest,
+    TResult Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreDeleteUser != null) {
+      return firestoreDeleteUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FirestoreDeleteUserFailure implements Failure {
+  const factory FirestoreDeleteUserFailure() = _$FirestoreDeleteUserFailure;
+}
+
+/// @nodoc
+abstract class _$$FirestoreGetUsersFailureCopyWith<$Res> {
+  factory _$$FirestoreGetUsersFailureCopyWith(_$FirestoreGetUsersFailure value,
+          $Res Function(_$FirestoreGetUsersFailure) then) =
+      __$$FirestoreGetUsersFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$FirestoreGetUsersFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$FirestoreGetUsersFailure>
+    implements _$$FirestoreGetUsersFailureCopyWith<$Res> {
+  __$$FirestoreGetUsersFailureCopyWithImpl(_$FirestoreGetUsersFailure _value,
+      $Res Function(_$FirestoreGetUsersFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
+  const _$FirestoreGetUsersFailure();
+
+  @override
+  String toString() {
+    return 'Failure.firestoreGetUsers()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FirestoreGetUsersFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() parseModel,
+    required TResult Function() http,
+    required TResult Function() cache,
+    required TResult Function() jsonDes,
+    required TResult Function() jsonDec,
+    required TResult Function() invalidData,
+    required TResult Function() unauthorized,
+    required TResult Function() noConnection,
+    required TResult Function() cancelRequest,
+    required TResult Function() connectTimeout,
+    required TResult Function() deniedPermissions,
+    required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
+  }) {
+    return firestoreGetUsers();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? parseModel,
+    TResult? Function()? http,
+    TResult? Function()? cache,
+    TResult? Function()? jsonDes,
+    TResult? Function()? jsonDec,
+    TResult? Function()? invalidData,
+    TResult? Function()? unauthorized,
+    TResult? Function()? noConnection,
+    TResult? Function()? cancelRequest,
+    TResult? Function()? connectTimeout,
+    TResult? Function()? deniedPermissions,
+    TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
+  }) {
+    return firestoreGetUsers?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? parseModel,
+    TResult Function()? http,
+    TResult Function()? cache,
+    TResult Function()? jsonDes,
+    TResult Function()? jsonDec,
+    TResult Function()? invalidData,
+    TResult Function()? unauthorized,
+    TResult Function()? noConnection,
+    TResult Function()? cancelRequest,
+    TResult Function()? connectTimeout,
+    TResult Function()? deniedPermissions,
+    TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreGetUsers != null) {
+      return firestoreGetUsers();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(HttpFailure value) http,
+    required TResult Function(CacheFailure value) cache,
+    required TResult Function(JsonDesFailure value) jsonDes,
+    required TResult Function(JsonDecFailure value) jsonDec,
+    required TResult Function(InvalidDataFailure value) invalidData,
+    required TResult Function(UnauthorizedFailure value) unauthorized,
+    required TResult Function(NoConnectionFailure value) noConnection,
+    required TResult Function(CancelRequestFailure value) cancelRequest,
+    required TResult Function(ConnectTimeoutFailure value) connectTimeout,
+    required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
+    required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+  }) {
+    return firestoreGetUsers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(HttpFailure value)? http,
+    TResult? Function(CacheFailure value)? cache,
+    TResult? Function(JsonDesFailure value)? jsonDes,
+    TResult? Function(JsonDecFailure value)? jsonDec,
+    TResult? Function(InvalidDataFailure value)? invalidData,
+    TResult? Function(UnauthorizedFailure value)? unauthorized,
+    TResult? Function(NoConnectionFailure value)? noConnection,
+    TResult? Function(CancelRequestFailure value)? cancelRequest,
+    TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+  }) {
+    return firestoreGetUsers?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(HttpFailure value)? http,
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(JsonDesFailure value)? jsonDes,
+    TResult Function(JsonDecFailure value)? jsonDec,
+    TResult Function(InvalidDataFailure value)? invalidData,
+    TResult Function(UnauthorizedFailure value)? unauthorized,
+    TResult Function(NoConnectionFailure value)? noConnection,
+    TResult Function(CancelRequestFailure value)? cancelRequest,
+    TResult Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    required TResult orElse(),
+  }) {
+    if (firestoreGetUsers != null) {
+      return firestoreGetUsers(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FirestoreGetUsersFailure implements Failure {
+  const factory FirestoreGetUsersFailure() = _$FirestoreGetUsersFailure;
 }

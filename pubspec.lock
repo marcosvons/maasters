@@ -226,7 +226,7 @@ packages:
     source: hosted
     version: "5.1.2"
   errors:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "packages/errors"
       relative: true
@@ -686,6 +686,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.1"
+  rxdart:
+    dependency: transitive
+    description:
+      name: rxdart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.27.7"
   shelf:
     dependency: transitive
     description:

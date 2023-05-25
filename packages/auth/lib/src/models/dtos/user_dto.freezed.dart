@@ -15,15 +15,22 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+  return _UserDto.fromJson(json);
 }
 
 /// @nodoc
 mixin _$UserDto {
   String get id => throw _privateConstructorUsedError;
   String get mail => throw _privateConstructorUsedError;
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  List<SpecificInterest> get areasOfInterest =>
+      throw _privateConstructorUsedError;
+  List<SocialMedia> get socialMedia => throw _privateConstructorUsedError;
+  ProfileType get profileType => throw _privateConstructorUsedError;
+  Seniority get seniority => throw _privateConstructorUsedError;
+  bool get onboardingCompleted => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
+  String? get company => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +42,17 @@ abstract class $UserDtoCopyWith<$Res> {
   factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
       _$UserDtoCopyWithImpl<$Res, UserDto>;
   @useResult
-  $Res call({String id, String mail, String firstName, String lastName});
+  $Res call(
+      {String id,
+      String mail,
+      String name,
+      List<SpecificInterest> areasOfInterest,
+      List<SocialMedia> socialMedia,
+      ProfileType profileType,
+      Seniority seniority,
+      bool onboardingCompleted,
+      String phoneNumber,
+      String? company});
 }
 
 /// @nodoc
@@ -53,8 +70,14 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
   $Res call({
     Object? id = null,
     Object? mail = null,
-    Object? firstName = null,
-    Object? lastName = null,
+    Object? name = null,
+    Object? areasOfInterest = null,
+    Object? socialMedia = null,
+    Object? profileType = null,
+    Object? seniority = null,
+    Object? onboardingCompleted = null,
+    Object? phoneNumber = null,
+    Object? company = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -65,31 +88,67 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
+      areasOfInterest: null == areasOfInterest
+          ? _value.areasOfInterest
+          : areasOfInterest // ignore: cast_nullable_to_non_nullable
+              as List<SpecificInterest>,
+      socialMedia: null == socialMedia
+          ? _value.socialMedia
+          : socialMedia // ignore: cast_nullable_to_non_nullable
+              as List<SocialMedia>,
+      profileType: null == profileType
+          ? _value.profileType
+          : profileType // ignore: cast_nullable_to_non_nullable
+              as ProfileType,
+      seniority: null == seniority
+          ? _value.seniority
+          : seniority // ignore: cast_nullable_to_non_nullable
+              as Seniority,
+      onboardingCompleted: null == onboardingCompleted
+          ? _value.onboardingCompleted
+          : onboardingCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
+      company: freezed == company
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_UserCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
-      __$$_UserCopyWithImpl<$Res>;
+abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
+  factory _$$_UserDtoCopyWith(
+          _$_UserDto value, $Res Function(_$_UserDto) then) =
+      __$$_UserDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String mail, String firstName, String lastName});
+  $Res call(
+      {String id,
+      String mail,
+      String name,
+      List<SpecificInterest> areasOfInterest,
+      List<SocialMedia> socialMedia,
+      ProfileType profileType,
+      Seniority seniority,
+      bool onboardingCompleted,
+      String phoneNumber,
+      String? company});
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res, _$_User>
-    implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
+class __$$_UserDtoCopyWithImpl<$Res>
+    extends _$UserDtoCopyWithImpl<$Res, _$_UserDto>
+    implements _$$_UserDtoCopyWith<$Res> {
+  __$$_UserDtoCopyWithImpl(_$_UserDto _value, $Res Function(_$_UserDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,10 +156,16 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res, _$_User>
   $Res call({
     Object? id = null,
     Object? mail = null,
-    Object? firstName = null,
-    Object? lastName = null,
+    Object? name = null,
+    Object? areasOfInterest = null,
+    Object? socialMedia = null,
+    Object? profileType = null,
+    Object? seniority = null,
+    Object? onboardingCompleted = null,
+    Object? phoneNumber = null,
+    Object? company = freezed,
   }) {
-    return _then(_$_User(
+    return _then(_$_UserDto(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -109,94 +174,197 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res, _$_User>
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
               as String,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
+      areasOfInterest: null == areasOfInterest
+          ? _value._areasOfInterest
+          : areasOfInterest // ignore: cast_nullable_to_non_nullable
+              as List<SpecificInterest>,
+      socialMedia: null == socialMedia
+          ? _value._socialMedia
+          : socialMedia // ignore: cast_nullable_to_non_nullable
+              as List<SocialMedia>,
+      profileType: null == profileType
+          ? _value.profileType
+          : profileType // ignore: cast_nullable_to_non_nullable
+              as ProfileType,
+      seniority: null == seniority
+          ? _value.seniority
+          : seniority // ignore: cast_nullable_to_non_nullable
+              as Seniority,
+      onboardingCompleted: null == onboardingCompleted
+          ? _value.onboardingCompleted
+          : onboardingCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
+      company: freezed == company
+          ? _value.company
+          : company // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_User extends _User {
-  const _$_User(
+class _$_UserDto extends _UserDto {
+  const _$_UserDto(
       {required this.id,
       required this.mail,
-      required this.firstName,
-      required this.lastName})
-      : super._();
+      this.name = '',
+      final List<SpecificInterest> areasOfInterest = const [],
+      final List<SocialMedia> socialMedia = const [],
+      this.profileType = ProfileType.unknown,
+      this.seniority = Seniority.unknown,
+      this.onboardingCompleted = false,
+      this.phoneNumber = '',
+      this.company = ''})
+      : _areasOfInterest = areasOfInterest,
+        _socialMedia = socialMedia,
+        super._();
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
+      _$$_UserDtoFromJson(json);
 
   @override
   final String id;
   @override
   final String mail;
   @override
-  final String firstName;
+  @JsonKey()
+  final String name;
+  final List<SpecificInterest> _areasOfInterest;
   @override
-  final String lastName;
+  @JsonKey()
+  List<SpecificInterest> get areasOfInterest {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_areasOfInterest);
+  }
+
+  final List<SocialMedia> _socialMedia;
+  @override
+  @JsonKey()
+  List<SocialMedia> get socialMedia {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_socialMedia);
+  }
+
+  @override
+  @JsonKey()
+  final ProfileType profileType;
+  @override
+  @JsonKey()
+  final Seniority seniority;
+  @override
+  @JsonKey()
+  final bool onboardingCompleted;
+  @override
+  @JsonKey()
+  final String phoneNumber;
+  @override
+  @JsonKey()
+  final String? company;
 
   @override
   String toString() {
-    return 'UserDto(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName)';
+    return 'UserDto(id: $id, mail: $mail, name: $name, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_User &&
+            other is _$_UserDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.mail, mail) || other.mail == mail) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName));
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality()
+                .equals(other._areasOfInterest, _areasOfInterest) &&
+            const DeepCollectionEquality()
+                .equals(other._socialMedia, _socialMedia) &&
+            (identical(other.profileType, profileType) ||
+                other.profileType == profileType) &&
+            (identical(other.seniority, seniority) ||
+                other.seniority == seniority) &&
+            (identical(other.onboardingCompleted, onboardingCompleted) ||
+                other.onboardingCompleted == onboardingCompleted) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber) &&
+            (identical(other.company, company) || other.company == company));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, mail, firstName, lastName);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      mail,
+      name,
+      const DeepCollectionEquality().hash(_areasOfInterest),
+      const DeepCollectionEquality().hash(_socialMedia),
+      profileType,
+      seniority,
+      onboardingCompleted,
+      phoneNumber,
+      company);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserCopyWith<_$_User> get copyWith =>
-      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>
+      __$$_UserDtoCopyWithImpl<_$_UserDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(
+    return _$$_UserDtoToJson(
       this,
     );
   }
 }
 
-abstract class _User extends UserDto {
-  const factory _User(
+abstract class _UserDto extends UserDto {
+  const factory _UserDto(
       {required final String id,
       required final String mail,
-      required final String firstName,
-      required final String lastName}) = _$_User;
-  const _User._() : super._();
+      final String name,
+      final List<SpecificInterest> areasOfInterest,
+      final List<SocialMedia> socialMedia,
+      final ProfileType profileType,
+      final Seniority seniority,
+      final bool onboardingCompleted,
+      final String phoneNumber,
+      final String? company}) = _$_UserDto;
+  const _UserDto._() : super._();
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
 
   @override
   String get id;
   @override
   String get mail;
   @override
-  String get firstName;
+  String get name;
   @override
-  String get lastName;
+  List<SpecificInterest> get areasOfInterest;
+  @override
+  List<SocialMedia> get socialMedia;
+  @override
+  ProfileType get profileType;
+  @override
+  Seniority get seniority;
+  @override
+  bool get onboardingCompleted;
+  @override
+  String get phoneNumber;
+  @override
+  String? get company;
   @override
   @JsonKey(ignore: true)
-  _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
+  _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
