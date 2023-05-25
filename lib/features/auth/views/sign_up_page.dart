@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
-import 'package:maasters/features/onboarding/views/onboarding_page.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -21,28 +20,21 @@ class SignUpPage extends StatelessWidget {
       child: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           state.whenOrNull(
-            authenticated: (_) {
-              Navigator.of(context)
-                  .pushReplacement<void, void>(OnboardingPage.route());
+            authenticated: (user) {
+              if (user.onboardingCompleted) {
+                Navigator.of(context)
+                    .pushReplacement<void, void>(HomePage.route());
+              } else {
+                Navigator.of(context)
+                    .pushReplacement<void, void>(OnboardingPage.route());
+              }
             },
           );
         },
         child: Scaffold(
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(context.height * 0.1),
-            child: AppBar(
-              toolbarHeight: context.height * 0.1,
-              title: Padding(
-                padding: EdgeInsets.symmetric(horizontal: context.width * 0.1),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: SvgPicture.asset(
-                    AppIcons.blueLogo,
-                    height: context.height * 0.075,
-                  ),
-                ),
-              ),
-            ),
+            child: const Header(),
           ),
           body: Row(
             children: [
