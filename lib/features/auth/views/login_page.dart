@@ -4,20 +4,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   static Route<dynamic> route() {
-    return MaterialPageRoute<void>(builder: (_) => const SignUpPage());
+    return MaterialPageRoute<void>(builder: (_) => const LoginPage());
   }
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<SignUpCubit>(
+        BlocProvider<LoginCubit>(
           create: (context) =>
-              SignUpCubit(authRepository: getIt<IAuthRepository>()),
+              LoginCubit(authRepository: getIt<IAuthRepository>()),
         ),
       ],
       child: MultiBlocListener(
@@ -43,15 +43,15 @@ class SignUpPage extends StatelessWidget {
             preferredSize: Size.fromHeight(context.height * 0.1),
             child: const Header(),
           ),
-          body: const SignUpBody(),
+          body: const LoginBody(),
         ),
       ),
     );
   }
 }
 
-class SignUpBody extends StatelessWidget {
-  const SignUpBody({
+class LoginBody extends StatelessWidget {
+  const LoginBody({
     super.key,
   });
 
@@ -69,23 +69,20 @@ class SignUpBody extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const _TitleAndSubtitle(),
-                  const SizedBox(height: Dimens.xxLarge * 2),
+                  const SizedBox(height: Dimens.xxLarge),
                   GoogleSignIn(
-                    onTap: () => context.read<SignUpCubit>().signUpWithGoogle(),
+                    onTap: () => context.read<LoginCubit>().loginWithGoogle(),
                   ),
                   const SizedBox(height: Dimens.xxLarge),
                   const DividerSignInMethod(),
-                  const SignUpForm(),
-                  const SizedBox(height: Dimens.medium),
-                  const _TermsAndConditions(),
-                  const SizedBox(height: Dimens.xxLarge),
+                  const SizedBox(height: Dimens.large),
+                  const LoginForm(),
+                  const SizedBox(height: Dimens.large),
                   ChangeAuthenticationView(
-                    questionText: '¿Ya tenés una cuenta? ',
-                    actionText: 'Inicia sesión',
-                    onTapAction: () =>
-                        Navigator.of(context).pushReplacement<void, void>(
-                      LoginPage.route(),
-                    ),
+                    questionText: '¿No tienes una cuenta? ',
+                    actionText: 'Sign Up',
+                    onTapAction: () => Navigator.of(context)
+                        .pushReplacement<void, void>(SignUpPage.route()),
                   ),
                 ],
               ),
@@ -142,46 +139,6 @@ class SignUpBody extends StatelessWidget {
   }
 }
 
-class _TermsAndConditions extends StatelessWidget {
-  const _TermsAndConditions();
-
-  @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        text: 'Al continuar usted acepta los ',
-        style: context.textTheme.bodySmall!.copyWith(
-          color: context.colorScheme.onTertiaryContainer,
-        ),
-        children: [
-          TextSpan(
-            text: 'Términos de Uso',
-            style: context.textTheme.bodySmall!.copyWith(
-              color: context.colorScheme.primary,
-            ),
-          ),
-          const TextSpan(text: ', '),
-          TextSpan(
-            text: 'Políticas de Privacidad',
-            style: context.textTheme.bodySmall!.copyWith(
-              color: context.colorScheme.primary,
-            ),
-          ),
-          const TextSpan(text: ' y '),
-          TextSpan(
-            text: 'Estándares de Comunidad',
-            style: context.textTheme.bodySmall!.copyWith(
-              color: context.colorScheme.primary,
-            ),
-          ),
-          const TextSpan(text: ' de MaaSters.'),
-        ],
-      ),
-      textAlign: TextAlign.center,
-    );
-  }
-}
-
 class _TitleAndSubtitle extends StatelessWidget {
   const _TitleAndSubtitle();
 
@@ -191,12 +148,12 @@ class _TitleAndSubtitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Bienvenido a MaaSters',
+          'Bienvenido MaaSter',
           style: context.textTheme.displayLarge,
         ),
         const SizedBox(height: Dimens.medium),
         Text(
-          'Conectá con las personas indicadas para potenciar tus decisiones y habilidades profesionales.',
+          'Inicia sesión en tu cuenta para acceder a los mejores profesionales de la industria.',
           style: context.textTheme.bodyMedium!.copyWith(
             color: context.colorScheme.surface,
           ),

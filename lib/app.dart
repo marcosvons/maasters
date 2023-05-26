@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/features/onboarding/cubit/onboarding_cubit.dart';
 import 'package:maasters/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -17,6 +18,10 @@ class App extends StatelessWidget {
             authRepository: getIt<IAuthRepository>(),
           ),
         ),
+        BlocProvider<OnboardingCubit>(
+          create: (context) =>
+              OnboardingCubit(authRepository: getIt<IAuthRepository>()),
+        )
       ],
       child: MaterialApp(
         theme: ThemeManager.light,

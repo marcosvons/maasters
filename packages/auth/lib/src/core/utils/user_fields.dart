@@ -7,9 +7,8 @@ enum Seniority {
 }
 
 enum ProfileType {
-  trainee,
+  mentee,
   mentor,
-  both,
   unknown,
 }
 

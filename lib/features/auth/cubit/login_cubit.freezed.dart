@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'sign_up_cubit.dart';
+part of 'login_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,42 +15,38 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SignUpState {
+mixin _$LoginState {
   Email get email => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
   FormzSubmissionStatus get status => throw _privateConstructorUsedError;
   bool get showPassword => throw _privateConstructorUsedError;
   AuthFailure? get failure => throw _privateConstructorUsedError;
-  bool? get isEmailValid => throw _privateConstructorUsedError;
-  bool? get isPasswordValid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SignUpStateCopyWith<SignUpState> get copyWith =>
+  $LoginStateCopyWith<LoginState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignUpStateCopyWith<$Res> {
-  factory $SignUpStateCopyWith(
-          SignUpState value, $Res Function(SignUpState) then) =
-      _$SignUpStateCopyWithImpl<$Res, SignUpState>;
+abstract class $LoginStateCopyWith<$Res> {
+  factory $LoginStateCopyWith(
+          LoginState value, $Res Function(LoginState) then) =
+      _$LoginStateCopyWithImpl<$Res, LoginState>;
   @useResult
   $Res call(
       {Email email,
       Password password,
       FormzSubmissionStatus status,
       bool showPassword,
-      AuthFailure? failure,
-      bool? isEmailValid,
-      bool? isPasswordValid});
+      AuthFailure? failure});
 
   $AuthFailureCopyWith<$Res>? get failure;
 }
 
 /// @nodoc
-class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
-    implements $SignUpStateCopyWith<$Res> {
-  _$SignUpStateCopyWithImpl(this._value, this._then);
+class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
+    implements $LoginStateCopyWith<$Res> {
+  _$LoginStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -65,8 +61,6 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
     Object? status = null,
     Object? showPassword = null,
     Object? failure = freezed,
-    Object? isEmailValid = freezed,
-    Object? isPasswordValid = freezed,
   }) {
     return _then(_value.copyWith(
       email: null == email
@@ -89,14 +83,6 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as AuthFailure?,
-      isEmailValid: freezed == isEmailValid
-          ? _value.isEmailValid
-          : isEmailValid // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isPasswordValid: freezed == isPasswordValid
-          ? _value.isPasswordValid
-          : isPasswordValid // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ) as $Val);
   }
 
@@ -114,7 +100,7 @@ class _$SignUpStateCopyWithImpl<$Res, $Val extends SignUpState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> implements $SignUpStateCopyWith<$Res> {
+abstract class _$$_InitialCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
   factory _$$_InitialCopyWith(
           _$_Initial value, $Res Function(_$_Initial) then) =
       __$$_InitialCopyWithImpl<$Res>;
@@ -125,9 +111,7 @@ abstract class _$$_InitialCopyWith<$Res> implements $SignUpStateCopyWith<$Res> {
       Password password,
       FormzSubmissionStatus status,
       bool showPassword,
-      AuthFailure? failure,
-      bool? isEmailValid,
-      bool? isPasswordValid});
+      AuthFailure? failure});
 
   @override
   $AuthFailureCopyWith<$Res>? get failure;
@@ -135,7 +119,7 @@ abstract class _$$_InitialCopyWith<$Res> implements $SignUpStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<$Res>
-    extends _$SignUpStateCopyWithImpl<$Res, _$_Initial>
+    extends _$LoginStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
@@ -148,8 +132,6 @@ class __$$_InitialCopyWithImpl<$Res>
     Object? status = null,
     Object? showPassword = null,
     Object? failure = freezed,
-    Object? isEmailValid = freezed,
-    Object? isPasswordValid = freezed,
   }) {
     return _then(_$_Initial(
       email: null == email
@@ -172,14 +154,6 @@ class __$$_InitialCopyWithImpl<$Res>
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
               as AuthFailure?,
-      isEmailValid: freezed == isEmailValid
-          ? _value.isEmailValid
-          : isEmailValid // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isPasswordValid: freezed == isPasswordValid
-          ? _value.isPasswordValid
-          : isPasswordValid // ignore: cast_nullable_to_non_nullable
-              as bool?,
     ));
   }
 }
@@ -192,9 +166,7 @@ class _$_Initial implements _Initial {
       this.password = const Password.pure(),
       this.status = FormzSubmissionStatus.initial,
       this.showPassword = false,
-      this.failure,
-      this.isEmailValid,
-      this.isPasswordValid});
+      this.failure});
 
   @override
   @JsonKey()
@@ -210,14 +182,10 @@ class _$_Initial implements _Initial {
   final bool showPassword;
   @override
   final AuthFailure? failure;
-  @override
-  final bool? isEmailValid;
-  @override
-  final bool? isPasswordValid;
 
   @override
   String toString() {
-    return 'SignUpState(email: $email, password: $password, status: $status, showPassword: $showPassword, failure: $failure, isEmailValid: $isEmailValid, isPasswordValid: $isPasswordValid)';
+    return 'LoginState(email: $email, password: $password, status: $status, showPassword: $showPassword, failure: $failure)';
   }
 
   @override
@@ -228,19 +196,15 @@ class _$_Initial implements _Initial {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other.status, status) &&
             (identical(other.showPassword, showPassword) ||
                 other.showPassword == showPassword) &&
-            (identical(other.failure, failure) || other.failure == failure) &&
-            (identical(other.isEmailValid, isEmailValid) ||
-                other.isEmailValid == isEmailValid) &&
-            (identical(other.isPasswordValid, isPasswordValid) ||
-                other.isPasswordValid == isPasswordValid));
+            (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password, status,
-      showPassword, failure, isEmailValid, isPasswordValid);
+  int get hashCode => Object.hash(runtimeType, email, password,
+      const DeepCollectionEquality().hash(status), showPassword, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -249,15 +213,13 @@ class _$_Initial implements _Initial {
       __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 }
 
-abstract class _Initial implements SignUpState {
+abstract class _Initial implements LoginState {
   const factory _Initial(
       {final Email email,
       final Password password,
       final FormzSubmissionStatus status,
       final bool showPassword,
-      final AuthFailure? failure,
-      final bool? isEmailValid,
-      final bool? isPasswordValid}) = _$_Initial;
+      final AuthFailure? failure}) = _$_Initial;
 
   @override
   Email get email;
@@ -269,10 +231,6 @@ abstract class _Initial implements SignUpState {
   bool get showPassword;
   @override
   AuthFailure? get failure;
-  @override
-  bool? get isEmailValid;
-  @override
-  bool? get isPasswordValid;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

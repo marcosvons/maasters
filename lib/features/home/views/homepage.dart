@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:maasters/features/auth/auth.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,8 +12,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text('Home Page'),
+    return Scaffold(
+      body: ElevatedButton(
+        child: const Text('Logout'),
+        onPressed: () =>
+            context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
+      ),
     );
   }
 }

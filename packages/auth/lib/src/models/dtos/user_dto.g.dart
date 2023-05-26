@@ -78,9 +78,8 @@ const _$SpecificInterestEnumMap = {
 };
 
 const _$ProfileTypeEnumMap = {
-  ProfileType.trainee: 'trainee',
+  ProfileType.mentee: 'mentee',
   ProfileType.mentor: 'mentor',
-  ProfileType.both: 'both',
   ProfileType.unknown: 'unknown',
 };
 

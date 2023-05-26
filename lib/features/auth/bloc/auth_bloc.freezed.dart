@@ -520,8 +520,8 @@ class __$$_AuthenticatedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Authenticated implements _Authenticated {
-  const _$_Authenticated({required this.user});
+class _$_Authenticated extends _Authenticated {
+  const _$_Authenticated({required this.user}) : super._();
 
   @override
   final User user;
@@ -611,8 +611,9 @@ class _$_Authenticated implements _Authenticated {
   }
 }
 
-abstract class _Authenticated implements AuthState {
+abstract class _Authenticated extends AuthState {
   const factory _Authenticated({required final User user}) = _$_Authenticated;
+  const _Authenticated._() : super._();
 
   User get user;
   @JsonKey(ignore: true)
@@ -667,8 +668,8 @@ class __$$_UnauthenticatedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Unauthenticated implements _Unauthenticated {
-  const _$_Unauthenticated({this.failure});
+class _$_Unauthenticated extends _Unauthenticated {
+  const _$_Unauthenticated({this.failure}) : super._();
 
   @override
   final Failure? failure;
@@ -758,8 +759,9 @@ class _$_Unauthenticated implements _Unauthenticated {
   }
 }
 
-abstract class _Unauthenticated implements AuthState {
+abstract class _Unauthenticated extends AuthState {
   const factory _Unauthenticated({final Failure? failure}) = _$_Unauthenticated;
+  const _Unauthenticated._() : super._();
 
   Failure? get failure;
   @JsonKey(ignore: true)

@@ -22,7 +22,7 @@ abstract class IAuthRepository {
   Future<Either<Failure, Unit>> createFirestoreUser({
     required firebase_auth.User firebaseUser,
   });
-  Future<Either<Failure, Unit>> updateFirestoreUser();
+  Future<Either<Failure, Unit>> updateFirestoreUser(User user);
   Future<void> logout();
 }
 
@@ -175,11 +175,6 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> updateFirestoreUser() async {
-    return const Left(Failure.cache());
-  }
-
-  @override
   Future<Either<Failure, Unit>> createFirestoreUser({
     required firebase_auth.User firebaseUser,
   }) async {
@@ -196,6 +191,28 @@ class AuthRepository implements IAuthRepository {
               FirestoreUserCreationFailure(),
             ),
           );
+      return const Right(unit);
+    } catch (e) {
+      return const Left(FirestoreUserCreationFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, Unit>> updateFirestoreUser(User user) async {
+    try {
+      final userDto = UserDto.fromModel(user);
+      // save UserDto to firestore
+      await _firestore
+          .collection(Keys.usersCollection)
+          .doc(userDto.id)
+          .set(userDto.toJson())
+          .onError(
+            (error, stackTrace) =>
+                const Left<FirestoreUserCreationFailure, Unit>(
+              FirestoreUserCreationFailure(),
+            ),
+          );
+      await _authLocalService.setCacheUser(userDto: userDto);
       return const Right(unit);
     } catch (e) {
       return const Left(FirestoreUserCreationFailure());

@@ -57,7 +57,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       onData: (Either<Failure, User?> possibleFailureOrUser) {
         return possibleFailureOrUser.fold(
           (failure) => _Unauthenticated(failure: failure),
-          (user) => _Authenticated(user: user!),
+          (user) {
+            if (user == null) return const _Unauthenticated();
+            return _Authenticated(user: user);
+          },
         );
       },
     );
