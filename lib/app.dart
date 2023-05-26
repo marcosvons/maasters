@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
-import 'package:maasters/features/onboarding/cubit/onboarding_cubit.dart';
 import 'package:maasters/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -23,13 +22,39 @@ class App extends StatelessWidget {
               OnboardingCubit(authRepository: getIt<IAuthRepository>()),
         )
       ],
-      child: MaterialApp(
-        theme: ThemeManager.light,
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        home: const SignUpPage(),
-      ),
+      child: const AppStartUp(),
+    );
+  }
+}
+
+class AppStartUp extends StatelessWidget {
+  const AppStartUp({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AuthBloc, AuthState>(
+      builder: (context, state) {
+        return MaterialApp(
+          theme: ThemeManager.light,
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: state.when(
+            authenticated: (user) {
+              if (user.onboardingCompleted) {
+                return const HomePage();
+              } else {
+                return const OnboardingPage();
+              }
+            },
+            unauthenticated: (_) {
+              return const SignUpPage();
+            },
+          ),
+        );
+      },
     );
   }
 }
