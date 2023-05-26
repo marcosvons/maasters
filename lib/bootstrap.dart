@@ -2,9 +2,8 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
-import 'package:maasters/firebase_options_prod.dart';
+import 'package:maasters/core/injector/dependency_injector.dart' as injector;
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -28,6 +27,8 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   };
 
   Bloc.observer = const AppBlocObserver();
+
+  await injector.initDependencies();
 
   await runZonedGuarded(
     () async => runApp(await builder()),
