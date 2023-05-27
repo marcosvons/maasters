@@ -19,7 +19,8 @@ mixin _$OnboardingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onboardingNotStarted,
-    required TResult Function(User user) onboardingInProgress,
+    required TResult Function(User user, int fieldsCompleted)
+        onboardingInProgress,
     required TResult Function() updatingUser,
     required TResult Function() onboardingSuccess,
     required TResult Function(Failure? failure) onboardingFailure,
@@ -28,7 +29,7 @@ mixin _$OnboardingState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user)? onboardingInProgress,
+    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult? Function()? updatingUser,
     TResult? Function()? onboardingSuccess,
     TResult? Function(Failure? failure)? onboardingFailure,
@@ -37,7 +38,7 @@ mixin _$OnboardingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onboardingNotStarted,
-    TResult Function(User user)? onboardingInProgress,
+    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult Function()? updatingUser,
     TResult Function()? onboardingSuccess,
     TResult Function(Failure? failure)? onboardingFailure,
@@ -110,8 +111,8 @@ class __$$_OnboardingNotStartedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnboardingNotStarted implements _OnboardingNotStarted {
-  const _$_OnboardingNotStarted();
+class _$_OnboardingNotStarted extends _OnboardingNotStarted {
+  const _$_OnboardingNotStarted() : super._();
 
   @override
   String toString() {
@@ -131,7 +132,8 @@ class _$_OnboardingNotStarted implements _OnboardingNotStarted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onboardingNotStarted,
-    required TResult Function(User user) onboardingInProgress,
+    required TResult Function(User user, int fieldsCompleted)
+        onboardingInProgress,
     required TResult Function() updatingUser,
     required TResult Function() onboardingSuccess,
     required TResult Function(Failure? failure) onboardingFailure,
@@ -143,7 +145,7 @@ class _$_OnboardingNotStarted implements _OnboardingNotStarted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user)? onboardingInProgress,
+    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult? Function()? updatingUser,
     TResult? Function()? onboardingSuccess,
     TResult? Function(Failure? failure)? onboardingFailure,
@@ -155,7 +157,7 @@ class _$_OnboardingNotStarted implements _OnboardingNotStarted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onboardingNotStarted,
-    TResult Function(User user)? onboardingInProgress,
+    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult Function()? updatingUser,
     TResult Function()? onboardingSuccess,
     TResult Function(Failure? failure)? onboardingFailure,
@@ -208,8 +210,9 @@ class _$_OnboardingNotStarted implements _OnboardingNotStarted {
   }
 }
 
-abstract class _OnboardingNotStarted implements OnboardingState {
+abstract class _OnboardingNotStarted extends OnboardingState {
   const factory _OnboardingNotStarted() = _$_OnboardingNotStarted;
+  const _OnboardingNotStarted._() : super._();
 }
 
 /// @nodoc
@@ -218,7 +221,7 @@ abstract class _$$_OnboardingInProgressCopyWith<$Res> {
           $Res Function(_$_OnboardingInProgress) then) =
       __$$_OnboardingInProgressCopyWithImpl<$Res>;
   @useResult
-  $Res call({User user});
+  $Res call({User user, int fieldsCompleted});
 
   $UserCopyWith<$Res> get user;
 }
@@ -235,12 +238,17 @@ class __$$_OnboardingInProgressCopyWithImpl<$Res>
   @override
   $Res call({
     Object? user = null,
+    Object? fieldsCompleted = null,
   }) {
     return _then(_$_OnboardingInProgress(
-      null == user
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as User,
+      fieldsCompleted: null == fieldsCompleted
+          ? _value.fieldsCompleted
+          : fieldsCompleted // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
@@ -255,15 +263,19 @@ class __$$_OnboardingInProgressCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnboardingInProgress implements _OnboardingInProgress {
-  const _$_OnboardingInProgress(this.user);
+class _$_OnboardingInProgress extends _OnboardingInProgress {
+  const _$_OnboardingInProgress({required this.user, this.fieldsCompleted = 0})
+      : super._();
 
   @override
   final User user;
+  @override
+  @JsonKey()
+  final int fieldsCompleted;
 
   @override
   String toString() {
-    return 'OnboardingState.onboardingInProgress(user: $user)';
+    return 'OnboardingState.onboardingInProgress(user: $user, fieldsCompleted: $fieldsCompleted)';
   }
 
   @override
@@ -271,11 +283,13 @@ class _$_OnboardingInProgress implements _OnboardingInProgress {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OnboardingInProgress &&
-            (identical(other.user, user) || other.user == user));
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.fieldsCompleted, fieldsCompleted) ||
+                other.fieldsCompleted == fieldsCompleted));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user);
+  int get hashCode => Object.hash(runtimeType, user, fieldsCompleted);
 
   @JsonKey(ignore: true)
   @override
@@ -288,38 +302,39 @@ class _$_OnboardingInProgress implements _OnboardingInProgress {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onboardingNotStarted,
-    required TResult Function(User user) onboardingInProgress,
+    required TResult Function(User user, int fieldsCompleted)
+        onboardingInProgress,
     required TResult Function() updatingUser,
     required TResult Function() onboardingSuccess,
     required TResult Function(Failure? failure) onboardingFailure,
   }) {
-    return onboardingInProgress(user);
+    return onboardingInProgress(user, fieldsCompleted);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user)? onboardingInProgress,
+    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult? Function()? updatingUser,
     TResult? Function()? onboardingSuccess,
     TResult? Function(Failure? failure)? onboardingFailure,
   }) {
-    return onboardingInProgress?.call(user);
+    return onboardingInProgress?.call(user, fieldsCompleted);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onboardingNotStarted,
-    TResult Function(User user)? onboardingInProgress,
+    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult Function()? updatingUser,
     TResult Function()? onboardingSuccess,
     TResult Function(Failure? failure)? onboardingFailure,
     required TResult orElse(),
   }) {
     if (onboardingInProgress != null) {
-      return onboardingInProgress(user);
+      return onboardingInProgress(user, fieldsCompleted);
     }
     return orElse();
   }
@@ -365,11 +380,14 @@ class _$_OnboardingInProgress implements _OnboardingInProgress {
   }
 }
 
-abstract class _OnboardingInProgress implements OnboardingState {
-  const factory _OnboardingInProgress(final User user) =
-      _$_OnboardingInProgress;
+abstract class _OnboardingInProgress extends OnboardingState {
+  const factory _OnboardingInProgress(
+      {required final User user,
+      final int fieldsCompleted}) = _$_OnboardingInProgress;
+  const _OnboardingInProgress._() : super._();
 
   User get user;
+  int get fieldsCompleted;
   @JsonKey(ignore: true)
   _$$_OnboardingInProgressCopyWith<_$_OnboardingInProgress> get copyWith =>
       throw _privateConstructorUsedError;
@@ -393,8 +411,8 @@ class __$$_UpdatingUserCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UpdatingUser implements _UpdatingUser {
-  const _$_UpdatingUser();
+class _$_UpdatingUser extends _UpdatingUser {
+  const _$_UpdatingUser() : super._();
 
   @override
   String toString() {
@@ -414,7 +432,8 @@ class _$_UpdatingUser implements _UpdatingUser {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onboardingNotStarted,
-    required TResult Function(User user) onboardingInProgress,
+    required TResult Function(User user, int fieldsCompleted)
+        onboardingInProgress,
     required TResult Function() updatingUser,
     required TResult Function() onboardingSuccess,
     required TResult Function(Failure? failure) onboardingFailure,
@@ -426,7 +445,7 @@ class _$_UpdatingUser implements _UpdatingUser {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user)? onboardingInProgress,
+    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult? Function()? updatingUser,
     TResult? Function()? onboardingSuccess,
     TResult? Function(Failure? failure)? onboardingFailure,
@@ -438,7 +457,7 @@ class _$_UpdatingUser implements _UpdatingUser {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onboardingNotStarted,
-    TResult Function(User user)? onboardingInProgress,
+    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult Function()? updatingUser,
     TResult Function()? onboardingSuccess,
     TResult Function(Failure? failure)? onboardingFailure,
@@ -491,8 +510,9 @@ class _$_UpdatingUser implements _UpdatingUser {
   }
 }
 
-abstract class _UpdatingUser implements OnboardingState {
+abstract class _UpdatingUser extends OnboardingState {
   const factory _UpdatingUser() = _$_UpdatingUser;
+  const _UpdatingUser._() : super._();
 }
 
 /// @nodoc
@@ -513,8 +533,8 @@ class __$$_OnboardingFinishedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnboardingFinished implements _OnboardingFinished {
-  const _$_OnboardingFinished();
+class _$_OnboardingFinished extends _OnboardingFinished {
+  const _$_OnboardingFinished() : super._();
 
   @override
   String toString() {
@@ -534,7 +554,8 @@ class _$_OnboardingFinished implements _OnboardingFinished {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onboardingNotStarted,
-    required TResult Function(User user) onboardingInProgress,
+    required TResult Function(User user, int fieldsCompleted)
+        onboardingInProgress,
     required TResult Function() updatingUser,
     required TResult Function() onboardingSuccess,
     required TResult Function(Failure? failure) onboardingFailure,
@@ -546,7 +567,7 @@ class _$_OnboardingFinished implements _OnboardingFinished {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user)? onboardingInProgress,
+    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult? Function()? updatingUser,
     TResult? Function()? onboardingSuccess,
     TResult? Function(Failure? failure)? onboardingFailure,
@@ -558,7 +579,7 @@ class _$_OnboardingFinished implements _OnboardingFinished {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onboardingNotStarted,
-    TResult Function(User user)? onboardingInProgress,
+    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult Function()? updatingUser,
     TResult Function()? onboardingSuccess,
     TResult Function(Failure? failure)? onboardingFailure,
@@ -611,8 +632,9 @@ class _$_OnboardingFinished implements _OnboardingFinished {
   }
 }
 
-abstract class _OnboardingFinished implements OnboardingState {
+abstract class _OnboardingFinished extends OnboardingState {
   const factory _OnboardingFinished() = _$_OnboardingFinished;
+  const _OnboardingFinished._() : super._();
 }
 
 /// @nodoc
@@ -662,8 +684,8 @@ class __$$_OnboardingFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnboardingFailure implements _OnboardingFailure {
-  const _$_OnboardingFailure({this.failure});
+class _$_OnboardingFailure extends _OnboardingFailure {
+  const _$_OnboardingFailure({this.failure}) : super._();
 
   @override
   final Failure? failure;
@@ -695,7 +717,8 @@ class _$_OnboardingFailure implements _OnboardingFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() onboardingNotStarted,
-    required TResult Function(User user) onboardingInProgress,
+    required TResult Function(User user, int fieldsCompleted)
+        onboardingInProgress,
     required TResult Function() updatingUser,
     required TResult Function() onboardingSuccess,
     required TResult Function(Failure? failure) onboardingFailure,
@@ -707,7 +730,7 @@ class _$_OnboardingFailure implements _OnboardingFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user)? onboardingInProgress,
+    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult? Function()? updatingUser,
     TResult? Function()? onboardingSuccess,
     TResult? Function(Failure? failure)? onboardingFailure,
@@ -719,7 +742,7 @@ class _$_OnboardingFailure implements _OnboardingFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? onboardingNotStarted,
-    TResult Function(User user)? onboardingInProgress,
+    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
     TResult Function()? updatingUser,
     TResult Function()? onboardingSuccess,
     TResult Function(Failure? failure)? onboardingFailure,
@@ -772,9 +795,10 @@ class _$_OnboardingFailure implements _OnboardingFailure {
   }
 }
 
-abstract class _OnboardingFailure implements OnboardingState {
+abstract class _OnboardingFailure extends OnboardingState {
   const factory _OnboardingFailure({final Failure? failure}) =
       _$_OnboardingFailure;
+  const _OnboardingFailure._() : super._();
 
   Failure? get failure;
   @JsonKey(ignore: true)

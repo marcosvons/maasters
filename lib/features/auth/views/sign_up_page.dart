@@ -30,6 +30,10 @@ class SignUpPage extends StatelessWidget {
                     Navigator.of(context)
                         .pushReplacement<void, void>(HomePage.route());
                   } else {
+                    context.read<OnboardingCubit>().saveProgress(
+                          user: user,
+                          completed: 0,
+                        );
                     Navigator.of(context)
                         .pushReplacement<void, void>(OnboardingPage.route());
                   }

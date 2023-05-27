@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:auth/auth.dart';
 import 'package:bloc/bloc.dart';
 import 'package:errors/errors.dart';
@@ -13,11 +15,34 @@ class OnboardingCubit extends Cubit<OnboardingState> {
 
   final IAuthRepository _authRepository;
 
-  void saveProgress(User user) {
-    emit(OnboardingState.onboardingInProgress(user));
+  FutureOr<void> saveProgress({
+    required User user,
+    required int completed,
+  }) async {
+    emit(
+      OnboardingState.onboardingInProgress(
+        user: user,
+        fieldsCompleted: state.fieldsCompleted + completed,
+      ),
+    );
   }
 
-  Future<void> updateUserInFirestore() async {
+  FutureOr<void> newPageStarted() async {
+    final user = state.maybeMap(
+      onboardingInProgress: (state) => state.user,
+      orElse: () => null,
+    );
+    if (user != null) {
+      emit(
+        OnboardingState.onboardingInProgress(
+          user: user,
+          fieldsCompleted: 0,
+        ),
+      );
+    }
+  }
+
+  FutureOr<void> updateUserInFirestore() async {
     final user = state.maybeMap(
       onboardingInProgress: (state) => state.user,
       orElse: () => null,
