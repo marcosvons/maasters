@@ -18,7 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$User {
   String get id => throw _privateConstructorUsedError;
   String get mail => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
+  String get googleName => throw _privateConstructorUsedError;
+  String get country => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get photoUrl => throw _privateConstructorUsedError;
   List<SpecificInterest> get areasOfInterest =>
       throw _privateConstructorUsedError;
   List<SocialMedia> get socialMedia => throw _privateConstructorUsedError;
@@ -26,7 +31,11 @@ mixin _$User {
   Seniority get seniority => throw _privateConstructorUsedError;
   bool get onboardingCompleted => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
-  String? get company => throw _privateConstructorUsedError;
+  String get company => throw _privateConstructorUsedError;
+  String get school => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  Objective get objective => throw _privateConstructorUsedError;
+  DateTime? get birthDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -40,14 +49,23 @@ abstract class $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String mail,
-      String name,
+      String firstName,
+      String lastName,
+      String googleName,
+      String country,
+      String description,
+      String photoUrl,
       List<SpecificInterest> areasOfInterest,
       List<SocialMedia> socialMedia,
       ProfileType profileType,
       Seniority seniority,
       bool onboardingCompleted,
       String phoneNumber,
-      String? company});
+      String company,
+      String school,
+      String title,
+      Objective objective,
+      DateTime? birthDate});
 }
 
 /// @nodoc
@@ -65,14 +83,23 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   $Res call({
     Object? id = null,
     Object? mail = null,
-    Object? name = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? googleName = null,
+    Object? country = null,
+    Object? description = null,
+    Object? photoUrl = null,
     Object? areasOfInterest = null,
     Object? socialMedia = null,
     Object? profileType = null,
     Object? seniority = null,
     Object? onboardingCompleted = null,
     Object? phoneNumber = null,
-    Object? company = freezed,
+    Object? company = null,
+    Object? school = null,
+    Object? title = null,
+    Object? objective = null,
+    Object? birthDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -83,9 +110,29 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      googleName: null == googleName
+          ? _value.googleName
+          : googleName // ignore: cast_nullable_to_non_nullable
+              as String,
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUrl: null == photoUrl
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String,
       areasOfInterest: null == areasOfInterest
           ? _value.areasOfInterest
@@ -111,10 +158,26 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      company: freezed == company
+      company: null == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      school: null == school
+          ? _value.school
+          : school // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      objective: null == objective
+          ? _value.objective
+          : objective // ignore: cast_nullable_to_non_nullable
+              as Objective,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -128,14 +191,23 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   $Res call(
       {String id,
       String mail,
-      String name,
+      String firstName,
+      String lastName,
+      String googleName,
+      String country,
+      String description,
+      String photoUrl,
       List<SpecificInterest> areasOfInterest,
       List<SocialMedia> socialMedia,
       ProfileType profileType,
       Seniority seniority,
       bool onboardingCompleted,
       String phoneNumber,
-      String? company});
+      String company,
+      String school,
+      String title,
+      Objective objective,
+      DateTime? birthDate});
 }
 
 /// @nodoc
@@ -149,14 +221,23 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
   $Res call({
     Object? id = null,
     Object? mail = null,
-    Object? name = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? googleName = null,
+    Object? country = null,
+    Object? description = null,
+    Object? photoUrl = null,
     Object? areasOfInterest = null,
     Object? socialMedia = null,
     Object? profileType = null,
     Object? seniority = null,
     Object? onboardingCompleted = null,
     Object? phoneNumber = null,
-    Object? company = freezed,
+    Object? company = null,
+    Object? school = null,
+    Object? title = null,
+    Object? objective = null,
+    Object? birthDate = freezed,
   }) {
     return _then(_$_User(
       id: null == id
@@ -167,9 +248,29 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      googleName: null == googleName
+          ? _value.googleName
+          : googleName // ignore: cast_nullable_to_non_nullable
+              as String,
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUrl: null == photoUrl
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String,
       areasOfInterest: null == areasOfInterest
           ? _value._areasOfInterest
@@ -195,10 +296,26 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      company: freezed == company
+      company: null == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      school: null == school
+          ? _value.school
+          : school // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      objective: null == objective
+          ? _value.objective
+          : objective // ignore: cast_nullable_to_non_nullable
+              as Objective,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -209,14 +326,23 @@ class _$_User implements _User {
   const _$_User(
       {required this.id,
       required this.mail,
-      this.name = '',
+      this.firstName = '',
+      this.lastName = '',
+      this.googleName = '',
+      this.country = '',
+      this.description = '',
+      this.photoUrl = '',
       final List<SpecificInterest> areasOfInterest = const [],
       final List<SocialMedia> socialMedia = const [],
       this.profileType = ProfileType.unknown,
       this.seniority = Seniority.unknown,
       this.onboardingCompleted = false,
       this.phoneNumber = '',
-      this.company = ''})
+      this.company = '',
+      this.school = '',
+      this.title = '',
+      this.objective = Objective.other,
+      this.birthDate})
       : _areasOfInterest = areasOfInterest,
         _socialMedia = socialMedia;
 
@@ -226,7 +352,22 @@ class _$_User implements _User {
   final String mail;
   @override
   @JsonKey()
-  final String name;
+  final String firstName;
+  @override
+  @JsonKey()
+  final String lastName;
+  @override
+  @JsonKey()
+  final String googleName;
+  @override
+  @JsonKey()
+  final String country;
+  @override
+  @JsonKey()
+  final String description;
+  @override
+  @JsonKey()
+  final String photoUrl;
   final List<SpecificInterest> _areasOfInterest;
   @override
   @JsonKey()
@@ -257,11 +398,22 @@ class _$_User implements _User {
   final String phoneNumber;
   @override
   @JsonKey()
-  final String? company;
+  final String company;
+  @override
+  @JsonKey()
+  final String school;
+  @override
+  @JsonKey()
+  final String title;
+  @override
+  @JsonKey()
+  final Objective objective;
+  @override
+  final DateTime? birthDate;
 
   @override
   String toString() {
-    return 'User(id: $id, mail: $mail, name: $name, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company)';
+    return 'User(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName, googleName: $googleName, country: $country, description: $description, photoUrl: $photoUrl, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company, school: $school, title: $title, objective: $objective, birthDate: $birthDate)';
   }
 
   @override
@@ -271,7 +423,17 @@ class _$_User implements _User {
             other is _$_User &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.mail, mail) || other.mail == mail) &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.googleName, googleName) ||
+                other.googleName == googleName) &&
+            (identical(other.country, country) || other.country == country) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.photoUrl, photoUrl) ||
+                other.photoUrl == photoUrl) &&
             const DeepCollectionEquality()
                 .equals(other._areasOfInterest, _areasOfInterest) &&
             const DeepCollectionEquality()
@@ -284,22 +446,38 @@ class _$_User implements _User {
                 other.onboardingCompleted == onboardingCompleted) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
-            (identical(other.company, company) || other.company == company));
+            (identical(other.company, company) || other.company == company) &&
+            (identical(other.school, school) || other.school == school) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.objective, objective) ||
+                other.objective == objective) &&
+            (identical(other.birthDate, birthDate) ||
+                other.birthDate == birthDate));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      mail,
-      name,
-      const DeepCollectionEquality().hash(_areasOfInterest),
-      const DeepCollectionEquality().hash(_socialMedia),
-      profileType,
-      seniority,
-      onboardingCompleted,
-      phoneNumber,
-      company);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        mail,
+        firstName,
+        lastName,
+        googleName,
+        country,
+        description,
+        photoUrl,
+        const DeepCollectionEquality().hash(_areasOfInterest),
+        const DeepCollectionEquality().hash(_socialMedia),
+        profileType,
+        seniority,
+        onboardingCompleted,
+        phoneNumber,
+        company,
+        school,
+        title,
+        objective,
+        birthDate
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -312,21 +490,40 @@ abstract class _User implements User {
   const factory _User(
       {required final String id,
       required final String mail,
-      final String name,
+      final String firstName,
+      final String lastName,
+      final String googleName,
+      final String country,
+      final String description,
+      final String photoUrl,
       final List<SpecificInterest> areasOfInterest,
       final List<SocialMedia> socialMedia,
       final ProfileType profileType,
       final Seniority seniority,
       final bool onboardingCompleted,
       final String phoneNumber,
-      final String? company}) = _$_User;
+      final String company,
+      final String school,
+      final String title,
+      final Objective objective,
+      final DateTime? birthDate}) = _$_User;
 
   @override
   String get id;
   @override
   String get mail;
   @override
-  String get name;
+  String get firstName;
+  @override
+  String get lastName;
+  @override
+  String get googleName;
+  @override
+  String get country;
+  @override
+  String get description;
+  @override
+  String get photoUrl;
   @override
   List<SpecificInterest> get areasOfInterest;
   @override
@@ -340,7 +537,15 @@ abstract class _User implements User {
   @override
   String get phoneNumber;
   @override
-  String? get company;
+  String get company;
+  @override
+  String get school;
+  @override
+  String get title;
+  @override
+  Objective get objective;
+  @override
+  DateTime? get birthDate;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

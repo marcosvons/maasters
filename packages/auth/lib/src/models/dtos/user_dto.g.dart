@@ -9,7 +9,12 @@ part of 'user_dto.dart';
 _$_UserDto _$$_UserDtoFromJson(Map<String, dynamic> json) => _$_UserDto(
       id: json['id'] as String,
       mail: json['mail'] as String,
-      name: json['name'] as String? ?? '',
+      firstName: json['firstName'] as String? ?? '',
+      lastName: json['lastName'] as String? ?? '',
+      googleName: json['googleName'] as String? ?? '',
+      country: json['country'] as String? ?? '',
+      description: json['description'] as String? ?? '',
+      photoUrl: json['photoUrl'] as String? ?? '',
       areasOfInterest: (json['areasOfInterest'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$SpecificInterestEnumMap, e))
               .toList() ??
@@ -26,13 +31,25 @@ _$_UserDto _$$_UserDtoFromJson(Map<String, dynamic> json) => _$_UserDto(
       onboardingCompleted: json['onboardingCompleted'] as bool? ?? false,
       phoneNumber: json['phoneNumber'] as String? ?? '',
       company: json['company'] as String? ?? '',
+      school: json['school'] as String? ?? '',
+      title: json['title'] as String? ?? '',
+      objective: $enumDecodeNullable(_$ObjectiveEnumMap, json['objective']) ??
+          Objective.other,
+      birthDate: json['birthDate'] == null
+          ? null
+          : DateTime.parse(json['birthDate'] as String),
     );
 
 Map<String, dynamic> _$$_UserDtoToJson(_$_UserDto instance) =>
     <String, dynamic>{
       'id': instance.id,
       'mail': instance.mail,
-      'name': instance.name,
+      'firstName': instance.firstName,
+      'lastName': instance.lastName,
+      'googleName': instance.googleName,
+      'country': instance.country,
+      'description': instance.description,
+      'photoUrl': instance.photoUrl,
       'areasOfInterest': instance.areasOfInterest
           .map((e) => _$SpecificInterestEnumMap[e]!)
           .toList(),
@@ -42,6 +59,10 @@ Map<String, dynamic> _$$_UserDtoToJson(_$_UserDto instance) =>
       'onboardingCompleted': instance.onboardingCompleted,
       'phoneNumber': instance.phoneNumber,
       'company': instance.company,
+      'school': instance.school,
+      'title': instance.title,
+      'objective': _$ObjectiveEnumMap[instance.objective]!,
+      'birthDate': instance.birthDate?.toIso8601String(),
     };
 
 const _$SpecificInterestEnumMap = {
@@ -89,4 +110,14 @@ const _$SeniorityEnumMap = {
   Seniority.semiSenior: 'semiSenior',
   Seniority.senior: 'senior',
   Seniority.unknown: 'unknown',
+};
+
+const _$ObjectiveEnumMap = {
+  Objective.findJob: 'findJob',
+  Objective.learn: 'learn',
+  Objective.network: 'network',
+  Objective.grow: 'grow',
+  Objective.change: 'change',
+  Objective.other: 'other',
+  Objective.notSure: 'notSure',
 };

@@ -12,14 +12,23 @@ class UserDto with _$UserDto {
   const factory UserDto({
     required String id,
     required String mail,
-    @Default('') String name,
+    @Default('') String firstName,
+    @Default('') String lastName,
+    @Default('') String googleName,
+    @Default('') String country,
+    @Default('') String description,
+    @Default('') String photoUrl,
     @Default([]) List<SpecificInterest> areasOfInterest,
     @Default([]) List<SocialMedia> socialMedia,
     @Default(ProfileType.unknown) ProfileType profileType,
     @Default(Seniority.unknown) Seniority seniority,
     @Default(false) bool onboardingCompleted,
     @Default('') String phoneNumber,
-    @Default('') String? company,
+    @Default('') String company,
+    @Default('') String school,
+    @Default('') String title,
+    @Default(Objective.other) Objective objective,
+    DateTime? birthDate,
   }) = _UserDto;
 
   const UserDto._();
@@ -30,7 +39,12 @@ class UserDto with _$UserDto {
   factory UserDto.fromModel(User user) => UserDto(
         id: user.id,
         mail: user.mail,
-        name: user.name,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        googleName: user.googleName,
+        country: user.country,
+        description: user.description,
+        photoUrl: user.photoUrl,
         areasOfInterest: user.areasOfInterest,
         socialMedia: user.socialMedia,
         profileType: user.profileType,
@@ -38,18 +52,28 @@ class UserDto with _$UserDto {
         onboardingCompleted: user.onboardingCompleted,
         phoneNumber: user.phoneNumber,
         company: user.company,
+        school: user.school,
+        title: user.title,
+        objective: user.objective,
+        birthDate: user.birthDate,
       );
 
   factory UserDto.fromFirebaseUser(firebase_auth.User user) => UserDto(
         id: user.uid,
         mail: user.email!,
-        name: user.displayName != null ? user.displayName! : '',
+        googleName: user.displayName != null ? user.displayName! : '',
+        photoUrl: user.photoURL != null ? user.photoURL! : '',
       );
 
   User toModel() => User(
         id: id,
         mail: mail,
-        name: name,
+        firstName: firstName,
+        lastName: lastName,
+        googleName: googleName,
+        country: country,
+        description: description,
+        photoUrl: photoUrl,
         areasOfInterest: areasOfInterest,
         socialMedia: socialMedia,
         profileType: profileType,
@@ -57,5 +81,9 @@ class UserDto with _$UserDto {
         onboardingCompleted: onboardingCompleted,
         phoneNumber: phoneNumber,
         company: company,
+        school: school,
+        title: title,
+        objective: objective,
+        birthDate: birthDate,
       );
 }
