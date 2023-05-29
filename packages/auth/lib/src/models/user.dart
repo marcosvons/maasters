@@ -13,6 +13,7 @@ class User with _$User {
     @Default('') String firstName,
     @Default('') String lastName,
     @Default('') String googleName,
+    @Default(Gender.notSpecified) Gender gender,
     @Default('') String country,
     @Default('') String description,
     @Default('') String photoUrl,
@@ -25,7 +26,8 @@ class User with _$User {
     @Default('') String company,
     @Default('') String school,
     @Default('') String title,
-    @Default(Objective.other) Objective objective,
+    @Default([]) List<Objective> objective,
+    @Default(0) int yearsOfProfesionalExperience,
     DateTime? birthDate,
   }) = _User;
 }

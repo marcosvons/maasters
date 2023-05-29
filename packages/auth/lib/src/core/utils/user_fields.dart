@@ -15,7 +15,10 @@ enum ProfileType {
 }
 
 enum SpecificInterest {
-  cyberSecurity('Ciberseguridad', AreaOfInterest.cyberSecurity),
+  cyberSecurity(
+    'Ciberseguridad',
+    AreaOfInterest.cyberSecurity,
+  ),
   dataScience('Ciencia de datos', AreaOfInterest.dataScience),
   devOps('DevOps', AreaOfInterest.devOps),
   htmlAndCss('HTML y CSS', AreaOfInterest.frontEnd),
@@ -40,7 +43,7 @@ enum SpecificInterest {
   kotlin('Kotlin', AreaOfInterest.mobile),
   qa('QA', AreaOfInterest.qa),
   uxUi('UX/UI', AreaOfInterest.uxUi),
-  digitalMarketing('Marketing digital', AreaOfInterest.digitalMarketing),
+  digitalMarketing('Marketing Digital', AreaOfInterest.digitalMarketing),
   productManagement('Product Management', AreaOfInterest.productManagement),
   ioT('IoT', AreaOfInterest.ioT),
   blockchain('Blockchain', AreaOfInterest.blockchain),
@@ -69,9 +72,14 @@ enum AreaOfInterest {
 }
 
 enum Gender {
-  male,
-  female,
-  notSpecified,
+  male('Hombre'),
+  female('Mujer'),
+  notSpecified('Prefiero no decirlo'),
+  unknown('');
+
+  const Gender(this.value);
+
+  final String value;
 }
 
 enum Objective {
@@ -88,7 +96,7 @@ enum Objective {
   final String objective;
 }
 
-List<String> paises = [
+List<String> countries = [
   'Afganistán',
   'Albania',
   'Alemania',

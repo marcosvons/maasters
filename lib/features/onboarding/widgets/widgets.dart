@@ -1,2 +1,9 @@
+export 'interest_selector.dart';
+export 'onboarding_back_button.dart';
+export 'onboarding_next_button.dart';
+export 'onboarding_objective.dart';
+export 'onboarding_professional_information.dart';
+export 'onboarding_profile_information.dart';
 export 'onboarding_profile_selection.dart';
+export 'onboarding_text_field.dart';
 export 'profile_container.dart';

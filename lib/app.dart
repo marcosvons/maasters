@@ -20,8 +20,7 @@ class App extends StatelessWidget {
           ),
         ),
         BlocProvider<OnboardingCubit>(
-          create: (context) =>
-              OnboardingCubit(authRepository: getIt<IAuthRepository>()),
+          create: (context) => OnboardingCubit(),
         )
       ],
       child: const AppStartUp(),

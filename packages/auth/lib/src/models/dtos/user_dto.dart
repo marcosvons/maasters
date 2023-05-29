@@ -15,6 +15,7 @@ class UserDto with _$UserDto {
     @Default('') String firstName,
     @Default('') String lastName,
     @Default('') String googleName,
+    @Default(Gender.notSpecified) Gender gender,
     @Default('') String country,
     @Default('') String description,
     @Default('') String photoUrl,
@@ -27,7 +28,8 @@ class UserDto with _$UserDto {
     @Default('') String company,
     @Default('') String school,
     @Default('') String title,
-    @Default(Objective.other) Objective objective,
+    @Default([]) List<Objective> objective,
+    @Default(0) int yearsOfProfesionalExperience,
     DateTime? birthDate,
   }) = _UserDto;
 
@@ -42,6 +44,7 @@ class UserDto with _$UserDto {
         firstName: user.firstName,
         lastName: user.lastName,
         googleName: user.googleName,
+        gender: user.gender,
         country: user.country,
         description: user.description,
         photoUrl: user.photoUrl,
@@ -55,6 +58,7 @@ class UserDto with _$UserDto {
         school: user.school,
         title: user.title,
         objective: user.objective,
+        yearsOfProfesionalExperience: user.yearsOfProfesionalExperience,
         birthDate: user.birthDate,
       );
 
@@ -71,6 +75,7 @@ class UserDto with _$UserDto {
         firstName: firstName,
         lastName: lastName,
         googleName: googleName,
+        gender: gender,
         country: country,
         description: description,
         photoUrl: photoUrl,
@@ -85,5 +90,6 @@ class UserDto with _$UserDto {
         title: title,
         objective: objective,
         birthDate: birthDate,
+        yearsOfProfesionalExperience: yearsOfProfesionalExperience,
       );
 }

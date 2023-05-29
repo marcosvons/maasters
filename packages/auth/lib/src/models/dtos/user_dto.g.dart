@@ -12,6 +12,8 @@ _$_UserDto _$$_UserDtoFromJson(Map<String, dynamic> json) => _$_UserDto(
       firstName: json['firstName'] as String? ?? '',
       lastName: json['lastName'] as String? ?? '',
       googleName: json['googleName'] as String? ?? '',
+      gender: $enumDecodeNullable(_$GenderEnumMap, json['gender']) ??
+          Gender.notSpecified,
       country: json['country'] as String? ?? '',
       description: json['description'] as String? ?? '',
       photoUrl: json['photoUrl'] as String? ?? '',
@@ -33,8 +35,12 @@ _$_UserDto _$$_UserDtoFromJson(Map<String, dynamic> json) => _$_UserDto(
       company: json['company'] as String? ?? '',
       school: json['school'] as String? ?? '',
       title: json['title'] as String? ?? '',
-      objective: $enumDecodeNullable(_$ObjectiveEnumMap, json['objective']) ??
-          Objective.other,
+      objective: (json['objective'] as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$ObjectiveEnumMap, e))
+              .toList() ??
+          const [],
+      yearsOfProfesionalExperience:
+          json['yearsOfProfesionalExperience'] as int? ?? 0,
       birthDate: json['birthDate'] == null
           ? null
           : DateTime.parse(json['birthDate'] as String),
@@ -47,6 +53,7 @@ Map<String, dynamic> _$$_UserDtoToJson(_$_UserDto instance) =>
       'firstName': instance.firstName,
       'lastName': instance.lastName,
       'googleName': instance.googleName,
+      'gender': _$GenderEnumMap[instance.gender]!,
       'country': instance.country,
       'description': instance.description,
       'photoUrl': instance.photoUrl,
@@ -61,9 +68,18 @@ Map<String, dynamic> _$$_UserDtoToJson(_$_UserDto instance) =>
       'company': instance.company,
       'school': instance.school,
       'title': instance.title,
-      'objective': _$ObjectiveEnumMap[instance.objective]!,
+      'objective':
+          instance.objective.map((e) => _$ObjectiveEnumMap[e]!).toList(),
+      'yearsOfProfesionalExperience': instance.yearsOfProfesionalExperience,
       'birthDate': instance.birthDate?.toIso8601String(),
     };
+
+const _$GenderEnumMap = {
+  Gender.male: 'male',
+  Gender.female: 'female',
+  Gender.notSpecified: 'notSpecified',
+  Gender.unknown: 'unknown',
+};
 
 const _$SpecificInterestEnumMap = {
   SpecificInterest.cyberSecurity: 'cyberSecurity',

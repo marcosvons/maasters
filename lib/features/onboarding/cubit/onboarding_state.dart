@@ -2,21 +2,20 @@ part of 'onboarding_cubit.dart';
 
 @freezed
 class OnboardingState with _$OnboardingState {
-  const factory OnboardingState.onboardingNotStarted() = _OnboardingNotStarted;
-  const factory OnboardingState.onboardingInProgress({
-    required User user,
-    @Default(0) int fieldsCompleted,
-  }) = _OnboardingInProgress;
-  const factory OnboardingState.updatingUser() = _UpdatingUser;
-  const factory OnboardingState.onboardingSuccess() = _OnboardingFinished;
-  const factory OnboardingState.onboardingFailure({Failure? failure}) =
-      _OnboardingFailure;
-
-  const OnboardingState._();
-
-//getter fieldsCompleted
-  int get fieldsCompleted => maybeWhen(
-        onboardingInProgress: (user, fieldsCompleted) => fieldsCompleted,
-        orElse: () => 0,
-      );
+  const factory OnboardingState({
+    @Default(ProfileType.unknown) ProfileType profileType,
+    @Default('') String firstName,
+    @Default('') String lastName,
+    @Default(Gender.unknown) Gender gender,
+    @Default('') String country,
+    @Default([]) List<SpecificInterest> areasOfInterest,
+    @Default('') String companyOrSchool,
+    @Default('') String title,
+    @Default(Seniority.unknown) Seniority seniority,
+    @Default(0) int yearsOfProfesionalExperience,
+    @Default('') String linkedinUrl,
+    DateTime? birthDate,
+    @Default([]) List<Objective> objectives,
+    @Default(false) bool isPageCompleted,
+  }) = _Initial;
 }

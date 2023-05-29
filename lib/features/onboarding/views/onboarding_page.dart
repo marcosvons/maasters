@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
-import 'package:maasters/features/onboarding/widgets/onboarding_profile_information.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -49,7 +48,9 @@ class _OnboardingPageState extends State<OnboardingPage> {
           physics: const NeverScrollableScrollPhysics(),
           children: [
             OnboardingProfileSelection(_pageController),
-            OnboardingProfileInformation(_pageController)
+            OnboardingProfileInformation(_pageController),
+            OnboardingProfessionalInformation(_pageController),
+            OnboardingObjective(_pageController),
           ],
         ),
       ),

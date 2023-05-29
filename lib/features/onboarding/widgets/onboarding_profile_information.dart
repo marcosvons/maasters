@@ -1,3 +1,4 @@
+import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
@@ -8,8 +9,6 @@ class OnboardingProfileInformation extends StatelessWidget {
       : _pageController = pageController;
 
   final PageController _pageController;
-
-  static const int fieldsToBeCompleted = 2;
 
   @override
   Widget build(BuildContext context) {
@@ -25,148 +24,237 @@ class OnboardingProfileInformation extends StatelessWidget {
                 style: context.textTheme.displayLarge,
               ),
               const SizedBox(height: Dimens.xxLarge),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: context.width * 0.2,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('Nombre'),
-                        const SizedBox(height: Dimens.medium),
-                        TextField(
-                          decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.circular(Dimens.xSmall),
-                              borderSide: BorderSide(
-                                color: context.colorScheme.inputBorder,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.circular(Dimens.xSmall),
-                              borderSide: BorderSide(
-                                color: context.colorScheme.primary,
-                                width: 2,
-                              ),
-                            ),
-                            hintText: 'Walter',
-                            hintStyle: context.textTheme.bodySmall!.copyWith(
-                              color: context.colorScheme.hintText,
-                            ),
-                            filled: true,
-                            fillColor: context.colorScheme.tertiaryContainer,
-                          ),
-                          onSubmitted: (value) =>
-                              context.read<OnboardingCubit>().saveProgress(
-                                    user: context
-                                        .read<AuthBloc>()
-                                        .state
-                                        .user!
-                                        .copyWith(
-                                          firstName: value,
-                                        ),
-                                    completed: 1,
-                                  ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: context.width * 0.05),
-                  SizedBox(
-                    width: context.width * 0.2,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text('Apellido'),
-                        const SizedBox(height: Dimens.medium),
-                        TextField(
-                          decoration: InputDecoration(
-                            enabledBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.circular(Dimens.xSmall),
-                              borderSide: BorderSide(
-                                color: context.colorScheme.inputBorder,
-                              ),
-                            ),
-                            focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.circular(Dimens.xSmall),
-                              borderSide: BorderSide(
-                                color: context.colorScheme.primary,
-                                width: 2,
-                              ),
-                            ),
-                            hintText: 'White',
-                            hintStyle: context.textTheme.bodySmall!.copyWith(
-                              color: context.colorScheme.hintText,
-                            ),
-                            filled: true,
-                            fillColor: context.colorScheme.tertiaryContainer,
-                          ),
-                          onSubmitted: (value) =>
-                              context.read<OnboardingCubit>().saveProgress(
-                                    user: context
-                                        .read<AuthBloc>()
-                                        .state
-                                        .user!
-                                        .copyWith(
-                                          lastName: value,
-                                        ),
-                                    completed: 1,
-                                  ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
+              const _FirstNameAndLastName(),
+              const SizedBox(height: Dimens.large),
+              const _GenderDropdown(),
+              const SizedBox(height: Dimens.large),
+              const _CountryDropdown(),
+              const SizedBox(height: Dimens.large),
+              const _BirthDaySelector(),
               const SizedBox(height: Dimens.xxLarge),
-              BlocBuilder<OnboardingCubit, OnboardingState>(
-                builder: (context, state) => state.maybeMap(
-                  orElse: SizedBox.shrink,
-                  onboardingInProgress: (state) => Align(
-                    child: SizedBox(
-                      width: context.width * 0.25,
-                      height: context.height * 0.065,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: state.fieldsCompleted ==
-                                  fieldsToBeCompleted
-                              ? MaterialStateProperty.all(
-                                  context.colorScheme.primary,
-                                )
-                              : MaterialStateProperty.all(
-                                  context.colorScheme.disabledButtonBackground,
-                                ),
-                        ),
-                        onPressed: () {
-                          if (state.fieldsCompleted == fieldsToBeCompleted) {
-                            _pageController.nextPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeIn,
-                            );
-                          }
-                        },
-                        child: Text(
-                          'Continuar',
-                          style: context.textTheme.bodySmall!.copyWith(
-                            color: state.fieldsCompleted == fieldsToBeCompleted
-                                ? context.colorScheme.onPrimary
-                                : context.colorScheme.surfaceTint,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              OnboardingNextButton(pageController: _pageController),
+              const SizedBox(height: Dimens.medium),
+              OnboardingBackButton(pageController: _pageController),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class _BirthDaySelector extends StatelessWidget {
+  const _BirthDaySelector();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text('¿Cuándo naciste?'),
+        const SizedBox(height: Dimens.medium),
+        SizedBox(
+          width: context.width * 0.45,
+          child: BlocBuilder<OnboardingCubit, OnboardingState>(
+            builder: (context, state) {
+              return TextFormField(
+                readOnly: true,
+                initialValue: state.birthDate?.formatDateTime(state.birthDate!),
+                decoration: InputDecoration(
+                  suffixIcon: const Icon(Icons.edit_calendar),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(Dimens.xSmall),
+                    borderSide: BorderSide(
+                      color: context.colorScheme.inputBorder,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(Dimens.xSmall),
+                    borderSide: BorderSide(
+                      color: context.colorScheme.inputBorder,
+                    ),
+                  ),
+                  hintText: state.birthDate?.formatDateTime(state.birthDate!) ??
+                      'DD/MM/YYYY',
+                  hintStyle: context.textTheme.bodySmall!.copyWith(
+                    color: context.colorScheme.hintText,
+                  ),
+                  filled: true,
+                  fillColor: context.colorScheme.tertiaryContainer,
+                ),
+                onTap: () => showDatePicker(
+                  context: context,
+                  initialDate: DateTime.now(),
+                  firstDate: DateTime(1900),
+                  lastDate: DateTime.now(),
+                ).then(
+                  (value) => context
+                      .read<OnboardingCubit>()
+                      .validateSecondFormPage(birthDate: value),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class _CountryDropdown extends StatelessWidget {
+  const _CountryDropdown();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text('¿Dónde vivis?'),
+        const SizedBox(height: Dimens.medium),
+        BlocBuilder<OnboardingCubit, OnboardingState>(
+          builder: (context, state) {
+            return Container(
+              width: context.width * 0.45,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: context.colorScheme.inputBorder,
+                ),
+                borderRadius: BorderRadius.circular(Dimens.xSmall),
+                color: context.colorScheme.tertiaryContainer,
+              ),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  value: state.country == '' ? null : state.country,
+                  icon: const Icon(Icons.keyboard_arrow_down),
+                  hint: Padding(
+                    padding: const EdgeInsets.all(Dimens.xSmall),
+                    child: Text(
+                      'Elegí tu país',
+                      style: context.textTheme.bodySmall!.copyWith(
+                        color: context.colorScheme.hintText,
+                      ),
+                    ),
+                  ),
+                  items: countries.map((String country) {
+                    return DropdownMenuItem<String>(
+                      value: country,
+                      child: Padding(
+                        padding: const EdgeInsets.all(Dimens.xSmall),
+                        child: Text(
+                          country,
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    context
+                        .read<OnboardingCubit>()
+                        .validateSecondFormPage(country: newValue);
+                  },
+                ),
+              ),
+            );
+          },
+        ),
+      ],
+    );
+  }
+}
+
+class _GenderDropdown extends StatelessWidget {
+  const _GenderDropdown();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text('¿Con que género te identificas?'),
+        const SizedBox(height: Dimens.medium),
+        BlocBuilder<OnboardingCubit, OnboardingState>(
+          builder: (context, state) {
+            return Container(
+              width: context.width * 0.45,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: context.colorScheme.inputBorder,
+                ),
+                borderRadius: BorderRadius.circular(Dimens.xSmall),
+                color: context.colorScheme.tertiaryContainer,
+              ),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<Gender>(
+                  value: state.gender == Gender.unknown ? null : state.gender,
+                  icon: const Icon(Icons.keyboard_arrow_down),
+                  hint: Padding(
+                    padding: const EdgeInsets.all(Dimens.xSmall),
+                    child: Text(
+                      'Seleccione uno',
+                      style: context.textTheme.bodySmall!.copyWith(
+                        color: context.colorScheme.hintText,
+                      ),
+                    ),
+                  ),
+                  items: Gender.values
+                      .where((gender) => gender != Gender.unknown)
+                      .map((Gender gender) {
+                    return DropdownMenuItem<Gender>(
+                      value: gender,
+                      child: Padding(
+                        padding: const EdgeInsets.all(Dimens.xSmall),
+                        child: Text(
+                          gender.value,
+                        ),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (Gender? newValue) {
+                    context
+                        .read<OnboardingCubit>()
+                        .validateSecondFormPage(gender: newValue);
+                  },
+                ),
+              ),
+            );
+          },
+        ),
+      ],
+    );
+  }
+}
+
+class _FirstNameAndLastName extends StatelessWidget {
+  const _FirstNameAndLastName();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<OnboardingCubit, OnboardingState>(
+      builder: (context, state) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OnboardingTextField(
+              width: context.width * 0.2,
+              label: 'Nombre',
+              initialValue: state.firstName,
+              hintText: 'Juan',
+              onChanged: (value) => context
+                  .read<OnboardingCubit>()
+                  .validateSecondFormPage(firstName: value),
+            ),
+            SizedBox(width: context.width * 0.05),
+            OnboardingTextField(
+              width: context.width * 0.2,
+              label: 'Apellido',
+              initialValue: state.lastName,
+              hintText: 'Perez',
+              onChanged: (value) => context
+                  .read<OnboardingCubit>()
+                  .validateSecondFormPage(lastName: value),
+            ),
+          ],
+        );
+      },
     );
   }
 }

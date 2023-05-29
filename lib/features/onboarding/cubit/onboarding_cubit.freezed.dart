@@ -16,62 +16,24 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$OnboardingState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() onboardingNotStarted,
-    required TResult Function(User user, int fieldsCompleted)
-        onboardingInProgress,
-    required TResult Function() updatingUser,
-    required TResult Function() onboardingSuccess,
-    required TResult Function(Failure? failure) onboardingFailure,
-  }) =>
+  ProfileType get profileType => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
+  Gender get gender => throw _privateConstructorUsedError;
+  String get country => throw _privateConstructorUsedError;
+  List<SpecificInterest> get areasOfInterest =>
       throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult? Function()? updatingUser,
-    TResult? Function()? onboardingSuccess,
-    TResult? Function(Failure? failure)? onboardingFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? onboardingNotStarted,
-    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult Function()? updatingUser,
-    TResult Function()? onboardingSuccess,
-    TResult Function(Failure? failure)? onboardingFailure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_OnboardingNotStarted value) onboardingNotStarted,
-    required TResult Function(_OnboardingInProgress value) onboardingInProgress,
-    required TResult Function(_UpdatingUser value) updatingUser,
-    required TResult Function(_OnboardingFinished value) onboardingSuccess,
-    required TResult Function(_OnboardingFailure value) onboardingFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult? Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult? Function(_UpdatingUser value)? updatingUser,
-    TResult? Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult? Function(_OnboardingFailure value)? onboardingFailure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult Function(_UpdatingUser value)? updatingUser,
-    TResult Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult Function(_OnboardingFailure value)? onboardingFailure,
-    required TResult orElse(),
-  }) =>
+  String get companyOrSchool => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  Seniority get seniority => throw _privateConstructorUsedError;
+  int get yearsOfProfesionalExperience => throw _privateConstructorUsedError;
+  String get linkedinUrl => throw _privateConstructorUsedError;
+  DateTime? get birthDate => throw _privateConstructorUsedError;
+  List<Objective> get objectives => throw _privateConstructorUsedError;
+  bool get isPageCompleted => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $OnboardingStateCopyWith<OnboardingState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -80,6 +42,22 @@ abstract class $OnboardingStateCopyWith<$Res> {
   factory $OnboardingStateCopyWith(
           OnboardingState value, $Res Function(OnboardingState) then) =
       _$OnboardingStateCopyWithImpl<$Res, OnboardingState>;
+  @useResult
+  $Res call(
+      {ProfileType profileType,
+      String firstName,
+      String lastName,
+      Gender gender,
+      String country,
+      List<SpecificInterest> areasOfInterest,
+      String companyOrSchool,
+      String title,
+      Seniority seniority,
+      int yearsOfProfesionalExperience,
+      String linkedinUrl,
+      DateTime? birthDate,
+      List<Objective> objectives,
+      bool isPageCompleted});
 }
 
 /// @nodoc
@@ -91,717 +69,381 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? profileType = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? gender = null,
+    Object? country = null,
+    Object? areasOfInterest = null,
+    Object? companyOrSchool = null,
+    Object? title = null,
+    Object? seniority = null,
+    Object? yearsOfProfesionalExperience = null,
+    Object? linkedinUrl = null,
+    Object? birthDate = freezed,
+    Object? objectives = null,
+    Object? isPageCompleted = null,
+  }) {
+    return _then(_value.copyWith(
+      profileType: null == profileType
+          ? _value.profileType
+          : profileType // ignore: cast_nullable_to_non_nullable
+              as ProfileType,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      areasOfInterest: null == areasOfInterest
+          ? _value.areasOfInterest
+          : areasOfInterest // ignore: cast_nullable_to_non_nullable
+              as List<SpecificInterest>,
+      companyOrSchool: null == companyOrSchool
+          ? _value.companyOrSchool
+          : companyOrSchool // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      seniority: null == seniority
+          ? _value.seniority
+          : seniority // ignore: cast_nullable_to_non_nullable
+              as Seniority,
+      yearsOfProfesionalExperience: null == yearsOfProfesionalExperience
+          ? _value.yearsOfProfesionalExperience
+          : yearsOfProfesionalExperience // ignore: cast_nullable_to_non_nullable
+              as int,
+      linkedinUrl: null == linkedinUrl
+          ? _value.linkedinUrl
+          : linkedinUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      objectives: null == objectives
+          ? _value.objectives
+          : objectives // ignore: cast_nullable_to_non_nullable
+              as List<Objective>,
+      isPageCompleted: null == isPageCompleted
+          ? _value.isPageCompleted
+          : isPageCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_OnboardingNotStartedCopyWith<$Res> {
-  factory _$$_OnboardingNotStartedCopyWith(_$_OnboardingNotStarted value,
-          $Res Function(_$_OnboardingNotStarted) then) =
-      __$$_OnboardingNotStartedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_OnboardingNotStartedCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$_OnboardingNotStarted>
-    implements _$$_OnboardingNotStartedCopyWith<$Res> {
-  __$$_OnboardingNotStartedCopyWithImpl(_$_OnboardingNotStarted _value,
-      $Res Function(_$_OnboardingNotStarted) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_OnboardingNotStarted extends _OnboardingNotStarted {
-  const _$_OnboardingNotStarted() : super._();
-
+abstract class _$$_InitialCopyWith<$Res>
+    implements $OnboardingStateCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
   @override
-  String toString() {
-    return 'OnboardingState.onboardingNotStarted()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnboardingNotStarted);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() onboardingNotStarted,
-    required TResult Function(User user, int fieldsCompleted)
-        onboardingInProgress,
-    required TResult Function() updatingUser,
-    required TResult Function() onboardingSuccess,
-    required TResult Function(Failure? failure) onboardingFailure,
-  }) {
-    return onboardingNotStarted();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult? Function()? updatingUser,
-    TResult? Function()? onboardingSuccess,
-    TResult? Function(Failure? failure)? onboardingFailure,
-  }) {
-    return onboardingNotStarted?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? onboardingNotStarted,
-    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult Function()? updatingUser,
-    TResult Function()? onboardingSuccess,
-    TResult Function(Failure? failure)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (onboardingNotStarted != null) {
-      return onboardingNotStarted();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_OnboardingNotStarted value) onboardingNotStarted,
-    required TResult Function(_OnboardingInProgress value) onboardingInProgress,
-    required TResult Function(_UpdatingUser value) updatingUser,
-    required TResult Function(_OnboardingFinished value) onboardingSuccess,
-    required TResult Function(_OnboardingFailure value) onboardingFailure,
-  }) {
-    return onboardingNotStarted(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult? Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult? Function(_UpdatingUser value)? updatingUser,
-    TResult? Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult? Function(_OnboardingFailure value)? onboardingFailure,
-  }) {
-    return onboardingNotStarted?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult Function(_UpdatingUser value)? updatingUser,
-    TResult Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult Function(_OnboardingFailure value)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (onboardingNotStarted != null) {
-      return onboardingNotStarted(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnboardingNotStarted extends OnboardingState {
-  const factory _OnboardingNotStarted() = _$_OnboardingNotStarted;
-  const _OnboardingNotStarted._() : super._();
-}
-
-/// @nodoc
-abstract class _$$_OnboardingInProgressCopyWith<$Res> {
-  factory _$$_OnboardingInProgressCopyWith(_$_OnboardingInProgress value,
-          $Res Function(_$_OnboardingInProgress) then) =
-      __$$_OnboardingInProgressCopyWithImpl<$Res>;
   @useResult
-  $Res call({User user, int fieldsCompleted});
-
-  $UserCopyWith<$Res> get user;
+  $Res call(
+      {ProfileType profileType,
+      String firstName,
+      String lastName,
+      Gender gender,
+      String country,
+      List<SpecificInterest> areasOfInterest,
+      String companyOrSchool,
+      String title,
+      Seniority seniority,
+      int yearsOfProfesionalExperience,
+      String linkedinUrl,
+      DateTime? birthDate,
+      List<Objective> objectives,
+      bool isPageCompleted});
 }
 
 /// @nodoc
-class __$$_OnboardingInProgressCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$_OnboardingInProgress>
-    implements _$$_OnboardingInProgressCopyWith<$Res> {
-  __$$_OnboardingInProgressCopyWithImpl(_$_OnboardingInProgress _value,
-      $Res Function(_$_OnboardingInProgress) _then)
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = null,
-    Object? fieldsCompleted = null,
+    Object? profileType = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? gender = null,
+    Object? country = null,
+    Object? areasOfInterest = null,
+    Object? companyOrSchool = null,
+    Object? title = null,
+    Object? seniority = null,
+    Object? yearsOfProfesionalExperience = null,
+    Object? linkedinUrl = null,
+    Object? birthDate = freezed,
+    Object? objectives = null,
+    Object? isPageCompleted = null,
   }) {
-    return _then(_$_OnboardingInProgress(
-      user: null == user
-          ? _value.user
-          : user // ignore: cast_nullable_to_non_nullable
-              as User,
-      fieldsCompleted: null == fieldsCompleted
-          ? _value.fieldsCompleted
-          : fieldsCompleted // ignore: cast_nullable_to_non_nullable
+    return _then(_$_Initial(
+      profileType: null == profileType
+          ? _value.profileType
+          : profileType // ignore: cast_nullable_to_non_nullable
+              as ProfileType,
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as String,
+      areasOfInterest: null == areasOfInterest
+          ? _value._areasOfInterest
+          : areasOfInterest // ignore: cast_nullable_to_non_nullable
+              as List<SpecificInterest>,
+      companyOrSchool: null == companyOrSchool
+          ? _value.companyOrSchool
+          : companyOrSchool // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      seniority: null == seniority
+          ? _value.seniority
+          : seniority // ignore: cast_nullable_to_non_nullable
+              as Seniority,
+      yearsOfProfesionalExperience: null == yearsOfProfesionalExperience
+          ? _value.yearsOfProfesionalExperience
+          : yearsOfProfesionalExperience // ignore: cast_nullable_to_non_nullable
               as int,
+      linkedinUrl: null == linkedinUrl
+          ? _value.linkedinUrl
+          : linkedinUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      objectives: null == objectives
+          ? _value._objectives
+          : objectives // ignore: cast_nullable_to_non_nullable
+              as List<Objective>,
+      isPageCompleted: null == isPageCompleted
+          ? _value.isPageCompleted
+          : isPageCompleted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res> get user {
-    return $UserCopyWith<$Res>(_value.user, (value) {
-      return _then(_value.copyWith(user: value));
-    });
   }
 }
 
 /// @nodoc
 
-class _$_OnboardingInProgress extends _OnboardingInProgress {
-  const _$_OnboardingInProgress({required this.user, this.fieldsCompleted = 0})
-      : super._();
+class _$_Initial implements _Initial {
+  const _$_Initial(
+      {this.profileType = ProfileType.unknown,
+      this.firstName = '',
+      this.lastName = '',
+      this.gender = Gender.unknown,
+      this.country = '',
+      final List<SpecificInterest> areasOfInterest = const [],
+      this.companyOrSchool = '',
+      this.title = '',
+      this.seniority = Seniority.unknown,
+      this.yearsOfProfesionalExperience = 0,
+      this.linkedinUrl = '',
+      this.birthDate,
+      final List<Objective> objectives = const [],
+      this.isPageCompleted = false})
+      : _areasOfInterest = areasOfInterest,
+        _objectives = objectives;
 
-  @override
-  final User user;
   @override
   @JsonKey()
-  final int fieldsCompleted;
+  final ProfileType profileType;
+  @override
+  @JsonKey()
+  final String firstName;
+  @override
+  @JsonKey()
+  final String lastName;
+  @override
+  @JsonKey()
+  final Gender gender;
+  @override
+  @JsonKey()
+  final String country;
+  final List<SpecificInterest> _areasOfInterest;
+  @override
+  @JsonKey()
+  List<SpecificInterest> get areasOfInterest {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_areasOfInterest);
+  }
+
+  @override
+  @JsonKey()
+  final String companyOrSchool;
+  @override
+  @JsonKey()
+  final String title;
+  @override
+  @JsonKey()
+  final Seniority seniority;
+  @override
+  @JsonKey()
+  final int yearsOfProfesionalExperience;
+  @override
+  @JsonKey()
+  final String linkedinUrl;
+  @override
+  final DateTime? birthDate;
+  final List<Objective> _objectives;
+  @override
+  @JsonKey()
+  List<Objective> get objectives {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_objectives);
+  }
+
+  @override
+  @JsonKey()
+  final bool isPageCompleted;
 
   @override
   String toString() {
-    return 'OnboardingState.onboardingInProgress(user: $user, fieldsCompleted: $fieldsCompleted)';
+    return 'OnboardingState(profileType: $profileType, firstName: $firstName, lastName: $lastName, gender: $gender, country: $country, areasOfInterest: $areasOfInterest, companyOrSchool: $companyOrSchool, title: $title, seniority: $seniority, yearsOfProfesionalExperience: $yearsOfProfesionalExperience, linkedinUrl: $linkedinUrl, birthDate: $birthDate, objectives: $objectives, isPageCompleted: $isPageCompleted)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnboardingInProgress &&
-            (identical(other.user, user) || other.user == user) &&
-            (identical(other.fieldsCompleted, fieldsCompleted) ||
-                other.fieldsCompleted == fieldsCompleted));
+            other is _$_Initial &&
+            (identical(other.profileType, profileType) ||
+                other.profileType == profileType) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.country, country) || other.country == country) &&
+            const DeepCollectionEquality()
+                .equals(other._areasOfInterest, _areasOfInterest) &&
+            (identical(other.companyOrSchool, companyOrSchool) ||
+                other.companyOrSchool == companyOrSchool) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.seniority, seniority) ||
+                other.seniority == seniority) &&
+            (identical(other.yearsOfProfesionalExperience,
+                    yearsOfProfesionalExperience) ||
+                other.yearsOfProfesionalExperience ==
+                    yearsOfProfesionalExperience) &&
+            (identical(other.linkedinUrl, linkedinUrl) ||
+                other.linkedinUrl == linkedinUrl) &&
+            (identical(other.birthDate, birthDate) ||
+                other.birthDate == birthDate) &&
+            const DeepCollectionEquality()
+                .equals(other._objectives, _objectives) &&
+            (identical(other.isPageCompleted, isPageCompleted) ||
+                other.isPageCompleted == isPageCompleted));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user, fieldsCompleted);
+  int get hashCode => Object.hash(
+      runtimeType,
+      profileType,
+      firstName,
+      lastName,
+      gender,
+      country,
+      const DeepCollectionEquality().hash(_areasOfInterest),
+      companyOrSchool,
+      title,
+      seniority,
+      yearsOfProfesionalExperience,
+      linkedinUrl,
+      birthDate,
+      const DeepCollectionEquality().hash(_objectives),
+      isPageCompleted);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnboardingInProgressCopyWith<_$_OnboardingInProgress> get copyWith =>
-      __$$_OnboardingInProgressCopyWithImpl<_$_OnboardingInProgress>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() onboardingNotStarted,
-    required TResult Function(User user, int fieldsCompleted)
-        onboardingInProgress,
-    required TResult Function() updatingUser,
-    required TResult Function() onboardingSuccess,
-    required TResult Function(Failure? failure) onboardingFailure,
-  }) {
-    return onboardingInProgress(user, fieldsCompleted);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult? Function()? updatingUser,
-    TResult? Function()? onboardingSuccess,
-    TResult? Function(Failure? failure)? onboardingFailure,
-  }) {
-    return onboardingInProgress?.call(user, fieldsCompleted);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? onboardingNotStarted,
-    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult Function()? updatingUser,
-    TResult Function()? onboardingSuccess,
-    TResult Function(Failure? failure)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (onboardingInProgress != null) {
-      return onboardingInProgress(user, fieldsCompleted);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_OnboardingNotStarted value) onboardingNotStarted,
-    required TResult Function(_OnboardingInProgress value) onboardingInProgress,
-    required TResult Function(_UpdatingUser value) updatingUser,
-    required TResult Function(_OnboardingFinished value) onboardingSuccess,
-    required TResult Function(_OnboardingFailure value) onboardingFailure,
-  }) {
-    return onboardingInProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult? Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult? Function(_UpdatingUser value)? updatingUser,
-    TResult? Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult? Function(_OnboardingFailure value)? onboardingFailure,
-  }) {
-    return onboardingInProgress?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult Function(_UpdatingUser value)? updatingUser,
-    TResult Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult Function(_OnboardingFailure value)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (onboardingInProgress != null) {
-      return onboardingInProgress(this);
-    }
-    return orElse();
-  }
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 }
 
-abstract class _OnboardingInProgress extends OnboardingState {
-  const factory _OnboardingInProgress(
-      {required final User user,
-      final int fieldsCompleted}) = _$_OnboardingInProgress;
-  const _OnboardingInProgress._() : super._();
+abstract class _Initial implements OnboardingState {
+  const factory _Initial(
+      {final ProfileType profileType,
+      final String firstName,
+      final String lastName,
+      final Gender gender,
+      final String country,
+      final List<SpecificInterest> areasOfInterest,
+      final String companyOrSchool,
+      final String title,
+      final Seniority seniority,
+      final int yearsOfProfesionalExperience,
+      final String linkedinUrl,
+      final DateTime? birthDate,
+      final List<Objective> objectives,
+      final bool isPageCompleted}) = _$_Initial;
 
-  User get user;
-  int get fieldsCompleted;
+  @override
+  ProfileType get profileType;
+  @override
+  String get firstName;
+  @override
+  String get lastName;
+  @override
+  Gender get gender;
+  @override
+  String get country;
+  @override
+  List<SpecificInterest> get areasOfInterest;
+  @override
+  String get companyOrSchool;
+  @override
+  String get title;
+  @override
+  Seniority get seniority;
+  @override
+  int get yearsOfProfesionalExperience;
+  @override
+  String get linkedinUrl;
+  @override
+  DateTime? get birthDate;
+  @override
+  List<Objective> get objectives;
+  @override
+  bool get isPageCompleted;
+  @override
   @JsonKey(ignore: true)
-  _$$_OnboardingInProgressCopyWith<_$_OnboardingInProgress> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_UpdatingUserCopyWith<$Res> {
-  factory _$$_UpdatingUserCopyWith(
-          _$_UpdatingUser value, $Res Function(_$_UpdatingUser) then) =
-      __$$_UpdatingUserCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_UpdatingUserCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$_UpdatingUser>
-    implements _$$_UpdatingUserCopyWith<$Res> {
-  __$$_UpdatingUserCopyWithImpl(
-      _$_UpdatingUser _value, $Res Function(_$_UpdatingUser) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_UpdatingUser extends _UpdatingUser {
-  const _$_UpdatingUser() : super._();
-
-  @override
-  String toString() {
-    return 'OnboardingState.updatingUser()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UpdatingUser);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() onboardingNotStarted,
-    required TResult Function(User user, int fieldsCompleted)
-        onboardingInProgress,
-    required TResult Function() updatingUser,
-    required TResult Function() onboardingSuccess,
-    required TResult Function(Failure? failure) onboardingFailure,
-  }) {
-    return updatingUser();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult? Function()? updatingUser,
-    TResult? Function()? onboardingSuccess,
-    TResult? Function(Failure? failure)? onboardingFailure,
-  }) {
-    return updatingUser?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? onboardingNotStarted,
-    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult Function()? updatingUser,
-    TResult Function()? onboardingSuccess,
-    TResult Function(Failure? failure)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (updatingUser != null) {
-      return updatingUser();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_OnboardingNotStarted value) onboardingNotStarted,
-    required TResult Function(_OnboardingInProgress value) onboardingInProgress,
-    required TResult Function(_UpdatingUser value) updatingUser,
-    required TResult Function(_OnboardingFinished value) onboardingSuccess,
-    required TResult Function(_OnboardingFailure value) onboardingFailure,
-  }) {
-    return updatingUser(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult? Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult? Function(_UpdatingUser value)? updatingUser,
-    TResult? Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult? Function(_OnboardingFailure value)? onboardingFailure,
-  }) {
-    return updatingUser?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult Function(_UpdatingUser value)? updatingUser,
-    TResult Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult Function(_OnboardingFailure value)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (updatingUser != null) {
-      return updatingUser(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _UpdatingUser extends OnboardingState {
-  const factory _UpdatingUser() = _$_UpdatingUser;
-  const _UpdatingUser._() : super._();
-}
-
-/// @nodoc
-abstract class _$$_OnboardingFinishedCopyWith<$Res> {
-  factory _$$_OnboardingFinishedCopyWith(_$_OnboardingFinished value,
-          $Res Function(_$_OnboardingFinished) then) =
-      __$$_OnboardingFinishedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_OnboardingFinishedCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$_OnboardingFinished>
-    implements _$$_OnboardingFinishedCopyWith<$Res> {
-  __$$_OnboardingFinishedCopyWithImpl(
-      _$_OnboardingFinished _value, $Res Function(_$_OnboardingFinished) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_OnboardingFinished extends _OnboardingFinished {
-  const _$_OnboardingFinished() : super._();
-
-  @override
-  String toString() {
-    return 'OnboardingState.onboardingSuccess()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_OnboardingFinished);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() onboardingNotStarted,
-    required TResult Function(User user, int fieldsCompleted)
-        onboardingInProgress,
-    required TResult Function() updatingUser,
-    required TResult Function() onboardingSuccess,
-    required TResult Function(Failure? failure) onboardingFailure,
-  }) {
-    return onboardingSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult? Function()? updatingUser,
-    TResult? Function()? onboardingSuccess,
-    TResult? Function(Failure? failure)? onboardingFailure,
-  }) {
-    return onboardingSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? onboardingNotStarted,
-    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult Function()? updatingUser,
-    TResult Function()? onboardingSuccess,
-    TResult Function(Failure? failure)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (onboardingSuccess != null) {
-      return onboardingSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_OnboardingNotStarted value) onboardingNotStarted,
-    required TResult Function(_OnboardingInProgress value) onboardingInProgress,
-    required TResult Function(_UpdatingUser value) updatingUser,
-    required TResult Function(_OnboardingFinished value) onboardingSuccess,
-    required TResult Function(_OnboardingFailure value) onboardingFailure,
-  }) {
-    return onboardingSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult? Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult? Function(_UpdatingUser value)? updatingUser,
-    TResult? Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult? Function(_OnboardingFailure value)? onboardingFailure,
-  }) {
-    return onboardingSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult Function(_UpdatingUser value)? updatingUser,
-    TResult Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult Function(_OnboardingFailure value)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (onboardingSuccess != null) {
-      return onboardingSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnboardingFinished extends OnboardingState {
-  const factory _OnboardingFinished() = _$_OnboardingFinished;
-  const _OnboardingFinished._() : super._();
-}
-
-/// @nodoc
-abstract class _$$_OnboardingFailureCopyWith<$Res> {
-  factory _$$_OnboardingFailureCopyWith(_$_OnboardingFailure value,
-          $Res Function(_$_OnboardingFailure) then) =
-      __$$_OnboardingFailureCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Failure? failure});
-
-  $FailureCopyWith<$Res>? get failure;
-}
-
-/// @nodoc
-class __$$_OnboardingFailureCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$_OnboardingFailure>
-    implements _$$_OnboardingFailureCopyWith<$Res> {
-  __$$_OnboardingFailureCopyWithImpl(
-      _$_OnboardingFailure _value, $Res Function(_$_OnboardingFailure) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = freezed,
-  }) {
-    return _then(_$_OnboardingFailure(
-      failure: freezed == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as Failure?,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $FailureCopyWith<$Res>? get failure {
-    if (_value.failure == null) {
-      return null;
-    }
-
-    return $FailureCopyWith<$Res>(_value.failure!, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_OnboardingFailure extends _OnboardingFailure {
-  const _$_OnboardingFailure({this.failure}) : super._();
-
-  @override
-  final Failure? failure;
-
-  @override
-  String toString() {
-    return 'OnboardingState.onboardingFailure(failure: $failure)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_OnboardingFailure &&
-            (identical(other.failure, failure) || other.failure == failure));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, failure);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_OnboardingFailureCopyWith<_$_OnboardingFailure> get copyWith =>
-      __$$_OnboardingFailureCopyWithImpl<_$_OnboardingFailure>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() onboardingNotStarted,
-    required TResult Function(User user, int fieldsCompleted)
-        onboardingInProgress,
-    required TResult Function() updatingUser,
-    required TResult Function() onboardingSuccess,
-    required TResult Function(Failure? failure) onboardingFailure,
-  }) {
-    return onboardingFailure(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? onboardingNotStarted,
-    TResult? Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult? Function()? updatingUser,
-    TResult? Function()? onboardingSuccess,
-    TResult? Function(Failure? failure)? onboardingFailure,
-  }) {
-    return onboardingFailure?.call(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? onboardingNotStarted,
-    TResult Function(User user, int fieldsCompleted)? onboardingInProgress,
-    TResult Function()? updatingUser,
-    TResult Function()? onboardingSuccess,
-    TResult Function(Failure? failure)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (onboardingFailure != null) {
-      return onboardingFailure(failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_OnboardingNotStarted value) onboardingNotStarted,
-    required TResult Function(_OnboardingInProgress value) onboardingInProgress,
-    required TResult Function(_UpdatingUser value) updatingUser,
-    required TResult Function(_OnboardingFinished value) onboardingSuccess,
-    required TResult Function(_OnboardingFailure value) onboardingFailure,
-  }) {
-    return onboardingFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult? Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult? Function(_UpdatingUser value)? updatingUser,
-    TResult? Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult? Function(_OnboardingFailure value)? onboardingFailure,
-  }) {
-    return onboardingFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_OnboardingNotStarted value)? onboardingNotStarted,
-    TResult Function(_OnboardingInProgress value)? onboardingInProgress,
-    TResult Function(_UpdatingUser value)? updatingUser,
-    TResult Function(_OnboardingFinished value)? onboardingSuccess,
-    TResult Function(_OnboardingFailure value)? onboardingFailure,
-    required TResult orElse(),
-  }) {
-    if (onboardingFailure != null) {
-      return onboardingFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _OnboardingFailure extends OnboardingState {
-  const factory _OnboardingFailure({final Failure? failure}) =
-      _$_OnboardingFailure;
-  const _OnboardingFailure._() : super._();
-
-  Failure? get failure;
-  @JsonKey(ignore: true)
-  _$$_OnboardingFailureCopyWith<_$_OnboardingFailure> get copyWith =>
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
       throw _privateConstructorUsedError;
 }

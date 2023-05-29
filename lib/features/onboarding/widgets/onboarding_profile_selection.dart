@@ -10,8 +10,6 @@ class OnboardingProfileSelection extends StatelessWidget {
 
   final PageController _pageController;
 
-  static const int fieldsToBeCompleted = 1;
-
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -42,13 +40,8 @@ class OnboardingProfileSelection extends StatelessWidget {
                     profileDescription: Strings.menteeProfileDescription,
                     profileType: ProfileType.mentee,
                     onTap: () {
-                      context.read<OnboardingCubit>().newPageStarted();
-                      context.read<OnboardingCubit>().saveProgress(
-                            user: context.read<AuthBloc>().state.user!.copyWith(
-                                  profileType: ProfileType.mentee,
-                                ),
-                            completed: 1,
-                          );
+                      context.read<OnboardingCubit>().validateFirstFormPage(
+                          profileType: ProfileType.mentee);
                     },
                   ),
                   SizedBox(width: context.width * 0.05),
@@ -58,58 +51,14 @@ class OnboardingProfileSelection extends StatelessWidget {
                     profileType: ProfileType.mentor,
                     profileDescription: Strings.mentorProfileDescription,
                     onTap: () {
-                      context.read<OnboardingCubit>().newPageStarted();
-                      context.read<OnboardingCubit>().saveProgress(
-                            user: context.read<AuthBloc>().state.user!.copyWith(
-                                  profileType: ProfileType.mentor,
-                                ),
-                            completed: 1,
-                          );
+                      context.read<OnboardingCubit>().validateFirstFormPage(
+                          profileType: ProfileType.mentor);
                     },
                   ),
                 ],
               ),
               const SizedBox(height: Dimens.xxLarge),
-              BlocBuilder<OnboardingCubit, OnboardingState>(
-                builder: (context, state) => state.maybeMap(
-                  orElse: SizedBox.shrink,
-                  onboardingInProgress: (state) => Align(
-                    child: SizedBox(
-                      width: context.width * 0.25,
-                      height: context.height * 0.065,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: state.fieldsCompleted ==
-                                  fieldsToBeCompleted
-                              ? MaterialStateProperty.all(
-                                  context.colorScheme.primary,
-                                )
-                              : MaterialStateProperty.all(
-                                  context.colorScheme.disabledButtonBackground,
-                                ),
-                        ),
-                        onPressed: () {
-                          if (state.fieldsCompleted == fieldsToBeCompleted) {
-                            _pageController.nextPage(
-                              duration: const Duration(milliseconds: 300),
-                              curve: Curves.easeIn,
-                            );
-                            context.read<OnboardingCubit>().newPageStarted();
-                          }
-                        },
-                        child: Text(
-                          'Continuar',
-                          style: context.textTheme.bodySmall!.copyWith(
-                            color: state.fieldsCompleted == fieldsToBeCompleted
-                                ? context.colorScheme.onPrimary
-                                : context.colorScheme.surfaceTint,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              OnboardingNextButton(pageController: _pageController)
             ],
           ),
         ),

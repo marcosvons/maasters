@@ -40,20 +40,13 @@ class ProfileSelectionButton extends StatelessWidget {
                   ),
                 ],
                 borderRadius: BorderRadius.circular(Dimens.large),
-                border: state.maybeMap(
-                  orElse: () =>
-                      Border.all(color: context.colorScheme.secondary),
-                  onboardingInProgress: (state) {
-                    if (state.user.profileType == profileType) {
-                      return Border.all(
+                border: state.profileType == profileType
+                    ? Border.all(
                         color: context.colorScheme.primary,
-                      );
-                    }
-                    return Border.all(
-                      color: context.colorScheme.secondary,
-                    );
-                  },
-                ),
+                      )
+                    : Border.all(
+                        color: context.colorScheme.secondary,
+                      ),
               ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(

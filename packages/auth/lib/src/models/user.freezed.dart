@@ -21,6 +21,7 @@ mixin _$User {
   String get firstName => throw _privateConstructorUsedError;
   String get lastName => throw _privateConstructorUsedError;
   String get googleName => throw _privateConstructorUsedError;
+  Gender get gender => throw _privateConstructorUsedError;
   String get country => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get photoUrl => throw _privateConstructorUsedError;
@@ -34,7 +35,8 @@ mixin _$User {
   String get company => throw _privateConstructorUsedError;
   String get school => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  Objective get objective => throw _privateConstructorUsedError;
+  List<Objective> get objective => throw _privateConstructorUsedError;
+  int get yearsOfProfesionalExperience => throw _privateConstructorUsedError;
   DateTime? get birthDate => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -52,6 +54,7 @@ abstract class $UserCopyWith<$Res> {
       String firstName,
       String lastName,
       String googleName,
+      Gender gender,
       String country,
       String description,
       String photoUrl,
@@ -64,7 +67,8 @@ abstract class $UserCopyWith<$Res> {
       String company,
       String school,
       String title,
-      Objective objective,
+      List<Objective> objective,
+      int yearsOfProfesionalExperience,
       DateTime? birthDate});
 }
 
@@ -86,6 +90,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? firstName = null,
     Object? lastName = null,
     Object? googleName = null,
+    Object? gender = null,
     Object? country = null,
     Object? description = null,
     Object? photoUrl = null,
@@ -99,6 +104,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? school = null,
     Object? title = null,
     Object? objective = null,
+    Object? yearsOfProfesionalExperience = null,
     Object? birthDate = freezed,
   }) {
     return _then(_value.copyWith(
@@ -122,6 +128,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.googleName
           : googleName // ignore: cast_nullable_to_non_nullable
               as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
@@ -173,7 +183,11 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       objective: null == objective
           ? _value.objective
           : objective // ignore: cast_nullable_to_non_nullable
-              as Objective,
+              as List<Objective>,
+      yearsOfProfesionalExperience: null == yearsOfProfesionalExperience
+          ? _value.yearsOfProfesionalExperience
+          : yearsOfProfesionalExperience // ignore: cast_nullable_to_non_nullable
+              as int,
       birthDate: freezed == birthDate
           ? _value.birthDate
           : birthDate // ignore: cast_nullable_to_non_nullable
@@ -194,6 +208,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String firstName,
       String lastName,
       String googleName,
+      Gender gender,
       String country,
       String description,
       String photoUrl,
@@ -206,7 +221,8 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String company,
       String school,
       String title,
-      Objective objective,
+      List<Objective> objective,
+      int yearsOfProfesionalExperience,
       DateTime? birthDate});
 }
 
@@ -224,6 +240,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? firstName = null,
     Object? lastName = null,
     Object? googleName = null,
+    Object? gender = null,
     Object? country = null,
     Object? description = null,
     Object? photoUrl = null,
@@ -237,6 +254,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? school = null,
     Object? title = null,
     Object? objective = null,
+    Object? yearsOfProfesionalExperience = null,
     Object? birthDate = freezed,
   }) {
     return _then(_$_User(
@@ -260,6 +278,10 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.googleName
           : googleName // ignore: cast_nullable_to_non_nullable
               as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
       country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
@@ -309,9 +331,13 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       objective: null == objective
-          ? _value.objective
+          ? _value._objective
           : objective // ignore: cast_nullable_to_non_nullable
-              as Objective,
+              as List<Objective>,
+      yearsOfProfesionalExperience: null == yearsOfProfesionalExperience
+          ? _value.yearsOfProfesionalExperience
+          : yearsOfProfesionalExperience // ignore: cast_nullable_to_non_nullable
+              as int,
       birthDate: freezed == birthDate
           ? _value.birthDate
           : birthDate // ignore: cast_nullable_to_non_nullable
@@ -329,6 +355,7 @@ class _$_User implements _User {
       this.firstName = '',
       this.lastName = '',
       this.googleName = '',
+      this.gender = Gender.notSpecified,
       this.country = '',
       this.description = '',
       this.photoUrl = '',
@@ -341,10 +368,12 @@ class _$_User implements _User {
       this.company = '',
       this.school = '',
       this.title = '',
-      this.objective = Objective.other,
+      final List<Objective> objective = const [],
+      this.yearsOfProfesionalExperience = 0,
       this.birthDate})
       : _areasOfInterest = areasOfInterest,
-        _socialMedia = socialMedia;
+        _socialMedia = socialMedia,
+        _objective = objective;
 
   @override
   final String id;
@@ -359,6 +388,9 @@ class _$_User implements _User {
   @override
   @JsonKey()
   final String googleName;
+  @override
+  @JsonKey()
+  final Gender gender;
   @override
   @JsonKey()
   final String country;
@@ -405,15 +437,23 @@ class _$_User implements _User {
   @override
   @JsonKey()
   final String title;
+  final List<Objective> _objective;
   @override
   @JsonKey()
-  final Objective objective;
+  List<Objective> get objective {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_objective);
+  }
+
+  @override
+  @JsonKey()
+  final int yearsOfProfesionalExperience;
   @override
   final DateTime? birthDate;
 
   @override
   String toString() {
-    return 'User(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName, googleName: $googleName, country: $country, description: $description, photoUrl: $photoUrl, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company, school: $school, title: $title, objective: $objective, birthDate: $birthDate)';
+    return 'User(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName, googleName: $googleName, gender: $gender, country: $country, description: $description, photoUrl: $photoUrl, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company, school: $school, title: $title, objective: $objective, yearsOfProfesionalExperience: $yearsOfProfesionalExperience, birthDate: $birthDate)';
   }
 
   @override
@@ -429,6 +469,7 @@ class _$_User implements _User {
                 other.lastName == lastName) &&
             (identical(other.googleName, googleName) ||
                 other.googleName == googleName) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
             (identical(other.country, country) || other.country == country) &&
             (identical(other.description, description) ||
                 other.description == description) &&
@@ -449,8 +490,12 @@ class _$_User implements _User {
             (identical(other.company, company) || other.company == company) &&
             (identical(other.school, school) || other.school == school) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.objective, objective) ||
-                other.objective == objective) &&
+            const DeepCollectionEquality()
+                .equals(other._objective, _objective) &&
+            (identical(other.yearsOfProfesionalExperience,
+                    yearsOfProfesionalExperience) ||
+                other.yearsOfProfesionalExperience ==
+                    yearsOfProfesionalExperience) &&
             (identical(other.birthDate, birthDate) ||
                 other.birthDate == birthDate));
   }
@@ -463,6 +508,7 @@ class _$_User implements _User {
         firstName,
         lastName,
         googleName,
+        gender,
         country,
         description,
         photoUrl,
@@ -475,7 +521,8 @@ class _$_User implements _User {
         company,
         school,
         title,
-        objective,
+        const DeepCollectionEquality().hash(_objective),
+        yearsOfProfesionalExperience,
         birthDate
       ]);
 
@@ -493,6 +540,7 @@ abstract class _User implements User {
       final String firstName,
       final String lastName,
       final String googleName,
+      final Gender gender,
       final String country,
       final String description,
       final String photoUrl,
@@ -505,7 +553,8 @@ abstract class _User implements User {
       final String company,
       final String school,
       final String title,
-      final Objective objective,
+      final List<Objective> objective,
+      final int yearsOfProfesionalExperience,
       final DateTime? birthDate}) = _$_User;
 
   @override
@@ -518,6 +567,8 @@ abstract class _User implements User {
   String get lastName;
   @override
   String get googleName;
+  @override
+  Gender get gender;
   @override
   String get country;
   @override
@@ -543,7 +594,9 @@ abstract class _User implements User {
   @override
   String get title;
   @override
-  Objective get objective;
+  List<Objective> get objective;
+  @override
+  int get yearsOfProfesionalExperience;
   @override
   DateTime? get birthDate;
   @override
