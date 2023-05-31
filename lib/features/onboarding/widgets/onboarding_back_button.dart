@@ -37,7 +37,7 @@ class OnboardingBackButton extends StatelessWidget {
           ),
           onTap: () {
             context.read<OnboardingCubit>().validateFirstFormPage(
-                  profileType: state.profileType,
+                  profileType: state.user.profileType,
                 );
             _pageController.previousPage(
               duration: const Duration(milliseconds: 300),

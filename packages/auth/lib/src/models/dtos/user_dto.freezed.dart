@@ -26,18 +26,17 @@ mixin _$UserDto {
   String get lastName => throw _privateConstructorUsedError;
   String get googleName => throw _privateConstructorUsedError;
   Gender get gender => throw _privateConstructorUsedError;
-  String get country => throw _privateConstructorUsedError;
+  Countries get country => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get photoUrl => throw _privateConstructorUsedError;
   List<SpecificInterest> get areasOfInterest =>
       throw _privateConstructorUsedError;
-  List<SocialMedia> get socialMedia => throw _privateConstructorUsedError;
+  List<SocialMediaDto> get socialMedia => throw _privateConstructorUsedError;
   ProfileType get profileType => throw _privateConstructorUsedError;
   Seniority get seniority => throw _privateConstructorUsedError;
   bool get onboardingCompleted => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
-  String get company => throw _privateConstructorUsedError;
-  String get school => throw _privateConstructorUsedError;
+  String get companyOrSchool => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   List<Objective> get objective => throw _privateConstructorUsedError;
   int get yearsOfProfesionalExperience => throw _privateConstructorUsedError;
@@ -60,17 +59,16 @@ abstract class $UserDtoCopyWith<$Res> {
       String lastName,
       String googleName,
       Gender gender,
-      String country,
+      Countries country,
       String description,
       String photoUrl,
       List<SpecificInterest> areasOfInterest,
-      List<SocialMedia> socialMedia,
+      List<SocialMediaDto> socialMedia,
       ProfileType profileType,
       Seniority seniority,
       bool onboardingCompleted,
       String phoneNumber,
-      String company,
-      String school,
+      String companyOrSchool,
       String title,
       List<Objective> objective,
       int yearsOfProfesionalExperience,
@@ -105,8 +103,7 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
     Object? seniority = null,
     Object? onboardingCompleted = null,
     Object? phoneNumber = null,
-    Object? company = null,
-    Object? school = null,
+    Object? companyOrSchool = null,
     Object? title = null,
     Object? objective = null,
     Object? yearsOfProfesionalExperience = null,
@@ -140,7 +137,7 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
       country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Countries,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -156,7 +153,7 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
       socialMedia: null == socialMedia
           ? _value.socialMedia
           : socialMedia // ignore: cast_nullable_to_non_nullable
-              as List<SocialMedia>,
+              as List<SocialMediaDto>,
       profileType: null == profileType
           ? _value.profileType
           : profileType // ignore: cast_nullable_to_non_nullable
@@ -173,13 +170,9 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      company: null == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as String,
-      school: null == school
-          ? _value.school
-          : school // ignore: cast_nullable_to_non_nullable
+      companyOrSchool: null == companyOrSchool
+          ? _value.companyOrSchool
+          : companyOrSchool // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -215,17 +208,16 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       String lastName,
       String googleName,
       Gender gender,
-      String country,
+      Countries country,
       String description,
       String photoUrl,
       List<SpecificInterest> areasOfInterest,
-      List<SocialMedia> socialMedia,
+      List<SocialMediaDto> socialMedia,
       ProfileType profileType,
       Seniority seniority,
       bool onboardingCompleted,
       String phoneNumber,
-      String company,
-      String school,
+      String companyOrSchool,
       String title,
       List<Objective> objective,
       int yearsOfProfesionalExperience,
@@ -257,8 +249,7 @@ class __$$_UserDtoCopyWithImpl<$Res>
     Object? seniority = null,
     Object? onboardingCompleted = null,
     Object? phoneNumber = null,
-    Object? company = null,
-    Object? school = null,
+    Object? companyOrSchool = null,
     Object? title = null,
     Object? objective = null,
     Object? yearsOfProfesionalExperience = null,
@@ -292,7 +283,7 @@ class __$$_UserDtoCopyWithImpl<$Res>
       country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Countries,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -308,7 +299,7 @@ class __$$_UserDtoCopyWithImpl<$Res>
       socialMedia: null == socialMedia
           ? _value._socialMedia
           : socialMedia // ignore: cast_nullable_to_non_nullable
-              as List<SocialMedia>,
+              as List<SocialMediaDto>,
       profileType: null == profileType
           ? _value.profileType
           : profileType // ignore: cast_nullable_to_non_nullable
@@ -325,13 +316,9 @@ class __$$_UserDtoCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      company: null == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as String,
-      school: null == school
-          ? _value.school
-          : school // ignore: cast_nullable_to_non_nullable
+      companyOrSchool: null == companyOrSchool
+          ? _value.companyOrSchool
+          : companyOrSchool // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -362,21 +349,20 @@ class _$_UserDto extends _UserDto {
       this.firstName = '',
       this.lastName = '',
       this.googleName = '',
-      this.gender = Gender.notSpecified,
-      this.country = '',
+      this.gender = Gender.unknown,
+      this.country = Countries.unknown,
       this.description = '',
       this.photoUrl = '',
       final List<SpecificInterest> areasOfInterest = const [],
-      final List<SocialMedia> socialMedia = const [],
+      final List<SocialMediaDto> socialMedia = const [],
       this.profileType = ProfileType.unknown,
       this.seniority = Seniority.unknown,
       this.onboardingCompleted = false,
       this.phoneNumber = '',
-      this.company = '',
-      this.school = '',
+      this.companyOrSchool = '',
       this.title = '',
       final List<Objective> objective = const [],
-      this.yearsOfProfesionalExperience = 0,
+      this.yearsOfProfesionalExperience = -1,
       this.birthDate})
       : _areasOfInterest = areasOfInterest,
         _socialMedia = socialMedia,
@@ -404,7 +390,7 @@ class _$_UserDto extends _UserDto {
   final Gender gender;
   @override
   @JsonKey()
-  final String country;
+  final Countries country;
   @override
   @JsonKey()
   final String description;
@@ -419,10 +405,10 @@ class _$_UserDto extends _UserDto {
     return EqualUnmodifiableListView(_areasOfInterest);
   }
 
-  final List<SocialMedia> _socialMedia;
+  final List<SocialMediaDto> _socialMedia;
   @override
   @JsonKey()
-  List<SocialMedia> get socialMedia {
+  List<SocialMediaDto> get socialMedia {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_socialMedia);
   }
@@ -441,10 +427,7 @@ class _$_UserDto extends _UserDto {
   final String phoneNumber;
   @override
   @JsonKey()
-  final String company;
-  @override
-  @JsonKey()
-  final String school;
+  final String companyOrSchool;
   @override
   @JsonKey()
   final String title;
@@ -464,7 +447,7 @@ class _$_UserDto extends _UserDto {
 
   @override
   String toString() {
-    return 'UserDto(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName, googleName: $googleName, gender: $gender, country: $country, description: $description, photoUrl: $photoUrl, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company, school: $school, title: $title, objective: $objective, yearsOfProfesionalExperience: $yearsOfProfesionalExperience, birthDate: $birthDate)';
+    return 'UserDto(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName, googleName: $googleName, gender: $gender, country: $country, description: $description, photoUrl: $photoUrl, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, companyOrSchool: $companyOrSchool, title: $title, objective: $objective, yearsOfProfesionalExperience: $yearsOfProfesionalExperience, birthDate: $birthDate)';
   }
 
   @override
@@ -498,8 +481,8 @@ class _$_UserDto extends _UserDto {
                 other.onboardingCompleted == onboardingCompleted) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
-            (identical(other.company, company) || other.company == company) &&
-            (identical(other.school, school) || other.school == school) &&
+            (identical(other.companyOrSchool, companyOrSchool) ||
+                other.companyOrSchool == companyOrSchool) &&
             (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality()
                 .equals(other._objective, _objective) &&
@@ -530,8 +513,7 @@ class _$_UserDto extends _UserDto {
         seniority,
         onboardingCompleted,
         phoneNumber,
-        company,
-        school,
+        companyOrSchool,
         title,
         const DeepCollectionEquality().hash(_objective),
         yearsOfProfesionalExperience,
@@ -560,17 +542,16 @@ abstract class _UserDto extends UserDto {
       final String lastName,
       final String googleName,
       final Gender gender,
-      final String country,
+      final Countries country,
       final String description,
       final String photoUrl,
       final List<SpecificInterest> areasOfInterest,
-      final List<SocialMedia> socialMedia,
+      final List<SocialMediaDto> socialMedia,
       final ProfileType profileType,
       final Seniority seniority,
       final bool onboardingCompleted,
       final String phoneNumber,
-      final String company,
-      final String school,
+      final String companyOrSchool,
       final String title,
       final List<Objective> objective,
       final int yearsOfProfesionalExperience,
@@ -592,7 +573,7 @@ abstract class _UserDto extends UserDto {
   @override
   Gender get gender;
   @override
-  String get country;
+  Countries get country;
   @override
   String get description;
   @override
@@ -600,7 +581,7 @@ abstract class _UserDto extends UserDto {
   @override
   List<SpecificInterest> get areasOfInterest;
   @override
-  List<SocialMedia> get socialMedia;
+  List<SocialMediaDto> get socialMedia;
   @override
   ProfileType get profileType;
   @override
@@ -610,9 +591,7 @@ abstract class _UserDto extends UserDto {
   @override
   String get phoneNumber;
   @override
-  String get company;
-  @override
-  String get school;
+  String get companyOrSchool;
   @override
   String get title;
   @override

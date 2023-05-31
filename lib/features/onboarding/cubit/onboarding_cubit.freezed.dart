@@ -16,21 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$OnboardingState {
-  ProfileType get profileType => throw _privateConstructorUsedError;
-  String get firstName => throw _privateConstructorUsedError;
-  String get lastName => throw _privateConstructorUsedError;
-  Gender get gender => throw _privateConstructorUsedError;
-  String get country => throw _privateConstructorUsedError;
-  List<SpecificInterest> get areasOfInterest =>
-      throw _privateConstructorUsedError;
-  String get companyOrSchool => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  Seniority get seniority => throw _privateConstructorUsedError;
-  int get yearsOfProfesionalExperience => throw _privateConstructorUsedError;
-  String get linkedinUrl => throw _privateConstructorUsedError;
-  DateTime? get birthDate => throw _privateConstructorUsedError;
-  List<Objective> get objectives => throw _privateConstructorUsedError;
+  User get user => throw _privateConstructorUsedError;
   bool get isPageCompleted => throw _privateConstructorUsedError;
+  Uint8List? get image => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OnboardingStateCopyWith<OnboardingState> get copyWith =>
@@ -43,21 +31,9 @@ abstract class $OnboardingStateCopyWith<$Res> {
           OnboardingState value, $Res Function(OnboardingState) then) =
       _$OnboardingStateCopyWithImpl<$Res, OnboardingState>;
   @useResult
-  $Res call(
-      {ProfileType profileType,
-      String firstName,
-      String lastName,
-      Gender gender,
-      String country,
-      List<SpecificInterest> areasOfInterest,
-      String companyOrSchool,
-      String title,
-      Seniority seniority,
-      int yearsOfProfesionalExperience,
-      String linkedinUrl,
-      DateTime? birthDate,
-      List<Objective> objectives,
-      bool isPageCompleted});
+  $Res call({User user, bool isPageCompleted, Uint8List? image});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -73,79 +49,32 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? profileType = null,
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? gender = null,
-    Object? country = null,
-    Object? areasOfInterest = null,
-    Object? companyOrSchool = null,
-    Object? title = null,
-    Object? seniority = null,
-    Object? yearsOfProfesionalExperience = null,
-    Object? linkedinUrl = null,
-    Object? birthDate = freezed,
-    Object? objectives = null,
+    Object? user = null,
     Object? isPageCompleted = null,
+    Object? image = freezed,
   }) {
     return _then(_value.copyWith(
-      profileType: null == profileType
-          ? _value.profileType
-          : profileType // ignore: cast_nullable_to_non_nullable
-              as ProfileType,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
-      country: null == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String,
-      areasOfInterest: null == areasOfInterest
-          ? _value.areasOfInterest
-          : areasOfInterest // ignore: cast_nullable_to_non_nullable
-              as List<SpecificInterest>,
-      companyOrSchool: null == companyOrSchool
-          ? _value.companyOrSchool
-          : companyOrSchool // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      seniority: null == seniority
-          ? _value.seniority
-          : seniority // ignore: cast_nullable_to_non_nullable
-              as Seniority,
-      yearsOfProfesionalExperience: null == yearsOfProfesionalExperience
-          ? _value.yearsOfProfesionalExperience
-          : yearsOfProfesionalExperience // ignore: cast_nullable_to_non_nullable
-              as int,
-      linkedinUrl: null == linkedinUrl
-          ? _value.linkedinUrl
-          : linkedinUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      birthDate: freezed == birthDate
-          ? _value.birthDate
-          : birthDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      objectives: null == objectives
-          ? _value.objectives
-          : objectives // ignore: cast_nullable_to_non_nullable
-              as List<Objective>,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
       isPageCompleted: null == isPageCompleted
           ? _value.isPageCompleted
           : isPageCompleted // ignore: cast_nullable_to_non_nullable
               as bool,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value) as $Val);
+    });
   }
 }
 
@@ -157,21 +86,10 @@ abstract class _$$_InitialCopyWith<$Res>
       __$$_InitialCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {ProfileType profileType,
-      String firstName,
-      String lastName,
-      Gender gender,
-      String country,
-      List<SpecificInterest> areasOfInterest,
-      String companyOrSchool,
-      String title,
-      Seniority seniority,
-      int yearsOfProfesionalExperience,
-      String linkedinUrl,
-      DateTime? birthDate,
-      List<Objective> objectives,
-      bool isPageCompleted});
+  $Res call({User user, bool isPageCompleted, Uint8List? image});
+
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -184,158 +102,54 @@ class __$$_InitialCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? profileType = null,
-    Object? firstName = null,
-    Object? lastName = null,
-    Object? gender = null,
-    Object? country = null,
-    Object? areasOfInterest = null,
-    Object? companyOrSchool = null,
-    Object? title = null,
-    Object? seniority = null,
-    Object? yearsOfProfesionalExperience = null,
-    Object? linkedinUrl = null,
-    Object? birthDate = freezed,
-    Object? objectives = null,
+    Object? user = null,
     Object? isPageCompleted = null,
+    Object? image = freezed,
   }) {
     return _then(_$_Initial(
-      profileType: null == profileType
-          ? _value.profileType
-          : profileType // ignore: cast_nullable_to_non_nullable
-              as ProfileType,
-      firstName: null == firstName
-          ? _value.firstName
-          : firstName // ignore: cast_nullable_to_non_nullable
-              as String,
-      lastName: null == lastName
-          ? _value.lastName
-          : lastName // ignore: cast_nullable_to_non_nullable
-              as String,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
-      country: null == country
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as String,
-      areasOfInterest: null == areasOfInterest
-          ? _value._areasOfInterest
-          : areasOfInterest // ignore: cast_nullable_to_non_nullable
-              as List<SpecificInterest>,
-      companyOrSchool: null == companyOrSchool
-          ? _value.companyOrSchool
-          : companyOrSchool // ignore: cast_nullable_to_non_nullable
-              as String,
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      seniority: null == seniority
-          ? _value.seniority
-          : seniority // ignore: cast_nullable_to_non_nullable
-              as Seniority,
-      yearsOfProfesionalExperience: null == yearsOfProfesionalExperience
-          ? _value.yearsOfProfesionalExperience
-          : yearsOfProfesionalExperience // ignore: cast_nullable_to_non_nullable
-              as int,
-      linkedinUrl: null == linkedinUrl
-          ? _value.linkedinUrl
-          : linkedinUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      birthDate: freezed == birthDate
-          ? _value.birthDate
-          : birthDate // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      objectives: null == objectives
-          ? _value._objectives
-          : objectives // ignore: cast_nullable_to_non_nullable
-              as List<Objective>,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
       isPageCompleted: null == isPageCompleted
           ? _value.isPageCompleted
           : isPageCompleted // ignore: cast_nullable_to_non_nullable
               as bool,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as Uint8List?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
+class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   const _$_Initial(
-      {this.profileType = ProfileType.unknown,
-      this.firstName = '',
-      this.lastName = '',
-      this.gender = Gender.unknown,
-      this.country = '',
-      final List<SpecificInterest> areasOfInterest = const [],
-      this.companyOrSchool = '',
-      this.title = '',
-      this.seniority = Seniority.unknown,
-      this.yearsOfProfesionalExperience = 0,
-      this.linkedinUrl = '',
-      this.birthDate,
-      final List<Objective> objectives = const [],
-      this.isPageCompleted = false})
-      : _areasOfInterest = areasOfInterest,
-        _objectives = objectives;
+      {required this.user, this.isPageCompleted = false, this.image});
 
   @override
-  @JsonKey()
-  final ProfileType profileType;
-  @override
-  @JsonKey()
-  final String firstName;
-  @override
-  @JsonKey()
-  final String lastName;
-  @override
-  @JsonKey()
-  final Gender gender;
-  @override
-  @JsonKey()
-  final String country;
-  final List<SpecificInterest> _areasOfInterest;
-  @override
-  @JsonKey()
-  List<SpecificInterest> get areasOfInterest {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_areasOfInterest);
-  }
-
-  @override
-  @JsonKey()
-  final String companyOrSchool;
-  @override
-  @JsonKey()
-  final String title;
-  @override
-  @JsonKey()
-  final Seniority seniority;
-  @override
-  @JsonKey()
-  final int yearsOfProfesionalExperience;
-  @override
-  @JsonKey()
-  final String linkedinUrl;
-  @override
-  final DateTime? birthDate;
-  final List<Objective> _objectives;
-  @override
-  @JsonKey()
-  List<Objective> get objectives {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_objectives);
-  }
-
+  final User user;
   @override
   @JsonKey()
   final bool isPageCompleted;
+  @override
+  final Uint8List? image;
 
   @override
-  String toString() {
-    return 'OnboardingState(profileType: $profileType, firstName: $firstName, lastName: $lastName, gender: $gender, country: $country, areasOfInterest: $areasOfInterest, companyOrSchool: $companyOrSchool, title: $title, seniority: $seniority, yearsOfProfesionalExperience: $yearsOfProfesionalExperience, linkedinUrl: $linkedinUrl, birthDate: $birthDate, objectives: $objectives, isPageCompleted: $isPageCompleted)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'OnboardingState(user: $user, isPageCompleted: $isPageCompleted, image: $image)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'OnboardingState'))
+      ..add(DiagnosticsProperty('user', user))
+      ..add(DiagnosticsProperty('isPageCompleted', isPageCompleted))
+      ..add(DiagnosticsProperty('image', image));
   }
 
   @override
@@ -343,52 +157,15 @@ class _$_Initial implements _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initial &&
-            (identical(other.profileType, profileType) ||
-                other.profileType == profileType) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
-            (identical(other.country, country) || other.country == country) &&
-            const DeepCollectionEquality()
-                .equals(other._areasOfInterest, _areasOfInterest) &&
-            (identical(other.companyOrSchool, companyOrSchool) ||
-                other.companyOrSchool == companyOrSchool) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.seniority, seniority) ||
-                other.seniority == seniority) &&
-            (identical(other.yearsOfProfesionalExperience,
-                    yearsOfProfesionalExperience) ||
-                other.yearsOfProfesionalExperience ==
-                    yearsOfProfesionalExperience) &&
-            (identical(other.linkedinUrl, linkedinUrl) ||
-                other.linkedinUrl == linkedinUrl) &&
-            (identical(other.birthDate, birthDate) ||
-                other.birthDate == birthDate) &&
-            const DeepCollectionEquality()
-                .equals(other._objectives, _objectives) &&
+            (identical(other.user, user) || other.user == user) &&
             (identical(other.isPageCompleted, isPageCompleted) ||
-                other.isPageCompleted == isPageCompleted));
+                other.isPageCompleted == isPageCompleted) &&
+            const DeepCollectionEquality().equals(other.image, image));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      profileType,
-      firstName,
-      lastName,
-      gender,
-      country,
-      const DeepCollectionEquality().hash(_areasOfInterest),
-      companyOrSchool,
-      title,
-      seniority,
-      yearsOfProfesionalExperience,
-      linkedinUrl,
-      birthDate,
-      const DeepCollectionEquality().hash(_objectives),
-      isPageCompleted);
+  int get hashCode => Object.hash(runtimeType, user, isPageCompleted,
+      const DeepCollectionEquality().hash(image));
 
   @JsonKey(ignore: true)
   @override
@@ -399,49 +176,16 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements OnboardingState {
   const factory _Initial(
-      {final ProfileType profileType,
-      final String firstName,
-      final String lastName,
-      final Gender gender,
-      final String country,
-      final List<SpecificInterest> areasOfInterest,
-      final String companyOrSchool,
-      final String title,
-      final Seniority seniority,
-      final int yearsOfProfesionalExperience,
-      final String linkedinUrl,
-      final DateTime? birthDate,
-      final List<Objective> objectives,
-      final bool isPageCompleted}) = _$_Initial;
+      {required final User user,
+      final bool isPageCompleted,
+      final Uint8List? image}) = _$_Initial;
 
   @override
-  ProfileType get profileType;
-  @override
-  String get firstName;
-  @override
-  String get lastName;
-  @override
-  Gender get gender;
-  @override
-  String get country;
-  @override
-  List<SpecificInterest> get areasOfInterest;
-  @override
-  String get companyOrSchool;
-  @override
-  String get title;
-  @override
-  Seniority get seniority;
-  @override
-  int get yearsOfProfesionalExperience;
-  @override
-  String get linkedinUrl;
-  @override
-  DateTime? get birthDate;
-  @override
-  List<Objective> get objectives;
+  User get user;
   @override
   bool get isPageCompleted;
+  @override
+  Uint8List? get image;
   @override
   @JsonKey(ignore: true)
   _$$_InitialCopyWith<_$_Initial> get copyWith =>

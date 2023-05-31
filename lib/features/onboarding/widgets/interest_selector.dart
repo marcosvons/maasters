@@ -48,12 +48,12 @@ class InterestSelector extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(Dimens.small),
                               border: Border.all(
-                                color: state.areasOfInterest.contains(
+                                color: state.user.areasOfInterest.contains(
                                   SpecificInterest.values[index],
                                 )
                                     ? context.colorScheme.primary
                                     : context.colorScheme.inputBorder,
-                                width: state.areasOfInterest.contains(
+                                width: state.user.areasOfInterest.contains(
                                   SpecificInterest.values[index],
                                 )
                                     ? 2
@@ -74,7 +74,7 @@ class InterestSelector extends StatelessWidget {
                                     ),
                                     width: Dimens.large,
                                     height: Dimens.large,
-                                    color: state.areasOfInterest.contains(
+                                    color: state.user.areasOfInterest.contains(
                                       SpecificInterest.values[index],
                                     )
                                         ? context.colorScheme.primary
@@ -84,16 +84,17 @@ class InterestSelector extends StatelessWidget {
                                 Text(
                                   SpecificInterest.values[index].name,
                                   style: context.textTheme.bodySmall!.copyWith(
-                                    color: state.areasOfInterest.contains(
+                                    color: state.user.areasOfInterest.contains(
                                       SpecificInterest.values[index],
                                     )
                                         ? context.colorScheme.primary
                                         : context.colorScheme.hintText,
-                                    fontWeight: state.areasOfInterest.contains(
+                                    fontWeight:
+                                        state.user.areasOfInterest.contains(
                                       SpecificInterest.values[index],
                                     )
-                                        ? FontWeight.w600
-                                        : FontWeight.normal,
+                                            ? FontWeight.w600
+                                            : FontWeight.normal,
                                   ),
                                 ),
                                 Image.asset(
@@ -109,7 +110,7 @@ class InterestSelector extends StatelessWidget {
                             ),
                           ),
                           onTap: () {
-                            if (state.areasOfInterest
+                            if (state.user.areasOfInterest
                                 .contains(SpecificInterest.values[index])) {
                               context
                                   .read<OnboardingCubit>()
@@ -119,7 +120,7 @@ class InterestSelector extends StatelessWidget {
                             } else {
                               context
                                   .read<OnboardingCubit>()
-                                  .validateThirdFormPage(
+                                  .validateFourthFormPage(
                                     areasOfInterest:
                                         SpecificInterest.values[index],
                                   );
@@ -127,33 +128,6 @@ class InterestSelector extends StatelessWidget {
                           },
                         );
                       },
-                    ),
-                    const SizedBox(height: Dimens.xxLarge),
-                    SizedBox(
-                      width: context.width * 0.3,
-                      height: context.height * 0.06,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: state.areasOfInterest.isNotEmpty
-                              ? MaterialStateProperty.all(
-                                  context.colorScheme.primary,
-                                )
-                              : MaterialStateProperty.all(
-                                  context.colorScheme.disabledButtonBackground,
-                                ),
-                        ),
-                        onPressed: () => state.areasOfInterest.isNotEmpty
-                            ? Navigator.of(context).pop()
-                            : () {},
-                        child: Text(
-                          'Guardar',
-                          style: context.textTheme.bodySmall!.copyWith(
-                            color: state.areasOfInterest.isNotEmpty
-                                ? context.colorScheme.onPrimary
-                                : context.colorScheme.surfaceTint,
-                          ),
-                        ),
-                      ),
                     ),
                     const SizedBox(height: Dimens.xxLarge),
                   ],
@@ -164,9 +138,9 @@ class InterestSelector extends StatelessWidget {
         ),
       ),
       contentPadding: const EdgeInsets.fromLTRB(
-        24,
-        20,
-        24,
+        Dimens.xLarge,
+        Dimens.large,
+        Dimens.xLarge,
         0,
       ),
     );

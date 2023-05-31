@@ -13,10 +13,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ElevatedButton(
-        child: const Text('Logout'),
-        onPressed: () =>
-            context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
+      body: Container(
+        color: Colors.green,
+        child: ElevatedButton(
+          child: const Text('Logout'),
+          onPressed: () =>
+              context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
+        ),
       ),
     );
   }

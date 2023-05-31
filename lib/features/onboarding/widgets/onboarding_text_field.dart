@@ -31,6 +31,7 @@ class OnboardingTextField extends StatelessWidget {
           child: TextFormField(
             readOnly: readOnly,
             initialValue: initialValue,
+            textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(Dimens.xSmall),

@@ -13,7 +13,6 @@ class LoginForm extends StatelessWidget {
     return BlocListener<LoginCubit, LoginState>(
       listener: (context, state) async {
         if (state.status == FormzSubmissionStatus.failure) {
-          //show snackbar
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               backgroundColor: context.colorScheme.error,

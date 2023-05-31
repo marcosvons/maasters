@@ -5,6 +5,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:errors/errors.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 
 abstract class IAuthRepository {
   Stream<Either<Failure, Option<User>>> get firebaseUser;
@@ -22,7 +24,16 @@ abstract class IAuthRepository {
   Future<Either<Failure, Unit>> createFirestoreUser({
     required firebase_auth.User firebaseUser,
   });
-  Future<Either<Failure, Unit>> updateFirestoreUser(User user);
+  Future<Either<Failure, Unit>> updateFirestoreUser({
+    required User user,
+    Uint8List? image,
+  });
+
+  Future<String> uploadFirestoreUserImage({
+    required String userId,
+    required Uint8List image,
+  });
+
   Future<void> logout();
 }
 
@@ -31,13 +42,16 @@ class AuthRepository implements IAuthRepository {
     required firebase_auth.FirebaseAuth firebaseAuth,
     required IAuthLocalService authLocalService,
     required FirebaseFirestore firestore,
+    required FirebaseStorage firebaseStorage,
   })  : _firebaseAuth = firebaseAuth,
         _authLocalService = authLocalService,
-        _firestore = firestore;
+        _firestore = firestore,
+        _firebaseStorage = firebaseStorage;
 
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final IAuthLocalService _authLocalService;
   final FirebaseFirestore _firestore;
+  final FirebaseStorage _firebaseStorage;
 
   @override
   Stream<Either<Failure, Option<User>>> get firebaseUser => _firebaseAuth
@@ -198,9 +212,18 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<Failure, Unit>> updateFirestoreUser(User user) async {
+  Future<Either<Failure, Unit>> updateFirestoreUser({
+    required User user,
+    Uint8List? image,
+  }) async {
     try {
-      final userDto = UserDto.fromModel(user);
+      User? userWithImage;
+      if (image != null) {
+        final imageUrl =
+            await uploadFirestoreUserImage(userId: user.id, image: image);
+        userWithImage = user.copyWith(photoUrl: imageUrl);
+      }
+      final userDto = UserDto.fromModel(userWithImage ?? user);
       // save UserDto to firestore
       await _firestore
           .collection(Keys.usersCollection)
@@ -214,6 +237,8 @@ class AuthRepository implements IAuthRepository {
           );
       await _authLocalService.setCacheUser(userDto: userDto);
       return const Right(unit);
+    } on CloudStorageUploadException {
+      return const Left(CloudStorageUploadFailure());
     } catch (e) {
       return const Left(FirestoreUserCreationFailure());
     }
@@ -240,6 +265,23 @@ class AuthRepository implements IAuthRepository {
       return firestoreUser;
     } catch (e) {
       return const Left(FirestoreGetUserFailure());
+    }
+  }
+
+  @override
+  Future<String> uploadFirestoreUserImage({
+    required String userId,
+    required Uint8List image,
+  }) async {
+    try {
+      final ref = _firebaseStorage.ref().child('profile_pictures/$userId');
+      final uploadTask = ref.putData(image);
+      final snapshot = await uploadTask.whenComplete(() {});
+
+      final photoUrl = await snapshot.ref.getDownloadURL();
+      return photoUrl;
+    } catch (e) {
+      throw CloudStorageUploadException();
     }
   }
 }

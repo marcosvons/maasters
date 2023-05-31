@@ -12,4 +12,6 @@ abstract class Images {
   static const String productManagementLogo = 'images/product_management.png';
   static const String qaLogo = 'images/qa.png';
   static const String uxLogo = 'images/ux.png';
+
+  static const String add = 'images/add.png';
 }

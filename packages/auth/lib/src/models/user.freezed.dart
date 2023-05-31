@@ -22,7 +22,7 @@ mixin _$User {
   String get lastName => throw _privateConstructorUsedError;
   String get googleName => throw _privateConstructorUsedError;
   Gender get gender => throw _privateConstructorUsedError;
-  String get country => throw _privateConstructorUsedError;
+  Countries get country => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get photoUrl => throw _privateConstructorUsedError;
   List<SpecificInterest> get areasOfInterest =>
@@ -32,8 +32,7 @@ mixin _$User {
   Seniority get seniority => throw _privateConstructorUsedError;
   bool get onboardingCompleted => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
-  String get company => throw _privateConstructorUsedError;
-  String get school => throw _privateConstructorUsedError;
+  String get companyOrSchool => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   List<Objective> get objective => throw _privateConstructorUsedError;
   int get yearsOfProfesionalExperience => throw _privateConstructorUsedError;
@@ -55,7 +54,7 @@ abstract class $UserCopyWith<$Res> {
       String lastName,
       String googleName,
       Gender gender,
-      String country,
+      Countries country,
       String description,
       String photoUrl,
       List<SpecificInterest> areasOfInterest,
@@ -64,8 +63,7 @@ abstract class $UserCopyWith<$Res> {
       Seniority seniority,
       bool onboardingCompleted,
       String phoneNumber,
-      String company,
-      String school,
+      String companyOrSchool,
       String title,
       List<Objective> objective,
       int yearsOfProfesionalExperience,
@@ -100,8 +98,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? seniority = null,
     Object? onboardingCompleted = null,
     Object? phoneNumber = null,
-    Object? company = null,
-    Object? school = null,
+    Object? companyOrSchool = null,
     Object? title = null,
     Object? objective = null,
     Object? yearsOfProfesionalExperience = null,
@@ -135,7 +132,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Countries,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -168,13 +165,9 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      company: null == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as String,
-      school: null == school
-          ? _value.school
-          : school // ignore: cast_nullable_to_non_nullable
+      companyOrSchool: null == companyOrSchool
+          ? _value.companyOrSchool
+          : companyOrSchool // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -209,7 +202,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       String lastName,
       String googleName,
       Gender gender,
-      String country,
+      Countries country,
       String description,
       String photoUrl,
       List<SpecificInterest> areasOfInterest,
@@ -218,8 +211,7 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       Seniority seniority,
       bool onboardingCompleted,
       String phoneNumber,
-      String company,
-      String school,
+      String companyOrSchool,
       String title,
       List<Objective> objective,
       int yearsOfProfesionalExperience,
@@ -250,8 +242,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
     Object? seniority = null,
     Object? onboardingCompleted = null,
     Object? phoneNumber = null,
-    Object? company = null,
-    Object? school = null,
+    Object? companyOrSchool = null,
     Object? title = null,
     Object? objective = null,
     Object? yearsOfProfesionalExperience = null,
@@ -285,7 +276,7 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
       country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Countries,
       description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -318,13 +309,9 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      company: null == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as String,
-      school: null == school
-          ? _value.school
-          : school // ignore: cast_nullable_to_non_nullable
+      companyOrSchool: null == companyOrSchool
+          ? _value.companyOrSchool
+          : companyOrSchool // ignore: cast_nullable_to_non_nullable
               as String,
       title: null == title
           ? _value.title
@@ -355,8 +342,8 @@ class _$_User implements _User {
       this.firstName = '',
       this.lastName = '',
       this.googleName = '',
-      this.gender = Gender.notSpecified,
-      this.country = '',
+      this.gender = Gender.unknown,
+      this.country = Countries.unknown,
       this.description = '',
       this.photoUrl = '',
       final List<SpecificInterest> areasOfInterest = const [],
@@ -365,11 +352,10 @@ class _$_User implements _User {
       this.seniority = Seniority.unknown,
       this.onboardingCompleted = false,
       this.phoneNumber = '',
-      this.company = '',
-      this.school = '',
+      this.companyOrSchool = '',
       this.title = '',
       final List<Objective> objective = const [],
-      this.yearsOfProfesionalExperience = 0,
+      this.yearsOfProfesionalExperience = -1,
       this.birthDate})
       : _areasOfInterest = areasOfInterest,
         _socialMedia = socialMedia,
@@ -393,7 +379,7 @@ class _$_User implements _User {
   final Gender gender;
   @override
   @JsonKey()
-  final String country;
+  final Countries country;
   @override
   @JsonKey()
   final String description;
@@ -430,10 +416,7 @@ class _$_User implements _User {
   final String phoneNumber;
   @override
   @JsonKey()
-  final String company;
-  @override
-  @JsonKey()
-  final String school;
+  final String companyOrSchool;
   @override
   @JsonKey()
   final String title;
@@ -453,7 +436,7 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName, googleName: $googleName, gender: $gender, country: $country, description: $description, photoUrl: $photoUrl, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company, school: $school, title: $title, objective: $objective, yearsOfProfesionalExperience: $yearsOfProfesionalExperience, birthDate: $birthDate)';
+    return 'User(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName, googleName: $googleName, gender: $gender, country: $country, description: $description, photoUrl: $photoUrl, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, companyOrSchool: $companyOrSchool, title: $title, objective: $objective, yearsOfProfesionalExperience: $yearsOfProfesionalExperience, birthDate: $birthDate)';
   }
 
   @override
@@ -487,8 +470,8 @@ class _$_User implements _User {
                 other.onboardingCompleted == onboardingCompleted) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
-            (identical(other.company, company) || other.company == company) &&
-            (identical(other.school, school) || other.school == school) &&
+            (identical(other.companyOrSchool, companyOrSchool) ||
+                other.companyOrSchool == companyOrSchool) &&
             (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality()
                 .equals(other._objective, _objective) &&
@@ -518,8 +501,7 @@ class _$_User implements _User {
         seniority,
         onboardingCompleted,
         phoneNumber,
-        company,
-        school,
+        companyOrSchool,
         title,
         const DeepCollectionEquality().hash(_objective),
         yearsOfProfesionalExperience,
@@ -541,7 +523,7 @@ abstract class _User implements User {
       final String lastName,
       final String googleName,
       final Gender gender,
-      final String country,
+      final Countries country,
       final String description,
       final String photoUrl,
       final List<SpecificInterest> areasOfInterest,
@@ -550,8 +532,7 @@ abstract class _User implements User {
       final Seniority seniority,
       final bool onboardingCompleted,
       final String phoneNumber,
-      final String company,
-      final String school,
+      final String companyOrSchool,
       final String title,
       final List<Objective> objective,
       final int yearsOfProfesionalExperience,
@@ -570,7 +551,7 @@ abstract class _User implements User {
   @override
   Gender get gender;
   @override
-  String get country;
+  Countries get country;
   @override
   String get description;
   @override
@@ -588,9 +569,7 @@ abstract class _User implements User {
   @override
   String get phoneNumber;
   @override
-  String get company;
-  @override
-  String get school;
+  String get companyOrSchool;
   @override
   String get title;
   @override

@@ -1,12 +1,15 @@
 import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
 
-class OnboardingProfileInformation extends StatelessWidget {
-  const OnboardingProfileInformation(PageController pageController, {super.key})
-      : _pageController = pageController;
+class OnboardingSecondProfileInformation extends StatelessWidget {
+  const OnboardingSecondProfileInformation(
+    PageController pageController, {
+    super.key,
+  }) : _pageController = pageController;
 
   final PageController _pageController;
 
@@ -24,13 +27,11 @@ class OnboardingProfileInformation extends StatelessWidget {
                 style: context.textTheme.displayLarge,
               ),
               const SizedBox(height: Dimens.xxLarge),
-              const _FirstNameAndLastName(),
-              const SizedBox(height: Dimens.large),
               const _GenderDropdown(),
               const SizedBox(height: Dimens.large),
-              const _CountryDropdown(),
-              const SizedBox(height: Dimens.large),
               const _BirthDaySelector(),
+              const SizedBox(height: Dimens.large),
+              const _PhoneNumber(),
               const SizedBox(height: Dimens.xxLarge),
               OnboardingNextButton(pageController: _pageController),
               const SizedBox(height: Dimens.medium),
@@ -39,6 +40,65 @@ class OnboardingProfileInformation extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _PhoneNumber extends StatelessWidget {
+  const _PhoneNumber();
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<OnboardingCubit, OnboardingState>(
+      builder: (context, state) {
+        return SizedBox(
+          width: context.width * 0.45,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Número de telefono'),
+              const SizedBox(height: Dimens.large),
+              TextFormField(
+                initialValue: state.user.phoneNumber.isEmpty
+                    ? state.user.country.countryCode
+                    : state.user.phoneNumber,
+                keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly
+                ],
+                decoration: InputDecoration(
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(
+                      Dimens.xSmall,
+                    ),
+                    borderSide: BorderSide(
+                      color: context.colorScheme.inputBorder,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(
+                      Dimens.xSmall,
+                    ),
+                    borderSide: BorderSide(
+                      color: context.colorScheme.primary,
+                      width: 2,
+                    ),
+                  ),
+                  hintText: '+54 9 11 5002-9001',
+                  hintStyle: context.textTheme.bodySmall!.copyWith(
+                    color: context.colorScheme.hintText,
+                  ),
+                  filled: true,
+                  fillColor: context.colorScheme.tertiaryContainer,
+                ),
+                onChanged: (value) => context
+                    .read<OnboardingCubit>()
+                    .validateThirdFormPage(phoneNumber: value),
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 }
@@ -59,7 +119,8 @@ class _BirthDaySelector extends StatelessWidget {
             builder: (context, state) {
               return TextFormField(
                 readOnly: true,
-                initialValue: state.birthDate?.formatDateTime(state.birthDate!),
+                initialValue:
+                    state.user.birthDate?.formatDateTime(state.user.birthDate!),
                 decoration: InputDecoration(
                   suffixIcon: const Icon(Icons.edit_calendar),
                   enabledBorder: OutlineInputBorder(
@@ -74,7 +135,8 @@ class _BirthDaySelector extends StatelessWidget {
                       color: context.colorScheme.inputBorder,
                     ),
                   ),
-                  hintText: state.birthDate?.formatDateTime(state.birthDate!) ??
+                  hintText: state.user.birthDate
+                          ?.formatDateTime(state.user.birthDate!) ??
                       'DD/MM/YYYY',
                   hintStyle: context.textTheme.bodySmall!.copyWith(
                     color: context.colorScheme.hintText,
@@ -90,71 +152,11 @@ class _BirthDaySelector extends StatelessWidget {
                 ).then(
                   (value) => context
                       .read<OnboardingCubit>()
-                      .validateSecondFormPage(birthDate: value),
+                      .validateThirdFormPage(birthDate: value),
                 ),
               );
             },
           ),
-        ),
-      ],
-    );
-  }
-}
-
-class _CountryDropdown extends StatelessWidget {
-  const _CountryDropdown();
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text('¿Dónde vivis?'),
-        const SizedBox(height: Dimens.medium),
-        BlocBuilder<OnboardingCubit, OnboardingState>(
-          builder: (context, state) {
-            return Container(
-              width: context.width * 0.45,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: context.colorScheme.inputBorder,
-                ),
-                borderRadius: BorderRadius.circular(Dimens.xSmall),
-                color: context.colorScheme.tertiaryContainer,
-              ),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton<String>(
-                  value: state.country == '' ? null : state.country,
-                  icon: const Icon(Icons.keyboard_arrow_down),
-                  hint: Padding(
-                    padding: const EdgeInsets.all(Dimens.xSmall),
-                    child: Text(
-                      'Elegí tu país',
-                      style: context.textTheme.bodySmall!.copyWith(
-                        color: context.colorScheme.hintText,
-                      ),
-                    ),
-                  ),
-                  items: countries.map((String country) {
-                    return DropdownMenuItem<String>(
-                      value: country,
-                      child: Padding(
-                        padding: const EdgeInsets.all(Dimens.xSmall),
-                        child: Text(
-                          country,
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                    context
-                        .read<OnboardingCubit>()
-                        .validateSecondFormPage(country: newValue);
-                  },
-                ),
-              ),
-            );
-          },
         ),
       ],
     );
@@ -184,7 +186,9 @@ class _GenderDropdown extends StatelessWidget {
               ),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<Gender>(
-                  value: state.gender == Gender.unknown ? null : state.gender,
+                  value: state.user.gender == Gender.unknown
+                      ? null
+                      : state.user.gender,
                   icon: const Icon(Icons.keyboard_arrow_down),
                   hint: Padding(
                     padding: const EdgeInsets.all(Dimens.xSmall),
@@ -211,7 +215,7 @@ class _GenderDropdown extends StatelessWidget {
                   onChanged: (Gender? newValue) {
                     context
                         .read<OnboardingCubit>()
-                        .validateSecondFormPage(gender: newValue);
+                        .validateThirdFormPage(gender: newValue);
                   },
                 ),
               ),
@@ -219,42 +223,6 @@ class _GenderDropdown extends StatelessWidget {
           },
         ),
       ],
-    );
-  }
-}
-
-class _FirstNameAndLastName extends StatelessWidget {
-  const _FirstNameAndLastName();
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<OnboardingCubit, OnboardingState>(
-      builder: (context, state) {
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            OnboardingTextField(
-              width: context.width * 0.2,
-              label: 'Nombre',
-              initialValue: state.firstName,
-              hintText: 'Juan',
-              onChanged: (value) => context
-                  .read<OnboardingCubit>()
-                  .validateSecondFormPage(firstName: value),
-            ),
-            SizedBox(width: context.width * 0.05),
-            OnboardingTextField(
-              width: context.width * 0.2,
-              label: 'Apellido',
-              initialValue: state.lastName,
-              hintText: 'Perez',
-              onChanged: (value) => context
-                  .read<OnboardingCubit>()
-                  .validateSecondFormPage(lastName: value),
-            ),
-          ],
-        );
-      },
     );
   }
 }

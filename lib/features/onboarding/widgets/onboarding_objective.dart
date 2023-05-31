@@ -49,12 +49,12 @@ class OnboardingObjective extends StatelessWidget {
                                     borderRadius:
                                         BorderRadius.circular(Dimens.small),
                                     border: Border.all(
-                                      color: state.objectives.contains(
+                                      color: state.user.objective.contains(
                                         Objective.values[index],
                                       )
                                           ? context.colorScheme.primary
                                           : context.colorScheme.inputBorder,
-                                      width: state.objectives.contains(
+                                      width: state.user.objective.contains(
                                         Objective.values[index],
                                       )
                                           ? 2
@@ -70,7 +70,7 @@ class OnboardingObjective extends StatelessWidget {
                                 ),
                                 onTap: () => context
                                     .read<OnboardingCubit>()
-                                    .validateFourthFormPage(
+                                    .validateFifthFormPage(
                                       objective: Objective.values[index],
                                     ),
                               ),

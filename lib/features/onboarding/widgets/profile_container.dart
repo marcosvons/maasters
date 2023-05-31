@@ -40,7 +40,7 @@ class ProfileSelectionButton extends StatelessWidget {
                   ),
                 ],
                 borderRadius: BorderRadius.circular(Dimens.large),
-                border: state.profileType == profileType
+                border: state.user.profileType == profileType
                     ? Border.all(
                         color: context.colorScheme.primary,
                       )

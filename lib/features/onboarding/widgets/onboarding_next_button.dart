@@ -73,6 +73,19 @@ class OnboardingNextButton extends StatelessWidget {
       case 2:
         context.read<OnboardingCubit>().validateFourthFormPage();
         break;
+      case 3:
+        context.read<OnboardingCubit>().validateFifthFormPage();
+        break;
+      case 4:
+        context.read<OnboardingCubit>().validateDescription();
+        break;
+      case 5:
+        context.read<UserBloc>().add(
+              UserEvent.updateUser(
+                user: context.read<OnboardingCubit>().state.user,
+              ),
+            );
+        break;
       default:
         break;
     }

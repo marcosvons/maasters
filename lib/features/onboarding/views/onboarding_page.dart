@@ -31,27 +31,33 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthBloc, AuthState>(
-      listener: (context, state) {
-        state.whenOrNull(
-          unauthenticated: (_) => Navigator.of(context)
-              .pushReplacement<void, void>(SignUpPage.route()),
-        );
-      },
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(context.height * 0.1),
-          child: const Header(),
-        ),
-        body: PageView(
-          controller: _pageController,
-          physics: const NeverScrollableScrollPhysics(),
-          children: [
-            OnboardingProfileSelection(_pageController),
-            OnboardingProfileInformation(_pageController),
-            OnboardingProfessionalInformation(_pageController),
-            OnboardingObjective(_pageController),
-          ],
+    return BlocProvider<OnboardingCubit>(
+      create: (context) =>
+          OnboardingCubit(user: context.read<AuthBloc>().state.user!),
+      child: BlocListener<AuthBloc, AuthState>(
+        listener: (context, state) {
+          state.whenOrNull(
+            unauthenticated: (_) => Navigator.of(context)
+                .pushReplacement<void, void>(SignUpPage.route()),
+          );
+        },
+        child: Scaffold(
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(context.height * 0.1),
+            child: const Header(),
+          ),
+          body: PageView(
+            controller: _pageController,
+            physics: const NeverScrollableScrollPhysics(),
+            children: [
+              OnboardingProfileSelection(_pageController),
+              OnboardingFirstProfileInformation(_pageController),
+              OnboardingSecondProfileInformation(_pageController),
+              OnboardingProfessionalInformation(_pageController),
+              OnboardingObjective(_pageController),
+              OnboardingDescription(_pageController),
+            ],
+          ),
         ),
       ),
     );
