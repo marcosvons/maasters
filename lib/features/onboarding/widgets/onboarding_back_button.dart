@@ -42,7 +42,7 @@ class OnboardingBackButton extends StatelessWidget {
                 );
             _pageController.previousPage(
               duration: const Duration(milliseconds: 300),
-              curve: Curves.easeInBack,
+              curve: Curves.easeIn,
             );
           },
         );

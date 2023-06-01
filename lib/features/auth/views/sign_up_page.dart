@@ -118,7 +118,7 @@ class SignUpBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      context.l10n.registrationContainerSubtitle,
+                      context.l10n.registrationContainerTitle,
                       style: context.textTheme.displayLarge!.copyWith(
                         color: context.colorScheme.secondary,
                       ),

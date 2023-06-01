@@ -29,6 +29,8 @@ class OnboardingCubit extends Cubit<OnboardingState> {
           yearsOfProfesionalExperience: profileType == ProfileType.mentee
               ? 0
               : state.user.yearsOfProfesionalExperience,
+          objective:
+              profileType == ProfileType.mentor ? [] : state.user.objective,
         ),
         isPageCompleted: true,
       ),

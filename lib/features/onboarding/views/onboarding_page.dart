@@ -1,3 +1,4 @@
+import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
@@ -46,17 +47,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
             preferredSize: Size.fromHeight(context.height * 0.1),
             child: const Header(),
           ),
-          body: PageView(
-            controller: _pageController,
-            physics: const NeverScrollableScrollPhysics(),
-            children: [
-              OnboardingProfileSelection(_pageController),
-              OnboardingFirstProfileInformation(_pageController),
-              OnboardingSecondProfileInformation(_pageController),
-              OnboardingProfessionalInformation(_pageController),
-              OnboardingObjective(_pageController),
-              OnboardingDescription(_pageController),
-            ],
+          body: BlocBuilder<OnboardingCubit, OnboardingState>(
+            builder: (context, state) {
+              return PageView(
+                controller: _pageController,
+                physics: const NeverScrollableScrollPhysics(),
+                children: [
+                  OnboardingProfileSelection(_pageController),
+                  OnboardingFirstProfileInformation(_pageController),
+                  OnboardingSecondProfileInformation(_pageController),
+                  OnboardingProfessionalInformation(_pageController),
+                  if (state.user.profileType == ProfileType.mentee)
+                    OnboardingObjective(_pageController),
+                  OnboardingDescription(_pageController),
+                ],
+              );
+            },
           ),
         ),
       ),

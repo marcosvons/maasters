@@ -1,3 +1,4 @@
+import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
@@ -81,7 +82,12 @@ class OnboardingNextButton extends StatelessWidget {
         context.read<OnboardingCubit>().validateFourthFormPage();
         break;
       case 3:
-        context.read<OnboardingCubit>().validateFifthFormPage();
+        if (context.read<OnboardingCubit>().state.user.profileType ==
+            ProfileType.mentor) {
+          context.read<OnboardingCubit>().validateDescription();
+        } else {
+          context.read<OnboardingCubit>().validateFifthFormPage();
+        }
         break;
       case 4:
         context.read<OnboardingCubit>().validateDescription();

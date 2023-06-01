@@ -42,7 +42,8 @@ class OnboardingProfileSelection extends StatelessWidget {
                     profileType: ProfileType.mentee,
                     onTap: () {
                       context.read<OnboardingCubit>().validateFirstFormPage(
-                          profileType: ProfileType.mentee);
+                            profileType: ProfileType.mentee,
+                          );
                     },
                   ),
                   SizedBox(width: context.width * 0.05),
@@ -53,7 +54,8 @@ class OnboardingProfileSelection extends StatelessWidget {
                     profileDescription: Strings.mentorProfileDescription,
                     onTap: () {
                       context.read<OnboardingCubit>().validateFirstFormPage(
-                          profileType: ProfileType.mentor);
+                            profileType: ProfileType.mentor,
+                          );
                     },
                   ),
                 ],
