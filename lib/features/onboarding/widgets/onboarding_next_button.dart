@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class OnboardingNextButton extends StatelessWidget {
   const OnboardingNextButton({
@@ -31,7 +32,8 @@ class OnboardingNextButton extends StatelessWidget {
                         ),
                 ),
                 onPressed: () {
-                  if (state.isPageCompleted) {
+                  if (state.isPageCompleted &&
+                      _pageController.page!.toInt() != 5) {
                     _pageController.nextPage(
                       duration: const Duration(milliseconds: 300),
                       curve: Curves.easeIn,
@@ -41,10 +43,15 @@ class OnboardingNextButton extends StatelessWidget {
                       currentPage: _pageController.page!.toInt(),
                       context: context,
                     );
+                  } else if (state.isPageCompleted) {
+                    validateNextPage(
+                      currentPage: _pageController.page!.toInt(),
+                      context: context,
+                    );
                   }
                 },
                 child: Text(
-                  'Continuar',
+                  context.l10n.next,
                   style: context.textTheme.bodySmall!.copyWith(
                     color: state.isPageCompleted
                         ? context.colorScheme.onPrimary
@@ -82,7 +89,12 @@ class OnboardingNextButton extends StatelessWidget {
       case 5:
         context.read<UserBloc>().add(
               UserEvent.updateUser(
-                user: context.read<OnboardingCubit>().state.user,
+                user: context
+                    .read<OnboardingCubit>()
+                    .state
+                    .user
+                    .copyWith(onboardingCompleted: true),
+                image: context.read<OnboardingCubit>().state.image,
               ),
             );
         break;

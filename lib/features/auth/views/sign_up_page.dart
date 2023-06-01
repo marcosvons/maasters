@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -80,8 +81,8 @@ class SignUpBody extends StatelessWidget {
                   const _TermsAndConditions(),
                   const SizedBox(height: Dimens.xxLarge),
                   ChangeAuthenticationView(
-                    questionText: '¿Ya tenés una cuenta? ',
-                    actionText: 'Inicia sesión',
+                    questionText: context.l10n.haveAnAccount,
+                    actionText: context.l10n.login,
                     onTapAction: () =>
                         Navigator.of(context).pushReplacement<void, void>(
                       LoginPage.route(),
@@ -117,7 +118,7 @@ class SignUpBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Potencia tu crecimiento',
+                      context.l10n.registrationContainerSubtitle,
                       style: context.textTheme.displayLarge!.copyWith(
                         color: context.colorScheme.secondary,
                       ),
@@ -125,7 +126,7 @@ class SignUpBody extends StatelessWidget {
                     ),
                     const SizedBox(height: Dimens.small),
                     Text(
-                      'Unite a la comunidad Latinoamericana para vincularte con expertos en la industria que quieras.',
+                      context.l10n.registrationContainerSubtitle,
                       style: context.textTheme.bodyMedium!.copyWith(
                         color: context.colorScheme.secondary,
                       ),
@@ -149,32 +150,32 @@ class _TermsAndConditions extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: 'Al continuar usted acepta los ',
+        text: context.l10n.termsAndConditions1,
         style: context.textTheme.bodySmall!.copyWith(
           color: context.colorScheme.onTertiaryContainer,
         ),
         children: [
           TextSpan(
-            text: 'Términos de Uso',
+            text: context.l10n.termsAndConditions2,
             style: context.textTheme.bodySmall!.copyWith(
               color: context.colorScheme.primary,
             ),
           ),
           const TextSpan(text: ', '),
           TextSpan(
-            text: 'Políticas de Privacidad',
+            text: context.l10n.termsAndConditions3,
             style: context.textTheme.bodySmall!.copyWith(
               color: context.colorScheme.primary,
             ),
           ),
-          const TextSpan(text: ' y '),
+          TextSpan(text: context.l10n.termsAndConditions6),
           TextSpan(
-            text: 'Estándares de Comunidad',
+            text: context.l10n.termsAndConditions4,
             style: context.textTheme.bodySmall!.copyWith(
               color: context.colorScheme.primary,
             ),
           ),
-          const TextSpan(text: ' de MaaSters.'),
+          TextSpan(text: context.l10n.termsAndConditions5),
         ],
       ),
       textAlign: TextAlign.center,
@@ -191,12 +192,12 @@ class _TitleAndSubtitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Bienvenido a MaaSters',
+          context.l10n.welcomeToMaasters,
           style: context.textTheme.displayLarge,
         ),
         const SizedBox(height: Dimens.medium),
         Text(
-          'Conectá con las personas indicadas para potenciar tus decisiones y habilidades profesionales.',
+          context.l10n.welcomeToMaastersSubtitle,
           style: context.textTheme.bodyMedium!.copyWith(
             color: context.colorScheme.surface,
           ),

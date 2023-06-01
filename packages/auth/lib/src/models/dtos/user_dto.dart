@@ -20,7 +20,7 @@ class UserDto with _$UserDto {
     @Default('') String description,
     @Default('') String photoUrl,
     @Default([]) List<SpecificInterest> areasOfInterest,
-    @Default([]) List<SocialMediaDto> socialMedia,
+    @Default([]) List<String> socialMedia,
     @Default(ProfileType.unknown) ProfileType profileType,
     @Default(Seniority.unknown) Seniority seniority,
     @Default(false) bool onboardingCompleted,
@@ -48,7 +48,7 @@ class UserDto with _$UserDto {
         description: user.description,
         photoUrl: user.photoUrl,
         areasOfInterest: user.areasOfInterest,
-        socialMedia: user.socialMedia.map(SocialMediaDto.fromModel).toList(),
+        socialMedia: user.socialMedia,
         profileType: user.profileType,
         seniority: user.seniority,
         onboardingCompleted: user.onboardingCompleted,
@@ -64,7 +64,6 @@ class UserDto with _$UserDto {
         id: user.uid,
         mail: user.email!,
         googleName: user.displayName != null ? user.displayName! : '',
-        photoUrl: user.photoURL != null ? user.photoURL! : '',
       );
 
   User toModel() => User(
@@ -78,7 +77,7 @@ class UserDto with _$UserDto {
         description: description,
         photoUrl: photoUrl,
         areasOfInterest: areasOfInterest,
-        socialMedia: socialMedia.map((e) => e.toModel()).toList(),
+        socialMedia: socialMedia,
         profileType: profileType,
         seniority: seniority,
         onboardingCompleted: onboardingCompleted,
@@ -89,30 +88,4 @@ class UserDto with _$UserDto {
         birthDate: birthDate,
         yearsOfProfesionalExperience: yearsOfProfesionalExperience,
       );
-
-  @override
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'mail': mail,
-      'firstName': firstName,
-      'lastName': lastName,
-      'googleName': googleName,
-      'gender': gender.name,
-      'country': country,
-      'description': description,
-      'photoUrl': photoUrl,
-      'areasOfInterest': areasOfInterest.map((e) => e.name).toList(),
-      'socialMedia': socialMedia.map((e) => e.toJson()).toList(),
-      'profileType': profileType,
-      'seniority': seniority.name,
-      'onboardingCompleted': onboardingCompleted,
-      'phoneNumber': phoneNumber,
-      'companyOrSchool': companyOrSchool,
-      'title': title,
-      'objective': objective.map((e) => e.name).toList(),
-      'yearsOfProfesionalExperience': yearsOfProfesionalExperience,
-      'birthDate': birthDate?.toIso8601String(),
-    };
-  }
 }

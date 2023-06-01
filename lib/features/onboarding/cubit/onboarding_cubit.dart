@@ -100,9 +100,8 @@ class OnboardingCubit extends Cubit<OnboardingState> {
           title: title ?? state.user.title,
           yearsOfProfesionalExperience: yearsOfProfessionalExperience ??
               state.user.yearsOfProfesionalExperience,
-          socialMedia: linkedinUrl != null
-              ? [SocialMedia(name: 'LinkedIn', url: linkedinUrl)]
-              : state.user.socialMedia,
+          socialMedia:
+              linkedinUrl != null ? [linkedinUrl] : state.user.socialMedia,
           seniority: seniority ?? state.user.seniority,
         ),
       ),
@@ -176,7 +175,7 @@ class OnboardingCubit extends Cubit<OnboardingState> {
     emit(
       state.copyWith(
         user: state.user.copyWith(
-          description: description ?? '',
+          description: description ?? state.user.description,
         ),
         isPageCompleted: state.user.description.isNotEmpty,
       ),

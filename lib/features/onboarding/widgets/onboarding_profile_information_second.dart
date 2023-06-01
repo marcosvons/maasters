@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class OnboardingSecondProfileInformation extends StatelessWidget {
   const OnboardingSecondProfileInformation(
@@ -23,7 +24,7 @@ class OnboardingSecondProfileInformation extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Contanos sobre vos',
+                context.l10n.tellUsAboutYou,
                 style: context.textTheme.displayLarge,
               ),
               const SizedBox(height: Dimens.xxLarge),
@@ -56,13 +57,13 @@ class _PhoneNumber extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text('Número de telefono'),
+              Text(context.l10n.phoneNumber),
               const SizedBox(height: Dimens.large),
               TextFormField(
                 initialValue: state.user.phoneNumber.isEmpty
                     ? state.user.country.countryCode
                     : state.user.phoneNumber,
-                keyboardType: TextInputType.number,
+                keyboardType: TextInputType.phone,
                 inputFormatters: <TextInputFormatter>[
                   FilteringTextInputFormatter.digitsOnly
                 ],
@@ -84,7 +85,7 @@ class _PhoneNumber extends StatelessWidget {
                       width: 2,
                     ),
                   ),
-                  hintText: '+54 9 11 5002-9001',
+                  hintText: context.l10n.phoneNumberHint,
                   hintStyle: context.textTheme.bodySmall!.copyWith(
                     color: context.colorScheme.hintText,
                   ),
@@ -111,7 +112,7 @@ class _BirthDaySelector extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('¿Cuándo naciste?'),
+        Text(context.l10n.birthDateLabel),
         const SizedBox(height: Dimens.medium),
         SizedBox(
           width: context.width * 0.45,
@@ -137,7 +138,7 @@ class _BirthDaySelector extends StatelessWidget {
                   ),
                   hintText: state.user.birthDate
                           ?.formatDateTime(state.user.birthDate!) ??
-                      'DD/MM/YYYY',
+                      context.l10n.birthDateHint,
                   hintStyle: context.textTheme.bodySmall!.copyWith(
                     color: context.colorScheme.hintText,
                   ),
@@ -171,7 +172,7 @@ class _GenderDropdown extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('¿Con que género te identificas?'),
+        Text(context.l10n.genderLabel),
         const SizedBox(height: Dimens.medium),
         BlocBuilder<OnboardingCubit, OnboardingState>(
           builder: (context, state) {
@@ -193,7 +194,7 @@ class _GenderDropdown extends StatelessWidget {
                   hint: Padding(
                     padding: const EdgeInsets.all(Dimens.xSmall),
                     child: Text(
-                      'Seleccione uno',
+                      context.l10n.genderHint,
                       style: context.textTheme.bodySmall!.copyWith(
                         color: context.colorScheme.hintText,
                       ),
@@ -207,7 +208,7 @@ class _GenderDropdown extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(Dimens.xSmall),
                         child: Text(
-                          gender.value,
+                          gender.translatedGender(context),
                         ),
                       ),
                     );

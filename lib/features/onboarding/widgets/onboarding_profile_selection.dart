@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class OnboardingProfileSelection extends StatelessWidget {
   const OnboardingProfileSelection(PageController pageController, {super.key})
@@ -20,12 +21,12 @@ class OnboardingProfileSelection extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '¿Qué deseas hacer en MaaSters?',
+                context.l10n.onboardingProfileSelectionTitle,
                 style: context.textTheme.displayLarge,
               ),
               const SizedBox(height: Dimens.medium),
               Text(
-                'Vas a poder conectarte con el mejor talento emergente de Latinoamerica',
+                context.l10n.onboardingProfileSelectionSubtitle,
                 style: context.textTheme.bodyMedium!.copyWith(
                   color: context.colorScheme.surface,
                 ),
@@ -36,7 +37,7 @@ class OnboardingProfileSelection extends StatelessWidget {
                 children: [
                   ProfileSelectionButton(
                     image: AppIcons.mentee,
-                    title: 'Ser mentoreado',
+                    title: context.l10n.beMentee,
                     profileDescription: Strings.menteeProfileDescription,
                     profileType: ProfileType.mentee,
                     onTap: () {
@@ -47,7 +48,7 @@ class OnboardingProfileSelection extends StatelessWidget {
                   SizedBox(width: context.width * 0.05),
                   ProfileSelectionButton(
                     image: AppIcons.mentor,
-                    title: 'Ser mentor',
+                    title: context.l10n.beMentor,
                     profileType: ProfileType.mentor,
                     profileDescription: Strings.mentorProfileDescription,
                     onTap: () {

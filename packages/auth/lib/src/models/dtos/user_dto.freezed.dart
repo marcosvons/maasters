@@ -31,7 +31,7 @@ mixin _$UserDto {
   String get photoUrl => throw _privateConstructorUsedError;
   List<SpecificInterest> get areasOfInterest =>
       throw _privateConstructorUsedError;
-  List<SocialMediaDto> get socialMedia => throw _privateConstructorUsedError;
+  List<String> get socialMedia => throw _privateConstructorUsedError;
   ProfileType get profileType => throw _privateConstructorUsedError;
   Seniority get seniority => throw _privateConstructorUsedError;
   bool get onboardingCompleted => throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ abstract class $UserDtoCopyWith<$Res> {
       String description,
       String photoUrl,
       List<SpecificInterest> areasOfInterest,
-      List<SocialMediaDto> socialMedia,
+      List<String> socialMedia,
       ProfileType profileType,
       Seniority seniority,
       bool onboardingCompleted,
@@ -153,7 +153,7 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
       socialMedia: null == socialMedia
           ? _value.socialMedia
           : socialMedia // ignore: cast_nullable_to_non_nullable
-              as List<SocialMediaDto>,
+              as List<String>,
       profileType: null == profileType
           ? _value.profileType
           : profileType // ignore: cast_nullable_to_non_nullable
@@ -212,7 +212,7 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
       String description,
       String photoUrl,
       List<SpecificInterest> areasOfInterest,
-      List<SocialMediaDto> socialMedia,
+      List<String> socialMedia,
       ProfileType profileType,
       Seniority seniority,
       bool onboardingCompleted,
@@ -299,7 +299,7 @@ class __$$_UserDtoCopyWithImpl<$Res>
       socialMedia: null == socialMedia
           ? _value._socialMedia
           : socialMedia // ignore: cast_nullable_to_non_nullable
-              as List<SocialMediaDto>,
+              as List<String>,
       profileType: null == profileType
           ? _value.profileType
           : profileType // ignore: cast_nullable_to_non_nullable
@@ -354,7 +354,7 @@ class _$_UserDto extends _UserDto {
       this.description = '',
       this.photoUrl = '',
       final List<SpecificInterest> areasOfInterest = const [],
-      final List<SocialMediaDto> socialMedia = const [],
+      final List<String> socialMedia = const [],
       this.profileType = ProfileType.unknown,
       this.seniority = Seniority.unknown,
       this.onboardingCompleted = false,
@@ -405,10 +405,10 @@ class _$_UserDto extends _UserDto {
     return EqualUnmodifiableListView(_areasOfInterest);
   }
 
-  final List<SocialMediaDto> _socialMedia;
+  final List<String> _socialMedia;
   @override
   @JsonKey()
-  List<SocialMediaDto> get socialMedia {
+  List<String> get socialMedia {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_socialMedia);
   }
@@ -546,7 +546,7 @@ abstract class _UserDto extends UserDto {
       final String description,
       final String photoUrl,
       final List<SpecificInterest> areasOfInterest,
-      final List<SocialMediaDto> socialMedia,
+      final List<String> socialMedia,
       final ProfileType profileType,
       final Seniority seniority,
       final bool onboardingCompleted,
@@ -581,7 +581,7 @@ abstract class _UserDto extends UserDto {
   @override
   List<SpecificInterest> get areasOfInterest;
   @override
-  List<SocialMediaDto> get socialMedia;
+  List<String> get socialMedia;
   @override
   ProfileType get profileType;
   @override

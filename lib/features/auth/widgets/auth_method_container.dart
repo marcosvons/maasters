@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:maasters/core/core.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class GoogleSignIn extends StatelessWidget {
   const GoogleSignIn({
@@ -51,7 +52,7 @@ class GoogleSignIn extends StatelessWidget {
             ),
             const SizedBox(width: Dimens.small),
             Text(
-              'Continuar con Google',
+              context.l10n.continueWithGoogle,
               style: context.textTheme.bodyMedium!.copyWith(
                 fontWeight: FontWeight.w600,
               ),

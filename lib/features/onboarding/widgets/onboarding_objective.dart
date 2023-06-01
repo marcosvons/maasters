@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class OnboardingObjective extends StatelessWidget {
   const OnboardingObjective(
@@ -24,7 +25,7 @@ class OnboardingObjective extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '¿Cuales son tus objetivos hoy?',
+                    context.l10n.objectiveLabel,
                     style: context.textTheme.displayLarge,
                   ),
                   const SizedBox(height: Dimens.xxLarge),
@@ -63,7 +64,8 @@ class OnboardingObjective extends StatelessWidget {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      Objective.values[index].objective,
+                                      Objective.values[index]
+                                          .translatedObjective(context),
                                       style: context.textTheme.bodyMedium,
                                     ),
                                   ),

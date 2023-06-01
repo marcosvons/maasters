@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -38,8 +39,8 @@ class _SignUpFormState extends State<SignUpForm> {
               backgroundColor: context.colorScheme.error,
               content: Text(
                 state.failure == const AuthFailure.emailAlreadyExistsError()
-                    ? 'El email ya se encuentra registrado.'
-                    : 'Ocurrio un error en la creación del usuario. Intente nuevamente.',
+                    ? context.l10n.emailAlreadyExistsError
+                    : context.l10n.userCreationError,
                 textAlign: TextAlign.center,
                 style: context.textTheme.bodyLarge!.copyWith(
                   color: context.colorScheme.secondary,
@@ -69,7 +70,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Email address',
+                          context.l10n.email,
                           style: context.textTheme.bodyMedium,
                         ),
                         const SizedBox(height: Dimens.medium),
@@ -78,14 +79,14 @@ class _SignUpFormState extends State<SignUpForm> {
                           onChanged: (value) =>
                               context.read<SignUpCubit>().emailChanged(value),
                           decoration: InputDecoration(
-                            hintText: 'Your email address',
+                            hintText: context.l10n.emailHintText,
                             hintStyle: context.textTheme.bodyMedium!.copyWith(
                               color: context.colorScheme.onTertiaryContainer,
                             ),
                             errorText: state.isEmailValid != null &&
                                     !state.isEmailValid! &&
                                     state.email.isNotValid
-                                ? 'Proporciona un email válido'
+                                ? context.l10n.invalidEmail
                                 : null,
                             border: OutlineInputBorder(
                               borderRadius:
@@ -114,7 +115,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Password',
+                          context.l10n.password,
                           style: context.textTheme.bodyMedium,
                         ),
                         const SizedBox(height: Dimens.medium),
@@ -137,7 +138,7 @@ class _SignUpFormState extends State<SignUpForm> {
                             errorText: state.isPasswordValid != null &&
                                     !state.isPasswordValid! &&
                                     state.password.isNotValid
-                                ? 'La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una minúscula, un número y un carácter especial'
+                                ? context.l10n.invalidPassword
                                 : null,
                             errorMaxLines: 4,
                             errorBorder: OutlineInputBorder(
@@ -168,7 +169,7 @@ class _SignUpFormState extends State<SignUpForm> {
                               );
                             },
                             child: Text(
-                              'Cambiar email',
+                              context.l10n.changeEmail,
                               style: context.textTheme.bodySmall!.copyWith(
                                 color: context.colorScheme.primary,
                                 decoration: TextDecoration.underline,
@@ -214,7 +215,7 @@ class _SignUpFormState extends State<SignUpForm> {
                           color: context.colorScheme.secondary,
                         )
                       : Text(
-                          'Continuar',
+                          context.l10n.continueText,
                           style: context.textTheme.bodyMedium!.copyWith(
                             color: context.colorScheme.onPrimary,
                           ),

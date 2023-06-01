@@ -18,7 +18,7 @@ class User with _$User {
     @Default('') String description,
     @Default('') String photoUrl,
     @Default([]) List<SpecificInterest> areasOfInterest,
-    @Default([]) List<SocialMedia> socialMedia,
+    @Default([]) List<String> socialMedia,
     @Default(ProfileType.unknown) ProfileType profileType,
     @Default(Seniority.unknown) Seniority seniority,
     @Default(false) bool onboardingCompleted,

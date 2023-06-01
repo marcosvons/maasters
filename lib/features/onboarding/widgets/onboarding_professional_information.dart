@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class OnboardingProfessionalInformation extends StatelessWidget {
   const OnboardingProfessionalInformation(
@@ -25,7 +26,7 @@ class OnboardingProfessionalInformation extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '¡Un gusto! ¿Cuál es tu superpoder?',
+                    context.l10n.professionalInformationTitle,
                     style: context.textTheme.displayLarge,
                   ),
                   const SizedBox(height: Dimens.xxLarge),
@@ -58,7 +59,7 @@ class _SeniorityDropdown extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('¿Cuál es tu seniority?'),
+        Text(context.l10n.seniorityLabel),
         const SizedBox(height: Dimens.medium),
         BlocBuilder<OnboardingCubit, OnboardingState>(
           builder: (context, state) {
@@ -80,21 +81,21 @@ class _SeniorityDropdown extends StatelessWidget {
                   hint: Padding(
                     padding: const EdgeInsets.all(Dimens.xSmall),
                     child: Text(
-                      'Seleccione uno',
+                      context.l10n.seniorityHint,
                       style: context.textTheme.bodySmall!.copyWith(
                         color: context.colorScheme.hintText,
                       ),
                     ),
                   ),
                   items: Seniority.values
-                      .where((gender) => gender != Seniority.unknown)
-                      .map((Seniority gender) {
+                      .where((seniority) => seniority != Seniority.unknown)
+                      .map((Seniority seniority) {
                     return DropdownMenuItem<Seniority>(
-                      value: gender,
+                      value: seniority,
                       child: Padding(
                         padding: const EdgeInsets.all(Dimens.xSmall),
                         child: Text(
-                          gender.value,
+                          seniority.value,
                         ),
                       ),
                     );
@@ -126,9 +127,9 @@ class _JobAndEducation extends StatelessWidget {
           children: [
             OnboardingTextField(
               width: context.width * 0.2125,
-              label: 'Empresa/Universidad/Colegio',
+              label: context.l10n.educationOrJobLabel,
               initialValue: state.user.companyOrSchool,
-              hintText: 'Ej. Mercado Libre, UBA, Freelancer, etc.',
+              hintText: context.l10n.educationOrJobHint,
               onChanged: (value) => context
                   .read<OnboardingCubit>()
                   .validateFourthFormPage(companyOrSchool: value),
@@ -136,9 +137,9 @@ class _JobAndEducation extends StatelessWidget {
             SizedBox(width: context.width * 0.025),
             OnboardingTextField(
               width: context.width * 0.2125,
-              label: 'Titulo',
-              initialValue: state.user.companyOrSchool,
-              hintText: 'Ej. Product Designer, Estudiante etc.',
+              label: context.l10n.titleLabel,
+              initialValue: state.user.title,
+              hintText: context.l10n.titleHint,
               onChanged: (value) => context
                   .read<OnboardingCubit>()
                   .validateFourthFormPage(title: value),
@@ -162,8 +163,8 @@ class _TechnologiesSelector extends StatelessWidget {
           children: [
             Text(
               state.user.profileType == ProfileType.mentor
-                  ? '¿Qué tecnologías te interesaría mentorear?'
-                  : '¿En qué tecnologías estas interesado?',
+                  ? context.l10n.technologiesLabelMentor
+                  : context.l10n.technologiesLabelMentee,
             ),
             const SizedBox(height: Dimens.medium),
             SizedBox(
@@ -188,7 +189,7 @@ class _TechnologiesSelector extends StatelessWidget {
                             color: context.colorScheme.inputBorder,
                           ),
                         ),
-                        hintText: 'Seleccionar tecnologias',
+                        hintText: context.l10n.technologiesHint,
                         hintStyle: context.textTheme.bodySmall!.copyWith(
                           color: context.colorScheme.hintText,
                         ),
@@ -252,7 +253,10 @@ class _TechnologiesSelector extends StatelessWidget {
                           ),
                           onTap: () => showDialog(
                             context: context,
-                            builder: (_) => const InterestSelector(),
+                            builder: (_) => BlocProvider.value(
+                              value: context.read<OnboardingCubit>(),
+                              child: const InterestSelector(),
+                            ),
                           ),
                         ),
                       ],
@@ -284,7 +288,7 @@ class _MentorAdditionalInformation extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Años de experiencia profesional'),
+                      Text(context.l10n.professionalExperienceLabel),
                       const SizedBox(height: Dimens.medium),
                       TextFormField(
                         initialValue:
@@ -314,7 +318,7 @@ class _MentorAdditionalInformation extends StatelessWidget {
                               width: 2,
                             ),
                           ),
-                          hintText: 'Ej. 5',
+                          hintText: context.l10n.professionalExperienceHint,
                           hintStyle: context.textTheme.bodySmall!.copyWith(
                             color: context.colorScheme.hintText,
                           ),
@@ -340,11 +344,11 @@ class _MentorAdditionalInformation extends StatelessWidget {
                 SizedBox(width: context.width * 0.02125),
                 OnboardingTextField(
                   width: context.width * 0.3,
-                  label: 'LinkedIn URL',
-                  hintText: 'linkedin.com/in/juanperez',
+                  label: context.l10n.linkedInUrlLabel,
+                  hintText: context.l10n.linkedInUrlHint,
                   initialValue: state.user.socialMedia.isEmpty
-                      ? 'linkedin.com/in/'
-                      : state.user.socialMedia.first.url,
+                      ? context.l10n.linkedInBaseUrl
+                      : state.user.socialMedia.first,
                   onChanged: (value) => context
                       .read<OnboardingCubit>()
                       .validateFourthFormPage(linkedinUrl: value),

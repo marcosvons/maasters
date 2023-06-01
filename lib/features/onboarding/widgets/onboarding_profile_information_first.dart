@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class OnboardingFirstProfileInformation extends StatelessWidget {
   const OnboardingFirstProfileInformation(
@@ -24,7 +25,7 @@ class OnboardingFirstProfileInformation extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Contanos sobre vos',
+                context.l10n.tellUsAboutYou,
                 style: context.textTheme.displayLarge,
               ),
               const SizedBox(height: Dimens.xxLarge),
@@ -53,7 +54,7 @@ class _CountryDropdown extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text('¿Dónde vivis?'),
+        Text(context.l10n.countryLabel),
         const SizedBox(height: Dimens.medium),
         BlocBuilder<OnboardingCubit, OnboardingState>(
           builder: (context, state) {
@@ -75,7 +76,7 @@ class _CountryDropdown extends StatelessWidget {
                   hint: Padding(
                     padding: const EdgeInsets.all(Dimens.xSmall),
                     child: Text(
-                      'Elegí tu país',
+                      context.l10n.countryHintText,
                       style: context.textTheme.bodySmall!.copyWith(
                         color: context.colorScheme.hintText,
                       ),
@@ -89,7 +90,7 @@ class _CountryDropdown extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.all(Dimens.xSmall),
                         child: Text(
-                          country.name,
+                          country.translatedCountry(context),
                         ),
                       ),
                     );
@@ -121,9 +122,9 @@ class _FirstNameAndLastName extends StatelessWidget {
           children: [
             OnboardingTextField(
               width: context.width * 0.2,
-              label: 'Nombre',
+              label: context.l10n.nameLabel,
               initialValue: state.user.firstName,
-              hintText: 'Juan',
+              hintText: context.l10n.nameHint,
               onChanged: (value) => context
                   .read<OnboardingCubit>()
                   .validateSecondFormPage(firstName: value),
@@ -131,9 +132,9 @@ class _FirstNameAndLastName extends StatelessWidget {
             SizedBox(width: context.width * 0.05),
             OnboardingTextField(
               width: context.width * 0.2,
-              label: 'Apellido',
+              label: context.l10n.lastNameLabel,
               initialValue: state.user.lastName,
-              hintText: 'Perez',
+              hintText: context.l10n.lastNameHint,
               onChanged: (value) => context
                   .read<OnboardingCubit>()
                   .validateSecondFormPage(lastName: value),
@@ -170,7 +171,7 @@ class _ProfilePicture extends StatelessWidget {
                 SnackBar(
                   backgroundColor: context.colorScheme.surface,
                   content: Text(
-                    'No se selecciono ninguna imagen',
+                    context.l10n.noImageSelectedSnackbar,
                     textAlign: TextAlign.center,
                     style: context.textTheme.bodyLarge!.copyWith(
                       color: context.colorScheme.secondary,
@@ -188,16 +189,35 @@ class _ProfilePicture extends StatelessWidget {
               shape: BoxShape.circle,
               color: context.colorScheme.tertiaryContainer,
             ),
-            child: state.image == null
+            child: state.image == null && state.user.photoUrl.isEmpty
                 ? Icon(
                     Icons.add_a_photo,
                     size: Dimens.xxLarge,
                     color: context.colorScheme.surface,
                   )
-                : CircleAvatar(
-                    backgroundImage: Image.memory(state.image!).image,
-                    backgroundColor: Colors.transparent,
-                  ),
+                : state.image != null
+                    ? CircleAvatar(
+                        backgroundImage: Image.memory(state.image!).image,
+                        backgroundColor: Colors.transparent,
+                      )
+                    : CircleAvatar(
+                        backgroundImage: Image.network(
+                          state.user.photoUrl,
+                          loadingBuilder: (context, child, loadingProgress) {
+                            if (loadingProgress == null) return child;
+                            return Center(
+                              child: CircularProgressIndicator(
+                                value: loadingProgress.expectedTotalBytes !=
+                                        null
+                                    ? loadingProgress.cumulativeBytesLoaded /
+                                        loadingProgress.expectedTotalBytes!
+                                    : null,
+                              ),
+                            );
+                          },
+                        ).image,
+                        backgroundColor: Colors.transparent,
+                      ),
           ),
         );
       },

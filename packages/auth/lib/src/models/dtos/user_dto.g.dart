@@ -23,7 +23,7 @@ _$_UserDto _$$_UserDtoFromJson(Map<String, dynamic> json) => _$_UserDto(
               .toList() ??
           const [],
       socialMedia: (json['socialMedia'] as List<dynamic>?)
-              ?.map((e) => SocialMediaDto.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => e as String)
               .toList() ??
           const [],
       profileType:

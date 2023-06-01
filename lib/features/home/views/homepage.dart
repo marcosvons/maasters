@@ -12,13 +12,24 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.green,
-        child: ElevatedButton(
-          child: const Text('Logout'),
-          onPressed: () =>
-              context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
+    return BlocListener<AuthBloc, AuthState>(
+      listener: (context, state) {
+        state.maybeMap(
+          orElse: () {},
+          unauthenticated: (_) {
+            Navigator.of(context)
+                .pushReplacement<void, void>(SignUpPage.route());
+          },
+        );
+      },
+      child: Scaffold(
+        body: Container(
+          color: Colors.green,
+          child: ElevatedButton(
+            child: const Text('Logout'),
+            onPressed: () =>
+                context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
+          ),
         ),
       ),
     );

@@ -20,10 +20,10 @@ enum ProfileType {
 
 enum SpecificInterest {
   cyberSecurity(
-    'Ciberseguridad',
+    'Cyber Security',
     AreaOfInterest.cyberSecurity,
   ),
-  dataScience('Ciencia de datos', AreaOfInterest.dataScience),
+  dataScience('Data Science', AreaOfInterest.dataScience),
   devOps('DevOps', AreaOfInterest.devOps),
   htmlAndCss('HTML y CSS', AreaOfInterest.frontEnd),
   javascript('JavaScript', AreaOfInterest.frontEnd),
@@ -47,11 +47,11 @@ enum SpecificInterest {
   kotlin('Kotlin', AreaOfInterest.mobile),
   qa('QA', AreaOfInterest.qa),
   uxUi('UX/UI', AreaOfInterest.uxUi),
-  digitalMarketing('Marketing Digital', AreaOfInterest.digitalMarketing),
+  digitalMarketing('Digital Marketing', AreaOfInterest.digitalMarketing),
   productManagement('Product Management', AreaOfInterest.productManagement),
   ioT('IoT', AreaOfInterest.ioT),
   blockchain('Blockchain', AreaOfInterest.blockchain),
-  graphicDesign('Diseño gráfico', AreaOfInterest.graphicDesign);
+  graphicDesign('Graphic Design', AreaOfInterest.graphicDesign);
 
   const SpecificInterest(this.name, this.category);
 
@@ -76,27 +76,19 @@ enum AreaOfInterest {
 }
 
 enum Gender {
-  male('Hombre'),
-  female('Mujer'),
-  notSpecified('Prefiero no decirlo'),
-  unknown('');
-
-  const Gender(this.value);
-
-  final String value;
+  male,
+  female,
+  notSpecified,
+  unknown;
 }
 
 enum Objective {
-  findJob('Encontrar un trabajo'),
-  learn('Aprender y potenciar conocimientos'),
-  network('Networking'),
-  grow('Crecer profesionalmente'),
-  change('Cambiar de carrera'),
-  notSure('No estoy seguro');
-
-  const Objective(this.objective);
-
-  final String objective;
+  findJob,
+  learn,
+  network,
+  grow,
+  change,
+  notSure;
 }
 
 enum Countries {

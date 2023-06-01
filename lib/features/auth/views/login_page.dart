@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -79,8 +80,8 @@ class LoginBody extends StatelessWidget {
                   const LoginForm(),
                   const SizedBox(height: Dimens.large),
                   ChangeAuthenticationView(
-                    questionText: '¿No tienes una cuenta? ',
-                    actionText: 'Sign Up',
+                    questionText: context.l10n.dontHaveAccount,
+                    actionText: context.l10n.signUp,
                     onTapAction: () => Navigator.of(context)
                         .pushReplacement<void, void>(SignUpPage.route()),
                   ),
@@ -114,7 +115,7 @@ class LoginBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Potencia tu crecimiento',
+                      context.l10n.registrationContainerTitle,
                       style: context.textTheme.displayLarge!.copyWith(
                         color: context.colorScheme.secondary,
                       ),
@@ -122,7 +123,7 @@ class LoginBody extends StatelessWidget {
                     ),
                     const SizedBox(height: Dimens.small),
                     Text(
-                      'Unite a la comunidad Latinoamericana para vincularte con expertos en la industria que quieras.',
+                      context.l10n.registrationContainerSubtitle,
                       style: context.textTheme.bodyMedium!.copyWith(
                         color: context.colorScheme.secondary,
                       ),
@@ -148,12 +149,12 @@ class _TitleAndSubtitle extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Bienvenido MaaSter',
+          context.l10n.welcomeMaaster,
           style: context.textTheme.displayLarge,
         ),
         const SizedBox(height: Dimens.medium),
         Text(
-          'Inicia sesión en tu cuenta para acceder a los mejores profesionales de la industria.',
+          context.l10n.welcomeMaasterSubtitle,
           style: context.textTheme.bodyMedium!.copyWith(
             color: context.colorScheme.surface,
           ),

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});
@@ -18,11 +19,11 @@ class LoginForm extends StatelessWidget {
               backgroundColor: context.colorScheme.error,
               content: Text(
                 state.failure == const AuthFailure.userNotFoundError()
-                    ? 'El usuario no se encuentra registrado.'
+                    ? context.l10n.userNotFoundError
                     : state.failure ==
                             const AuthFailure.invalidCredentialsError()
-                        ? 'La combinación de email y contraseña no es válida.'
-                        : 'Ocurrio un error en la autenticación del usuario. Intente nuevamente.',
+                        ? context.l10n.wrongPassword
+                        : context.l10n.generalAuthError,
                 textAlign: TextAlign.center,
                 style: context.textTheme.bodyLarge!.copyWith(
                   color: context.colorScheme.secondary,
@@ -40,7 +41,7 @@ class LoginForm extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Email address',
+                context.l10n.email,
                 style: context.textTheme.bodyMedium,
               ),
               const SizedBox(height: Dimens.medium),
@@ -61,7 +62,7 @@ class LoginForm extends StatelessWidget {
               ),
               const SizedBox(height: Dimens.medium),
               Text(
-                'Password',
+                context.l10n.password,
                 style: context.textTheme.bodyMedium,
               ),
               const SizedBox(height: Dimens.medium),
@@ -107,7 +108,7 @@ class LoginForm extends StatelessWidget {
                           color: context.colorScheme.secondary,
                         )
                       : Text(
-                          'Iniciar sesión',
+                          context.l10n.logIn,
                           style: context.textTheme.bodyMedium!.copyWith(
                             color: context.colorScheme.onPrimary,
                           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maasters/core/core.dart';
+import 'package:maasters/l10n/l10n.dart';
 
 class DividerSignInMethod extends StatelessWidget {
   const DividerSignInMethod({super.key});
@@ -16,7 +17,7 @@ class DividerSignInMethod extends StatelessWidget {
             horizontal: Dimens.xSmall,
           ),
           child: Text(
-            'O',
+            context.l10n.dividerSignInMethod,
             style: context.textTheme.bodySmall!.copyWith(
               color: context.colorScheme.surfaceTint,
             ),
