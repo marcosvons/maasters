@@ -36,6 +36,7 @@ mixin _$Failure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,6 +59,7 @@ mixin _$Failure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -80,6 +82,7 @@ mixin _$Failure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -106,6 +109,8 @@ mixin _$Failure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -129,6 +134,7 @@ mixin _$Failure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -151,6 +157,7 @@ mixin _$Failure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -229,6 +236,7 @@ class _$ParseModelFailure implements ParseModelFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return parseModel();
   }
@@ -254,6 +262,7 @@ class _$ParseModelFailure implements ParseModelFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return parseModel?.call();
   }
@@ -279,6 +288,7 @@ class _$ParseModelFailure implements ParseModelFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (parseModel != null) {
@@ -311,6 +321,8 @@ class _$ParseModelFailure implements ParseModelFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return parseModel(this);
   }
@@ -337,6 +349,7 @@ class _$ParseModelFailure implements ParseModelFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return parseModel?.call(this);
   }
@@ -362,6 +375,7 @@ class _$ParseModelFailure implements ParseModelFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (parseModel != null) {
@@ -431,6 +445,7 @@ class _$UpdateUserFailure implements UpdateUserFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return updateUser();
   }
@@ -456,6 +471,7 @@ class _$UpdateUserFailure implements UpdateUserFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return updateUser?.call();
   }
@@ -481,6 +497,7 @@ class _$UpdateUserFailure implements UpdateUserFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (updateUser != null) {
@@ -513,6 +530,8 @@ class _$UpdateUserFailure implements UpdateUserFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return updateUser(this);
   }
@@ -539,6 +558,7 @@ class _$UpdateUserFailure implements UpdateUserFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return updateUser?.call(this);
   }
@@ -564,6 +584,7 @@ class _$UpdateUserFailure implements UpdateUserFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (updateUser != null) {
@@ -633,6 +654,7 @@ class _$HttpFailure implements HttpFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return http();
   }
@@ -658,6 +680,7 @@ class _$HttpFailure implements HttpFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return http?.call();
   }
@@ -683,6 +706,7 @@ class _$HttpFailure implements HttpFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -715,6 +739,8 @@ class _$HttpFailure implements HttpFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return http(this);
   }
@@ -741,6 +767,7 @@ class _$HttpFailure implements HttpFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return http?.call(this);
   }
@@ -766,6 +793,7 @@ class _$HttpFailure implements HttpFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (http != null) {
@@ -835,6 +863,7 @@ class _$CacheFailure implements CacheFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return cache();
   }
@@ -860,6 +889,7 @@ class _$CacheFailure implements CacheFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return cache?.call();
   }
@@ -885,6 +915,7 @@ class _$CacheFailure implements CacheFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (cache != null) {
@@ -917,6 +948,8 @@ class _$CacheFailure implements CacheFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return cache(this);
   }
@@ -943,6 +976,7 @@ class _$CacheFailure implements CacheFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return cache?.call(this);
   }
@@ -968,6 +1002,7 @@ class _$CacheFailure implements CacheFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (cache != null) {
@@ -1037,6 +1072,7 @@ class _$JsonDesFailure implements JsonDesFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return jsonDes();
   }
@@ -1062,6 +1098,7 @@ class _$JsonDesFailure implements JsonDesFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return jsonDes?.call();
   }
@@ -1087,6 +1124,7 @@ class _$JsonDesFailure implements JsonDesFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (jsonDes != null) {
@@ -1119,6 +1157,8 @@ class _$JsonDesFailure implements JsonDesFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return jsonDes(this);
   }
@@ -1145,6 +1185,7 @@ class _$JsonDesFailure implements JsonDesFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return jsonDes?.call(this);
   }
@@ -1170,6 +1211,7 @@ class _$JsonDesFailure implements JsonDesFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (jsonDes != null) {
@@ -1239,6 +1281,7 @@ class _$JsonDecFailure implements JsonDecFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return jsonDec();
   }
@@ -1264,6 +1307,7 @@ class _$JsonDecFailure implements JsonDecFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return jsonDec?.call();
   }
@@ -1289,6 +1333,7 @@ class _$JsonDecFailure implements JsonDecFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (jsonDec != null) {
@@ -1321,6 +1366,8 @@ class _$JsonDecFailure implements JsonDecFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return jsonDec(this);
   }
@@ -1347,6 +1394,7 @@ class _$JsonDecFailure implements JsonDecFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return jsonDec?.call(this);
   }
@@ -1372,6 +1420,7 @@ class _$JsonDecFailure implements JsonDecFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (jsonDec != null) {
@@ -1441,6 +1490,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return invalidData();
   }
@@ -1466,6 +1516,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return invalidData?.call();
   }
@@ -1491,6 +1542,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (invalidData != null) {
@@ -1523,6 +1575,8 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return invalidData(this);
   }
@@ -1549,6 +1603,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return invalidData?.call(this);
   }
@@ -1574,6 +1629,7 @@ class _$InvalidDataFailure implements InvalidDataFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (invalidData != null) {
@@ -1643,6 +1699,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return unauthorized();
   }
@@ -1668,6 +1725,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return unauthorized?.call();
   }
@@ -1693,6 +1751,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (unauthorized != null) {
@@ -1725,6 +1784,8 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return unauthorized(this);
   }
@@ -1751,6 +1812,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return unauthorized?.call(this);
   }
@@ -1776,6 +1838,7 @@ class _$UnauthorizedFailure implements UnauthorizedFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (unauthorized != null) {
@@ -1845,6 +1908,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return noConnection();
   }
@@ -1870,6 +1934,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return noConnection?.call();
   }
@@ -1895,6 +1960,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -1927,6 +1993,8 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return noConnection(this);
   }
@@ -1953,6 +2021,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return noConnection?.call(this);
   }
@@ -1978,6 +2047,7 @@ class _$NoConnectionFailure implements NoConnectionFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (noConnection != null) {
@@ -2047,6 +2117,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return cancelRequest();
   }
@@ -2072,6 +2143,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return cancelRequest?.call();
   }
@@ -2097,6 +2169,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (cancelRequest != null) {
@@ -2129,6 +2202,8 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return cancelRequest(this);
   }
@@ -2155,6 +2230,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return cancelRequest?.call(this);
   }
@@ -2180,6 +2256,7 @@ class _$CancelRequestFailure implements CancelRequestFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (cancelRequest != null) {
@@ -2249,6 +2326,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return connectTimeout();
   }
@@ -2274,6 +2352,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return connectTimeout?.call();
   }
@@ -2299,6 +2378,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (connectTimeout != null) {
@@ -2331,6 +2411,8 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return connectTimeout(this);
   }
@@ -2357,6 +2439,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return connectTimeout?.call(this);
   }
@@ -2382,6 +2465,7 @@ class _$ConnectTimeoutFailure implements ConnectTimeoutFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (connectTimeout != null) {
@@ -2452,6 +2536,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return deniedPermissions();
   }
@@ -2477,6 +2562,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return deniedPermissions?.call();
   }
@@ -2502,6 +2588,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (deniedPermissions != null) {
@@ -2534,6 +2621,8 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return deniedPermissions(this);
   }
@@ -2560,6 +2649,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return deniedPermissions?.call(this);
   }
@@ -2585,6 +2675,7 @@ class _$DeniedPermissionsFailure implements DeniedPermissionsFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (deniedPermissions != null) {
@@ -2654,6 +2745,7 @@ class _$UnknownFailure implements UnknownFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return unknown();
   }
@@ -2679,6 +2771,7 @@ class _$UnknownFailure implements UnknownFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return unknown?.call();
   }
@@ -2704,6 +2797,7 @@ class _$UnknownFailure implements UnknownFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -2736,6 +2830,8 @@ class _$UnknownFailure implements UnknownFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return unknown(this);
   }
@@ -2762,6 +2858,7 @@ class _$UnknownFailure implements UnknownFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return unknown?.call(this);
   }
@@ -2787,6 +2884,7 @@ class _$UnknownFailure implements UnknownFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (unknown != null) {
@@ -2859,6 +2957,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return firestoreUserCreation();
   }
@@ -2884,6 +2983,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return firestoreUserCreation?.call();
   }
@@ -2909,6 +3009,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreUserCreation != null) {
@@ -2941,6 +3042,8 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return firestoreUserCreation(this);
   }
@@ -2967,6 +3070,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return firestoreUserCreation?.call(this);
   }
@@ -2992,6 +3096,7 @@ class _$FirestoreUserCreationFailure implements FirestoreUserCreationFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreUserCreation != null) {
@@ -3064,6 +3169,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return firestoreUserUpdate();
   }
@@ -3089,6 +3195,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return firestoreUserUpdate?.call();
   }
@@ -3114,6 +3221,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreUserUpdate != null) {
@@ -3146,6 +3254,8 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return firestoreUserUpdate(this);
   }
@@ -3172,6 +3282,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return firestoreUserUpdate?.call(this);
   }
@@ -3197,6 +3308,7 @@ class _$FirestoreUserUpdateFailure implements FirestoreUserUpdateFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreUserUpdate != null) {
@@ -3267,6 +3379,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return firestoreGetUser();
   }
@@ -3292,6 +3405,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return firestoreGetUser?.call();
   }
@@ -3317,6 +3431,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreGetUser != null) {
@@ -3349,6 +3464,8 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return firestoreGetUser(this);
   }
@@ -3375,6 +3492,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return firestoreGetUser?.call(this);
   }
@@ -3400,6 +3518,7 @@ class _$FirestoreGetUserFailure implements FirestoreGetUserFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreGetUser != null) {
@@ -3472,6 +3591,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return firestoreDeleteUser();
   }
@@ -3497,6 +3617,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return firestoreDeleteUser?.call();
   }
@@ -3522,6 +3643,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreDeleteUser != null) {
@@ -3554,6 +3676,8 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return firestoreDeleteUser(this);
   }
@@ -3580,6 +3704,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return firestoreDeleteUser?.call(this);
   }
@@ -3605,6 +3730,7 @@ class _$FirestoreDeleteUserFailure implements FirestoreDeleteUserFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreDeleteUser != null) {
@@ -3675,6 +3801,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
     required TResult Function() firestoreGetUser,
     required TResult Function() firestoreDeleteUser,
     required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
   }) {
     return firestoreGetUsers();
   }
@@ -3700,6 +3827,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
     TResult? Function()? firestoreGetUser,
     TResult? Function()? firestoreDeleteUser,
     TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
   }) {
     return firestoreGetUsers?.call();
   }
@@ -3725,6 +3853,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
     TResult Function()? firestoreGetUser,
     TResult Function()? firestoreDeleteUser,
     TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreGetUsers != null) {
@@ -3757,6 +3886,8 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
     required TResult Function(FirestoreDeleteUserFailure value)
         firestoreDeleteUser,
     required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
   }) {
     return firestoreGetUsers(this);
   }
@@ -3783,6 +3914,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
     TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
   }) {
     return firestoreGetUsers?.call(this);
   }
@@ -3808,6 +3940,7 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
     TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
     TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
     TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
     required TResult orElse(),
   }) {
     if (firestoreGetUsers != null) {
@@ -3819,4 +3952,215 @@ class _$FirestoreGetUsersFailure implements FirestoreGetUsersFailure {
 
 abstract class FirestoreGetUsersFailure implements Failure {
   const factory FirestoreGetUsersFailure() = _$FirestoreGetUsersFailure;
+}
+
+/// @nodoc
+abstract class _$$CloudStorageUploadFailureCopyWith<$Res> {
+  factory _$$CloudStorageUploadFailureCopyWith(
+          _$CloudStorageUploadFailure value,
+          $Res Function(_$CloudStorageUploadFailure) then) =
+      __$$CloudStorageUploadFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CloudStorageUploadFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res, _$CloudStorageUploadFailure>
+    implements _$$CloudStorageUploadFailureCopyWith<$Res> {
+  __$$CloudStorageUploadFailureCopyWithImpl(_$CloudStorageUploadFailure _value,
+      $Res Function(_$CloudStorageUploadFailure) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CloudStorageUploadFailure implements CloudStorageUploadFailure {
+  const _$CloudStorageUploadFailure();
+
+  @override
+  String toString() {
+    return 'Failure.cloudStorageUpload()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CloudStorageUploadFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() parseModel,
+    required TResult Function() updateUser,
+    required TResult Function() http,
+    required TResult Function() cache,
+    required TResult Function() jsonDes,
+    required TResult Function() jsonDec,
+    required TResult Function() invalidData,
+    required TResult Function() unauthorized,
+    required TResult Function() noConnection,
+    required TResult Function() cancelRequest,
+    required TResult Function() connectTimeout,
+    required TResult Function() deniedPermissions,
+    required TResult Function() unknown,
+    required TResult Function() firestoreUserCreation,
+    required TResult Function() firestoreUserUpdate,
+    required TResult Function() firestoreGetUser,
+    required TResult Function() firestoreDeleteUser,
+    required TResult Function() firestoreGetUsers,
+    required TResult Function() cloudStorageUpload,
+  }) {
+    return cloudStorageUpload();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? parseModel,
+    TResult? Function()? updateUser,
+    TResult? Function()? http,
+    TResult? Function()? cache,
+    TResult? Function()? jsonDes,
+    TResult? Function()? jsonDec,
+    TResult? Function()? invalidData,
+    TResult? Function()? unauthorized,
+    TResult? Function()? noConnection,
+    TResult? Function()? cancelRequest,
+    TResult? Function()? connectTimeout,
+    TResult? Function()? deniedPermissions,
+    TResult? Function()? unknown,
+    TResult? Function()? firestoreUserCreation,
+    TResult? Function()? firestoreUserUpdate,
+    TResult? Function()? firestoreGetUser,
+    TResult? Function()? firestoreDeleteUser,
+    TResult? Function()? firestoreGetUsers,
+    TResult? Function()? cloudStorageUpload,
+  }) {
+    return cloudStorageUpload?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? parseModel,
+    TResult Function()? updateUser,
+    TResult Function()? http,
+    TResult Function()? cache,
+    TResult Function()? jsonDes,
+    TResult Function()? jsonDec,
+    TResult Function()? invalidData,
+    TResult Function()? unauthorized,
+    TResult Function()? noConnection,
+    TResult Function()? cancelRequest,
+    TResult Function()? connectTimeout,
+    TResult Function()? deniedPermissions,
+    TResult Function()? unknown,
+    TResult Function()? firestoreUserCreation,
+    TResult Function()? firestoreUserUpdate,
+    TResult Function()? firestoreGetUser,
+    TResult Function()? firestoreDeleteUser,
+    TResult Function()? firestoreGetUsers,
+    TResult Function()? cloudStorageUpload,
+    required TResult orElse(),
+  }) {
+    if (cloudStorageUpload != null) {
+      return cloudStorageUpload();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ParseModelFailure value) parseModel,
+    required TResult Function(UpdateUserFailure value) updateUser,
+    required TResult Function(HttpFailure value) http,
+    required TResult Function(CacheFailure value) cache,
+    required TResult Function(JsonDesFailure value) jsonDes,
+    required TResult Function(JsonDecFailure value) jsonDec,
+    required TResult Function(InvalidDataFailure value) invalidData,
+    required TResult Function(UnauthorizedFailure value) unauthorized,
+    required TResult Function(NoConnectionFailure value) noConnection,
+    required TResult Function(CancelRequestFailure value) cancelRequest,
+    required TResult Function(ConnectTimeoutFailure value) connectTimeout,
+    required TResult Function(DeniedPermissionsFailure value) deniedPermissions,
+    required TResult Function(UnknownFailure value) unknown,
+    required TResult Function(FirestoreUserCreationFailure value)
+        firestoreUserCreation,
+    required TResult Function(FirestoreUserUpdateFailure value)
+        firestoreUserUpdate,
+    required TResult Function(FirestoreGetUserFailure value) firestoreGetUser,
+    required TResult Function(FirestoreDeleteUserFailure value)
+        firestoreDeleteUser,
+    required TResult Function(FirestoreGetUsersFailure value) firestoreGetUsers,
+    required TResult Function(CloudStorageUploadFailure value)
+        cloudStorageUpload,
+  }) {
+    return cloudStorageUpload(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(ParseModelFailure value)? parseModel,
+    TResult? Function(UpdateUserFailure value)? updateUser,
+    TResult? Function(HttpFailure value)? http,
+    TResult? Function(CacheFailure value)? cache,
+    TResult? Function(JsonDesFailure value)? jsonDes,
+    TResult? Function(JsonDecFailure value)? jsonDec,
+    TResult? Function(InvalidDataFailure value)? invalidData,
+    TResult? Function(UnauthorizedFailure value)? unauthorized,
+    TResult? Function(NoConnectionFailure value)? noConnection,
+    TResult? Function(CancelRequestFailure value)? cancelRequest,
+    TResult? Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult? Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult? Function(UnknownFailure value)? unknown,
+    TResult? Function(FirestoreUserCreationFailure value)?
+        firestoreUserCreation,
+    TResult? Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult? Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult? Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult? Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult? Function(CloudStorageUploadFailure value)? cloudStorageUpload,
+  }) {
+    return cloudStorageUpload?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ParseModelFailure value)? parseModel,
+    TResult Function(UpdateUserFailure value)? updateUser,
+    TResult Function(HttpFailure value)? http,
+    TResult Function(CacheFailure value)? cache,
+    TResult Function(JsonDesFailure value)? jsonDes,
+    TResult Function(JsonDecFailure value)? jsonDec,
+    TResult Function(InvalidDataFailure value)? invalidData,
+    TResult Function(UnauthorizedFailure value)? unauthorized,
+    TResult Function(NoConnectionFailure value)? noConnection,
+    TResult Function(CancelRequestFailure value)? cancelRequest,
+    TResult Function(ConnectTimeoutFailure value)? connectTimeout,
+    TResult Function(DeniedPermissionsFailure value)? deniedPermissions,
+    TResult Function(UnknownFailure value)? unknown,
+    TResult Function(FirestoreUserCreationFailure value)? firestoreUserCreation,
+    TResult Function(FirestoreUserUpdateFailure value)? firestoreUserUpdate,
+    TResult Function(FirestoreGetUserFailure value)? firestoreGetUser,
+    TResult Function(FirestoreDeleteUserFailure value)? firestoreDeleteUser,
+    TResult Function(FirestoreGetUsersFailure value)? firestoreGetUsers,
+    TResult Function(CloudStorageUploadFailure value)? cloudStorageUpload,
+    required TResult orElse(),
+  }) {
+    if (cloudStorageUpload != null) {
+      return cloudStorageUpload(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CloudStorageUploadFailure implements Failure {
+  const factory CloudStorageUploadFailure() = _$CloudStorageUploadFailure;
 }

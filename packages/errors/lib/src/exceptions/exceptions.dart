@@ -15,3 +15,15 @@ class CacheException implements Exception {}
 class ModelException implements Exception {}
 
 class UnknownNetworkException implements Exception {}
+
+class FirestoreUserCreationException implements Exception {}
+
+class FirestoreUserUpdateException implements Exception {}
+
+class FirestoreGetUserException implements Exception {}
+
+class FirestoreDeleteUserException implements Exception {}
+
+class FirestoreGetUsersException implements Exception {}
+
+class CloudStorageUploadException implements Exception {}

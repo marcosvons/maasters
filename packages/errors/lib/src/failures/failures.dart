@@ -27,4 +27,7 @@ class Failure with _$Failure {
   const factory Failure.firestoreGetUser() = FirestoreGetUserFailure;
   const factory Failure.firestoreDeleteUser() = FirestoreDeleteUserFailure;
   const factory Failure.firestoreGetUsers() = FirestoreGetUsersFailure;
+
+  //Cloud Storage Errors
+  const factory Failure.cloudStorageUpload() = CloudStorageUploadFailure;
 }

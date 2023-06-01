@@ -45,14 +45,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _onListenToUserChanges(
     _ListenToUserChanges event,
     Emitter<AuthState> emit,
-  ) {
+  ) async {
     emit(
       state.map(
         authenticated: (authenticated) => authenticated,
         unauthenticated: (unauthenticated) => unauthenticated,
       ),
     );
-    emit.forEach(
+    await emit.forEach(
       _authRepository.cacheUser,
       onData: (Either<Failure, User?> possibleFailureOrUser) {
         return possibleFailureOrUser.fold(

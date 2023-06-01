@@ -23,6 +23,7 @@ class ChangeAuthenticationView extends StatelessWidget {
             color: context.colorScheme.onTertiaryContainer,
           ),
           children: [
+            const TextSpan(text: ' '),
             WidgetSpan(
               child: GestureDetector(
                 onTap: onTapAction,

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,10 +19,10 @@ class App extends StatelessWidget {
             authRepository: getIt<IAuthRepository>(),
           ),
         ),
-        BlocProvider<OnboardingCubit>(
+        BlocProvider<UserBloc>(
           create: (context) =>
-              OnboardingCubit(authRepository: getIt<IAuthRepository>()),
-        )
+              UserBloc(authRepository: getIt<IAuthRepository>()),
+        ),
       ],
       child: const AppStartUp(),
     );
@@ -37,6 +39,7 @@ class AppStartUp extends StatelessWidget {
     return BlocBuilder<AuthBloc, AuthState>(
       builder: (context, state) {
         return MaterialApp(
+          scrollBehavior: NoThumbScrollBehavior().copyWith(scrollbars: false),
           theme: ThemeManager.light,
           debugShowCheckedModeBanner: false,
           localizationsDelegates: AppLocalizations.localizationsDelegates,
@@ -57,4 +60,13 @@ class AppStartUp extends StatelessWidget {
       },
     );
   }
+}
+
+class NoThumbScrollBehavior extends ScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+        PointerDeviceKind.touch,
+        PointerDeviceKind.mouse,
+        PointerDeviceKind.stylus,
+      };
 }

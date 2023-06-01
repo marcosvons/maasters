@@ -22,15 +22,25 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
 mixin _$UserDto {
   String get id => throw _privateConstructorUsedError;
   String get mail => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String get firstName => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
+  String get googleName => throw _privateConstructorUsedError;
+  Gender get gender => throw _privateConstructorUsedError;
+  Countries get country => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
+  String get photoUrl => throw _privateConstructorUsedError;
   List<SpecificInterest> get areasOfInterest =>
       throw _privateConstructorUsedError;
-  List<SocialMedia> get socialMedia => throw _privateConstructorUsedError;
+  List<String> get socialMedia => throw _privateConstructorUsedError;
   ProfileType get profileType => throw _privateConstructorUsedError;
   Seniority get seniority => throw _privateConstructorUsedError;
   bool get onboardingCompleted => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
-  String? get company => throw _privateConstructorUsedError;
+  String get companyOrSchool => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  List<Objective> get objective => throw _privateConstructorUsedError;
+  int get yearsOfProfesionalExperience => throw _privateConstructorUsedError;
+  DateTime? get birthDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,14 +55,24 @@ abstract class $UserDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String mail,
-      String name,
+      String firstName,
+      String lastName,
+      String googleName,
+      Gender gender,
+      Countries country,
+      String description,
+      String photoUrl,
       List<SpecificInterest> areasOfInterest,
-      List<SocialMedia> socialMedia,
+      List<String> socialMedia,
       ProfileType profileType,
       Seniority seniority,
       bool onboardingCompleted,
       String phoneNumber,
-      String? company});
+      String companyOrSchool,
+      String title,
+      List<Objective> objective,
+      int yearsOfProfesionalExperience,
+      DateTime? birthDate});
 }
 
 /// @nodoc
@@ -70,14 +90,24 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
   $Res call({
     Object? id = null,
     Object? mail = null,
-    Object? name = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? googleName = null,
+    Object? gender = null,
+    Object? country = null,
+    Object? description = null,
+    Object? photoUrl = null,
     Object? areasOfInterest = null,
     Object? socialMedia = null,
     Object? profileType = null,
     Object? seniority = null,
     Object? onboardingCompleted = null,
     Object? phoneNumber = null,
-    Object? company = freezed,
+    Object? companyOrSchool = null,
+    Object? title = null,
+    Object? objective = null,
+    Object? yearsOfProfesionalExperience = null,
+    Object? birthDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -88,9 +118,33 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      googleName: null == googleName
+          ? _value.googleName
+          : googleName // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as Countries,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUrl: null == photoUrl
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String,
       areasOfInterest: null == areasOfInterest
           ? _value.areasOfInterest
@@ -99,7 +153,7 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
       socialMedia: null == socialMedia
           ? _value.socialMedia
           : socialMedia // ignore: cast_nullable_to_non_nullable
-              as List<SocialMedia>,
+              as List<String>,
       profileType: null == profileType
           ? _value.profileType
           : profileType // ignore: cast_nullable_to_non_nullable
@@ -116,10 +170,26 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      company: freezed == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as String?,
+      companyOrSchool: null == companyOrSchool
+          ? _value.companyOrSchool
+          : companyOrSchool // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      objective: null == objective
+          ? _value.objective
+          : objective // ignore: cast_nullable_to_non_nullable
+              as List<Objective>,
+      yearsOfProfesionalExperience: null == yearsOfProfesionalExperience
+          ? _value.yearsOfProfesionalExperience
+          : yearsOfProfesionalExperience // ignore: cast_nullable_to_non_nullable
+              as int,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -134,14 +204,24 @@ abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
   $Res call(
       {String id,
       String mail,
-      String name,
+      String firstName,
+      String lastName,
+      String googleName,
+      Gender gender,
+      Countries country,
+      String description,
+      String photoUrl,
       List<SpecificInterest> areasOfInterest,
-      List<SocialMedia> socialMedia,
+      List<String> socialMedia,
       ProfileType profileType,
       Seniority seniority,
       bool onboardingCompleted,
       String phoneNumber,
-      String? company});
+      String companyOrSchool,
+      String title,
+      List<Objective> objective,
+      int yearsOfProfesionalExperience,
+      DateTime? birthDate});
 }
 
 /// @nodoc
@@ -156,14 +236,24 @@ class __$$_UserDtoCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? mail = null,
-    Object? name = null,
+    Object? firstName = null,
+    Object? lastName = null,
+    Object? googleName = null,
+    Object? gender = null,
+    Object? country = null,
+    Object? description = null,
+    Object? photoUrl = null,
     Object? areasOfInterest = null,
     Object? socialMedia = null,
     Object? profileType = null,
     Object? seniority = null,
     Object? onboardingCompleted = null,
     Object? phoneNumber = null,
-    Object? company = freezed,
+    Object? companyOrSchool = null,
+    Object? title = null,
+    Object? objective = null,
+    Object? yearsOfProfesionalExperience = null,
+    Object? birthDate = freezed,
   }) {
     return _then(_$_UserDto(
       id: null == id
@@ -174,9 +264,33 @@ class __$$_UserDtoCopyWithImpl<$Res>
           ? _value.mail
           : mail // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      firstName: null == firstName
+          ? _value.firstName
+          : firstName // ignore: cast_nullable_to_non_nullable
+              as String,
+      lastName: null == lastName
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
+      googleName: null == googleName
+          ? _value.googleName
+          : googleName // ignore: cast_nullable_to_non_nullable
+              as String,
+      gender: null == gender
+          ? _value.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as Gender,
+      country: null == country
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as Countries,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      photoUrl: null == photoUrl
+          ? _value.photoUrl
+          : photoUrl // ignore: cast_nullable_to_non_nullable
               as String,
       areasOfInterest: null == areasOfInterest
           ? _value._areasOfInterest
@@ -185,7 +299,7 @@ class __$$_UserDtoCopyWithImpl<$Res>
       socialMedia: null == socialMedia
           ? _value._socialMedia
           : socialMedia // ignore: cast_nullable_to_non_nullable
-              as List<SocialMedia>,
+              as List<String>,
       profileType: null == profileType
           ? _value.profileType
           : profileType // ignore: cast_nullable_to_non_nullable
@@ -202,10 +316,26 @@ class __$$_UserDtoCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as String,
-      company: freezed == company
-          ? _value.company
-          : company // ignore: cast_nullable_to_non_nullable
-              as String?,
+      companyOrSchool: null == companyOrSchool
+          ? _value.companyOrSchool
+          : companyOrSchool // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      objective: null == objective
+          ? _value._objective
+          : objective // ignore: cast_nullable_to_non_nullable
+              as List<Objective>,
+      yearsOfProfesionalExperience: null == yearsOfProfesionalExperience
+          ? _value.yearsOfProfesionalExperience
+          : yearsOfProfesionalExperience // ignore: cast_nullable_to_non_nullable
+              as int,
+      birthDate: freezed == birthDate
+          ? _value.birthDate
+          : birthDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -216,16 +346,27 @@ class _$_UserDto extends _UserDto {
   const _$_UserDto(
       {required this.id,
       required this.mail,
-      this.name = '',
+      this.firstName = '',
+      this.lastName = '',
+      this.googleName = '',
+      this.gender = Gender.unknown,
+      this.country = Countries.unknown,
+      this.description = '',
+      this.photoUrl = '',
       final List<SpecificInterest> areasOfInterest = const [],
-      final List<SocialMedia> socialMedia = const [],
+      final List<String> socialMedia = const [],
       this.profileType = ProfileType.unknown,
       this.seniority = Seniority.unknown,
       this.onboardingCompleted = false,
       this.phoneNumber = '',
-      this.company = ''})
+      this.companyOrSchool = '',
+      this.title = '',
+      final List<Objective> objective = const [],
+      this.yearsOfProfesionalExperience = -1,
+      this.birthDate})
       : _areasOfInterest = areasOfInterest,
         _socialMedia = socialMedia,
+        _objective = objective,
         super._();
 
   factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
@@ -237,7 +378,25 @@ class _$_UserDto extends _UserDto {
   final String mail;
   @override
   @JsonKey()
-  final String name;
+  final String firstName;
+  @override
+  @JsonKey()
+  final String lastName;
+  @override
+  @JsonKey()
+  final String googleName;
+  @override
+  @JsonKey()
+  final Gender gender;
+  @override
+  @JsonKey()
+  final Countries country;
+  @override
+  @JsonKey()
+  final String description;
+  @override
+  @JsonKey()
+  final String photoUrl;
   final List<SpecificInterest> _areasOfInterest;
   @override
   @JsonKey()
@@ -246,10 +405,10 @@ class _$_UserDto extends _UserDto {
     return EqualUnmodifiableListView(_areasOfInterest);
   }
 
-  final List<SocialMedia> _socialMedia;
+  final List<String> _socialMedia;
   @override
   @JsonKey()
-  List<SocialMedia> get socialMedia {
+  List<String> get socialMedia {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_socialMedia);
   }
@@ -268,11 +427,27 @@ class _$_UserDto extends _UserDto {
   final String phoneNumber;
   @override
   @JsonKey()
-  final String? company;
+  final String companyOrSchool;
+  @override
+  @JsonKey()
+  final String title;
+  final List<Objective> _objective;
+  @override
+  @JsonKey()
+  List<Objective> get objective {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_objective);
+  }
+
+  @override
+  @JsonKey()
+  final int yearsOfProfesionalExperience;
+  @override
+  final DateTime? birthDate;
 
   @override
   String toString() {
-    return 'UserDto(id: $id, mail: $mail, name: $name, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, company: $company)';
+    return 'UserDto(id: $id, mail: $mail, firstName: $firstName, lastName: $lastName, googleName: $googleName, gender: $gender, country: $country, description: $description, photoUrl: $photoUrl, areasOfInterest: $areasOfInterest, socialMedia: $socialMedia, profileType: $profileType, seniority: $seniority, onboardingCompleted: $onboardingCompleted, phoneNumber: $phoneNumber, companyOrSchool: $companyOrSchool, title: $title, objective: $objective, yearsOfProfesionalExperience: $yearsOfProfesionalExperience, birthDate: $birthDate)';
   }
 
   @override
@@ -282,7 +457,18 @@ class _$_UserDto extends _UserDto {
             other is _$_UserDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.mail, mail) || other.mail == mail) &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.firstName, firstName) ||
+                other.firstName == firstName) &&
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.googleName, googleName) ||
+                other.googleName == googleName) &&
+            (identical(other.gender, gender) || other.gender == gender) &&
+            (identical(other.country, country) || other.country == country) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.photoUrl, photoUrl) ||
+                other.photoUrl == photoUrl) &&
             const DeepCollectionEquality()
                 .equals(other._areasOfInterest, _areasOfInterest) &&
             const DeepCollectionEquality()
@@ -295,23 +481,44 @@ class _$_UserDto extends _UserDto {
                 other.onboardingCompleted == onboardingCompleted) &&
             (identical(other.phoneNumber, phoneNumber) ||
                 other.phoneNumber == phoneNumber) &&
-            (identical(other.company, company) || other.company == company));
+            (identical(other.companyOrSchool, companyOrSchool) ||
+                other.companyOrSchool == companyOrSchool) &&
+            (identical(other.title, title) || other.title == title) &&
+            const DeepCollectionEquality()
+                .equals(other._objective, _objective) &&
+            (identical(other.yearsOfProfesionalExperience,
+                    yearsOfProfesionalExperience) ||
+                other.yearsOfProfesionalExperience ==
+                    yearsOfProfesionalExperience) &&
+            (identical(other.birthDate, birthDate) ||
+                other.birthDate == birthDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      mail,
-      name,
-      const DeepCollectionEquality().hash(_areasOfInterest),
-      const DeepCollectionEquality().hash(_socialMedia),
-      profileType,
-      seniority,
-      onboardingCompleted,
-      phoneNumber,
-      company);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        mail,
+        firstName,
+        lastName,
+        googleName,
+        gender,
+        country,
+        description,
+        photoUrl,
+        const DeepCollectionEquality().hash(_areasOfInterest),
+        const DeepCollectionEquality().hash(_socialMedia),
+        profileType,
+        seniority,
+        onboardingCompleted,
+        phoneNumber,
+        companyOrSchool,
+        title,
+        const DeepCollectionEquality().hash(_objective),
+        yearsOfProfesionalExperience,
+        birthDate
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -331,14 +538,24 @@ abstract class _UserDto extends UserDto {
   const factory _UserDto(
       {required final String id,
       required final String mail,
-      final String name,
+      final String firstName,
+      final String lastName,
+      final String googleName,
+      final Gender gender,
+      final Countries country,
+      final String description,
+      final String photoUrl,
       final List<SpecificInterest> areasOfInterest,
-      final List<SocialMedia> socialMedia,
+      final List<String> socialMedia,
       final ProfileType profileType,
       final Seniority seniority,
       final bool onboardingCompleted,
       final String phoneNumber,
-      final String? company}) = _$_UserDto;
+      final String companyOrSchool,
+      final String title,
+      final List<Objective> objective,
+      final int yearsOfProfesionalExperience,
+      final DateTime? birthDate}) = _$_UserDto;
   const _UserDto._() : super._();
 
   factory _UserDto.fromJson(Map<String, dynamic> json) = _$_UserDto.fromJson;
@@ -348,11 +565,23 @@ abstract class _UserDto extends UserDto {
   @override
   String get mail;
   @override
-  String get name;
+  String get firstName;
+  @override
+  String get lastName;
+  @override
+  String get googleName;
+  @override
+  Gender get gender;
+  @override
+  Countries get country;
+  @override
+  String get description;
+  @override
+  String get photoUrl;
   @override
   List<SpecificInterest> get areasOfInterest;
   @override
-  List<SocialMedia> get socialMedia;
+  List<String> get socialMedia;
   @override
   ProfileType get profileType;
   @override
@@ -362,7 +591,15 @@ abstract class _UserDto extends UserDto {
   @override
   String get phoneNumber;
   @override
-  String? get company;
+  String get companyOrSchool;
+  @override
+  String get title;
+  @override
+  List<Objective> get objective;
+  @override
+  int get yearsOfProfesionalExperience;
+  @override
+  DateTime? get birthDate;
   @override
   @JsonKey(ignore: true)
   _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>

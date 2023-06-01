@@ -196,15 +196,15 @@ class _$_Initial implements _Initial {
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.showPassword, showPassword) ||
                 other.showPassword == showPassword) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password,
-      const DeepCollectionEquality().hash(status), showPassword, failure);
+  int get hashCode =>
+      Object.hash(runtimeType, email, password, status, showPassword, failure);
 
   @JsonKey(ignore: true)
   @override
