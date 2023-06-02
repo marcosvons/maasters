@@ -13,6 +13,7 @@ class ProfileSelectionButton extends StatelessWidget {
     required this.profileDescription,
     required this.profileType,
     required this.onTap,
+    required this.constraints,
   });
 
   final Map<int, String> profileDescription;
@@ -20,11 +21,14 @@ class ProfileSelectionButton extends StatelessWidget {
   final String title;
   final VoidCallback onTap;
   final ProfileType profileType;
+  final BoxConstraints constraints;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: context.width * 0.3,
+      width: constraints.maxWidth > Resolutions.mobileMaxWidth
+          ? context.width * 0.3
+          : context.width * 0.9,
       child: GestureDetector(
         onTap: onTap,
         child: BlocBuilder<OnboardingCubit, OnboardingState>(
@@ -55,19 +59,25 @@ class ProfileSelectionButton extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    SvgPicture.asset(
-                      image,
-                      height: Dimens.xxLarge * 1.5,
-                      width: Dimens.xxLarge * 1.5,
-                    ),
-                    const SizedBox(height: Dimens.medium),
-                    Text(
-                      title,
-                      style: context.textTheme.displaySmall!.copyWith(
-                        color: context.colorScheme.onSecondary,
-                        fontSize: 18,
+                    if (constraints.maxWidth > Resolutions.mobileMaxWidth)
+                      Column(
+                        children: profileTypeImageAndText(
+                          context,
+                          constraints,
+                          image,
+                          title,
+                        ),
+                      )
+                    else
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: profileTypeImageAndText(
+                          context,
+                          constraints,
+                          image,
+                          title,
+                        ),
                       ),
-                    ),
                     const SizedBox(height: Dimens.medium),
                     const Divider(),
                     const SizedBox(height: Dimens.medium),
@@ -98,6 +108,32 @@ class ProfileSelectionButton extends StatelessWidget {
   }
 }
 
+List<Widget> profileTypeImageAndText(
+  BuildContext context,
+  BoxConstraints constraints,
+  String image,
+  String title,
+) {
+  return [
+    SvgPicture.asset(
+      image,
+      height: Dimens.xxLarge * 1.5,
+      width: Dimens.xxLarge * 1.5,
+    ),
+    const SizedBox(
+      height: Dimens.medium,
+      width: Dimens.medium,
+    ),
+    Text(
+      title,
+      style: context.textTheme.displaySmall!.copyWith(
+        color: context.colorScheme.onSecondary,
+        fontSize: 18,
+      ),
+    ),
+  ];
+}
+
 class _ProfileDescription extends StatelessWidget {
   const _ProfileDescription({
     required this.text,
@@ -107,30 +143,23 @@ class _ProfileDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        children: [
-          WidgetSpan(
-            child: Icon(
-              Icons.check,
-              color: context.colorScheme.onTertiaryContainer,
-              size: Dimens.medium,
-            ),
-          ),
-          const WidgetSpan(
-            child: SizedBox(width: Dimens.xxSmall),
-          ),
-          TextSpan(
-            text: text,
+    return Row(
+      children: [
+        Icon(
+          Icons.check,
+          color: context.colorScheme.onTertiaryContainer,
+          size: Dimens.medium,
+        ),
+        const SizedBox(width: Dimens.xxSmall),
+        Expanded(
+          child: Text(
+            text,
             style: context.textTheme.bodySmall!.copyWith(
               color: context.colorScheme.onTertiaryContainer,
             ),
           ),
-        ],
-        style: context.textTheme.bodyMedium!.copyWith(
-          color: context.colorScheme.onSecondary,
         ),
-      ),
+      ],
     );
   }
 }

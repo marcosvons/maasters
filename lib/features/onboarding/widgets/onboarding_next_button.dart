@@ -19,47 +19,53 @@ class OnboardingNextButton extends StatelessWidget {
       children: [
         BlocBuilder<OnboardingCubit, OnboardingState>(
           builder: (context, state) => Align(
-            child: SizedBox(
-              width: context.width * 0.25,
-              height: context.height * 0.065,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: state.isPageCompleted
-                      ? MaterialStateProperty.all(
-                          context.colorScheme.primary,
-                        )
-                      : MaterialStateProperty.all(
-                          context.colorScheme.disabledButtonBackground,
-                        ),
-                ),
-                onPressed: () {
-                  if (state.isPageCompleted &&
-                      _pageController.page!.toInt() != 5) {
-                    _pageController.nextPage(
-                      duration: const Duration(milliseconds: 300),
-                      curve: Curves.easeIn,
-                    );
-                    context.read<OnboardingCubit>().newPageStarted();
-                    validateNextPage(
-                      currentPage: _pageController.page!.toInt(),
-                      context: context,
-                    );
-                  } else if (state.isPageCompleted) {
-                    validateNextPage(
-                      currentPage: _pageController.page!.toInt(),
-                      context: context,
-                    );
-                  }
-                },
-                child: Text(
-                  context.l10n.next,
-                  style: context.textTheme.bodySmall!.copyWith(
-                    color: state.isPageCompleted
-                        ? context.colorScheme.onPrimary
-                        : context.colorScheme.surfaceTint,
+            child: LayoutBuilder(
+              builder: (context, boxConstraints) {
+                return SizedBox(
+                  width: boxConstraints.maxWidth > Resolutions.mobileMaxWidth
+                      ? context.width * 0.25
+                      : context.width * 0.9,
+                  height: context.height * 0.065,
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor: state.isPageCompleted
+                          ? MaterialStateProperty.all(
+                              context.colorScheme.primary,
+                            )
+                          : MaterialStateProperty.all(
+                              context.colorScheme.disabledButtonBackground,
+                            ),
+                    ),
+                    onPressed: () {
+                      if (state.isPageCompleted &&
+                          _pageController.page!.toInt() != 5) {
+                        _pageController.nextPage(
+                          duration: const Duration(milliseconds: 300),
+                          curve: Curves.easeIn,
+                        );
+                        context.read<OnboardingCubit>().newPageStarted();
+                        validateNextPage(
+                          currentPage: _pageController.page!.toInt(),
+                          context: context,
+                        );
+                      } else if (state.isPageCompleted) {
+                        validateNextPage(
+                          currentPage: _pageController.page!.toInt(),
+                          context: context,
+                        );
+                      }
+                    },
+                    child: Text(
+                      context.l10n.next,
+                      style: context.textTheme.bodySmall!.copyWith(
+                        color: state.isPageCompleted
+                            ? context.colorScheme.onPrimary
+                            : context.colorScheme.surfaceTint,
+                      ),
+                    ),
                   ),
-                ),
-              ),
+                );
+              },
             ),
           ),
         ),
@@ -90,7 +96,21 @@ class OnboardingNextButton extends StatelessWidget {
         }
         break;
       case 4:
-        context.read<OnboardingCubit>().validateDescription();
+        if (context.read<OnboardingCubit>().state.user.profileType ==
+            ProfileType.mentor) {
+          context.read<UserBloc>().add(
+                UserEvent.updateUser(
+                  user: context
+                      .read<OnboardingCubit>()
+                      .state
+                      .user
+                      .copyWith(onboardingCompleted: true),
+                  image: context.read<OnboardingCubit>().state.image,
+                ),
+              );
+        } else {
+          context.read<OnboardingCubit>().validateDescription();
+        }
         break;
       case 5:
         context.read<UserBloc>().add(

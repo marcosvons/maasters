@@ -7,6 +7,7 @@ import 'package:errors/errors.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/foundation.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class IAuthRepository {
   Stream<Either<Failure, Option<User>>> get firebaseUser;
@@ -20,6 +21,8 @@ abstract class IAuthRepository {
     required String password,
   });
   Future<Either<AuthFailure, firebase_auth.UserCredential>> loginWithGoogle();
+  Future<Either<AuthFailure, firebase_auth.UserCredential>>
+      loginWithGoogleMobile();
   Future<Either<Failure, User?>> getFirestoreUser({required String id});
   Future<Either<Failure, Unit>> createFirestoreUser({
     required firebase_auth.User firebaseUser,
@@ -43,15 +46,18 @@ class AuthRepository implements IAuthRepository {
     required IAuthLocalService authLocalService,
     required FirebaseFirestore firestore,
     required FirebaseStorage firebaseStorage,
+    required GoogleSignIn googleSignIn,
   })  : _firebaseAuth = firebaseAuth,
         _authLocalService = authLocalService,
         _firestore = firestore,
-        _firebaseStorage = firebaseStorage;
+        _firebaseStorage = firebaseStorage,
+        _googleSignIn = googleSignIn;
 
   final firebase_auth.FirebaseAuth _firebaseAuth;
   final IAuthLocalService _authLocalService;
   final FirebaseFirestore _firestore;
   final FirebaseStorage _firebaseStorage;
+  final GoogleSignIn _googleSignIn;
 
   @override
   Stream<Either<Failure, Option<User>>> get firebaseUser => _firebaseAuth
@@ -175,6 +181,32 @@ class AuthRepository implements IAuthRepository {
       return Right(userCredential);
     } catch (e) {
       return const Left(AuthFailure());
+    }
+  }
+
+  @override
+  Future<Either<AuthFailure, firebase_auth.UserCredential>>
+      loginWithGoogleMobile() async {
+    try {
+      // Trigger the authentication flow
+      final googleUser = await _googleSignIn.signIn();
+
+      // Obtain the auth details from the request
+      final googleAuth = await googleUser?.authentication;
+
+      // Create a new credential
+      final credential = firebase_auth.GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      // Once signed in, return the UserCredential
+      final userCredential =
+          await _firebaseAuth.signInWithCredential(credential);
+
+      return Right(userCredential);
+    } catch (e) {
+      return const Left(AuthFailure.googleSignInError());
     }
   }
 

@@ -73,18 +73,32 @@ class LoginCubit extends Cubit<LoginState> {
     );
   }
 
-  FutureOr<void> loginWithGoogle() async {
+  FutureOr<void> loginWithGoogle({required bool isWeb}) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
-    final successOrFailure = await _authRepository.loginWithGoogle();
-
-    return successOrFailure.fold(
-      (failure) => emit(
-        state.copyWith(
-          status: FormzSubmissionStatus.failure,
-          failure: failure,
+    if (isWeb) {
+      final successOrFailure = await _authRepository.loginWithGoogle();
+      return successOrFailure.fold(
+        (failure) => emit(
+          state.copyWith(
+            status: FormzSubmissionStatus.failure,
+            failure: failure,
+          ),
         ),
-      ),
-      (success) => emit(state.copyWith(status: FormzSubmissionStatus.success)),
-    );
+        (success) =>
+            emit(state.copyWith(status: FormzSubmissionStatus.success)),
+      );
+    } else {
+      final successOrFailure = await _authRepository.loginWithGoogleMobile();
+      return successOrFailure.fold(
+        (failure) => emit(
+          state.copyWith(
+            status: FormzSubmissionStatus.failure,
+            failure: failure,
+          ),
+        ),
+        (success) =>
+            emit(state.copyWith(status: FormzSubmissionStatus.success)),
+      );
+    }
   }
 }

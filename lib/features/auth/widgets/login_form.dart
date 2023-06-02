@@ -46,6 +46,7 @@ class LoginForm extends StatelessWidget {
               ),
               const SizedBox(height: Dimens.medium),
               TextFormField(
+                keyboardType: TextInputType.emailAddress,
                 initialValue: state.email.value,
                 onChanged: (value) =>
                     context.read<LoginCubit>().emailChanged(value),
@@ -93,28 +94,33 @@ class LoginForm extends StatelessWidget {
               ),
               // const SizedBox(height: Dimens.medium),
               const SizedBox(height: Dimens.xxLarge),
-              SizedBox(
-                width: context.width * 0.3,
-                height: context.height * 0.075,
-                child: ElevatedButton(
-                  onPressed: () {
-                    context.read<LoginCubit>().loginWithEmailAndPassword();
-                  },
-                  child: (state.status == FormzSubmissionStatus.inProgress ||
-                              state.status == FormzSubmissionStatus.success) &&
-                          context.read<AuthBloc>().state ==
-                              const AuthState.unauthenticated()
-                      ? CircularProgressIndicator(
-                          color: context.colorScheme.secondary,
-                        )
-                      : Text(
-                          context.l10n.logIn,
-                          style: context.textTheme.bodyMedium!.copyWith(
-                            color: context.colorScheme.onPrimary,
+              LayoutBuilder(builder: (context, boxConstraints) {
+                return SizedBox(
+                  width: boxConstraints.maxWidth > Resolutions.mobileMaxWidth
+                      ? context.width * 0.3
+                      : context.width * 0.9,
+                  height: context.height * 0.075,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      context.read<LoginCubit>().loginWithEmailAndPassword();
+                    },
+                    child: (state.status == FormzSubmissionStatus.inProgress ||
+                                state.status ==
+                                    FormzSubmissionStatus.success) &&
+                            context.read<AuthBloc>().state ==
+                                const AuthState.unauthenticated()
+                        ? CircularProgressIndicator(
+                            color: context.colorScheme.secondary,
+                          )
+                        : Text(
+                            context.l10n.logIn,
+                            style: context.textTheme.bodyMedium!.copyWith(
+                              color: context.colorScheme.onPrimary,
+                            ),
                           ),
-                        ),
-                ),
-              ),
+                  ),
+                );
+              }),
             ],
           );
         },

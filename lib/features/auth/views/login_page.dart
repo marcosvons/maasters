@@ -1,6 +1,7 @@
 import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
 import 'package:maasters/l10n/l10n.dart';
@@ -39,12 +40,18 @@ class LoginPage extends StatelessWidget {
             },
           ),
         ],
-        child: Scaffold(
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(context.height * 0.1),
-            child: const Header(),
-          ),
-          body: const LoginBody(),
+        child: LayoutBuilder(
+          builder: (context, boxConstraints) {
+            return Scaffold(
+              appBar: boxConstraints.maxWidth > Resolutions.mobileMaxWidth
+                  ? PreferredSize(
+                      preferredSize: Size.fromHeight(context.height * 0.1),
+                      child: const Header(),
+                    )
+                  : null,
+              body: const LoginBody(),
+            );
+          },
         ),
       ),
     );
@@ -58,84 +65,67 @@ class LoginBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: context.width * 0.1),
-          child: SingleChildScrollView(
-            child: SizedBox(
-              width: context.width * 0.3,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const _TitleAndSubtitle(),
-                  const SizedBox(height: Dimens.xxLarge),
-                  GoogleSignIn(
-                    onTap: () => context.read<LoginCubit>().loginWithGoogle(),
-                  ),
-                  const SizedBox(height: Dimens.xxLarge),
-                  const DividerSignInMethod(),
-                  const SizedBox(height: Dimens.large),
-                  const LoginForm(),
-                  const SizedBox(height: Dimens.large),
-                  ChangeAuthenticationView(
-                    questionText: context.l10n.dontHaveAccount,
-                    actionText: context.l10n.signUp,
-                    onTapAction: () => Navigator.of(context)
-                        .pushReplacement<void, void>(SignUpPage.route()),
-                  ),
-                ],
+    return LayoutBuilder(
+      builder: (context, boxConstraints) {
+        return Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: boxConstraints.maxWidth > Resolutions.mobileMaxWidth
+                    ? context.width * 0.1
+                    : Dimens.medium,
               ),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(bottom: context.height * 0.1),
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    context.colorScheme.tertiary,
-                    context.colorScheme.primary,
-                  ],
-                ),
-                boxShadow: const [
-                  BoxShadow(
-                    offset: Offset(0, 15),
-                    blurRadius: 10,
-                    color: Colors.black12,
-                  )
-                ],
-              ),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: context.width * 0.1),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      context.l10n.registrationContainerTitle,
-                      style: context.textTheme.displayLarge!.copyWith(
-                        color: context.colorScheme.secondary,
+              child: SingleChildScrollView(
+                child: SizedBox(
+                  width: boxConstraints.maxWidth > Resolutions.mobileMaxWidth
+                      ? context.width * 0.3
+                      : context.width * 0.9,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      if (boxConstraints.maxWidth < Resolutions.mobileMaxWidth)
+                        Align(
+                          child: SvgPicture.asset(
+                            AppIcons.blueLogoMobile,
+                            height: context.height * 0.3,
+                          ),
+                        ),
+                      if (boxConstraints.maxWidth > Resolutions.mobileMaxWidth)
+                        const _TitleAndSubtitle(),
+                      const SizedBox(height: Dimens.xxLarge * 2),
+                      GoogleSignIn(
+                        onTap: () {
+                          context.read<LoginCubit>().loginWithGoogle(
+                                isWeb: boxConstraints.maxWidth >
+                                    Resolutions.mobileMaxWidth,
+                              );
+                        },
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: Dimens.small),
-                    Text(
-                      context.l10n.registrationContainerSubtitle,
-                      style: context.textTheme.bodyMedium!.copyWith(
-                        color: context.colorScheme.secondary,
+                      const SizedBox(height: Dimens.xxLarge),
+                      const DividerSignInMethod(),
+                      const SizedBox(height: Dimens.large),
+                      const LoginForm(),
+                      const SizedBox(height: Dimens.large),
+                      ChangeAuthenticationView(
+                        questionText: context.l10n.dontHaveAccount,
+                        actionText: context.l10n.signUp,
+                        onTapAction: () => Navigator.of(context)
+                            .pushReplacement<void, void>(SignUpPage.route()),
                       ),
-                      textAlign: TextAlign.center,
-                    )
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ),
-      ],
+            if (boxConstraints.maxWidth > Resolutions.mobileMaxWidth)
+              BlueBox(
+                title: context.l10n.registrationContainerTitle,
+                subtitle: context.l10n.registrationContainerSubtitle,
+              )
+          ],
+        );
+      },
     );
   }
 }

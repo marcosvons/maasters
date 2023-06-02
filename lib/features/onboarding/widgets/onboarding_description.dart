@@ -56,30 +56,43 @@ class _DescriptionBody extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: Dimens.small),
           child: BlocBuilder<OnboardingCubit, OnboardingState>(
             builder: (context, state) {
-              return SizedBox(
-                width: context.width * 0.45,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      context.l10n.descriptionTitle,
-                      style: context.textTheme.displayLarge,
+              return LayoutBuilder(
+                builder: (context, boxConstraints) {
+                  return SizedBox(
+                    width: boxConstraints.maxWidth > Resolutions.mobileMaxWidth
+                        ? context.width * 0.45
+                        : context.width * 0.9,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          context.l10n.descriptionTitle,
+                          style: boxConstraints.maxWidth >
+                                  Resolutions.mobileMaxWidth
+                              ? context.textTheme.displayLarge
+                              : context.textTheme.displayMedium,
+                          textAlign: boxConstraints.maxWidth >
+                                  Resolutions.mobileMaxWidth
+                              ? TextAlign.start
+                              : TextAlign.center,
+                        ),
+                        const SizedBox(height: Dimens.medium),
+                        Text(
+                          '${context.l10n.descriptionSubtitle} ${state.user.profileType == ProfileType.mentor ? context.l10n.descriptionSubtitleMentor : context.l10n.descriptionSubtitleMentee}',
+                          style: context.textTheme.bodyMedium!.copyWith(
+                            color: context.colorScheme.surface,
+                          ),
+                        ),
+                        const SizedBox(height: Dimens.xxLarge * 2),
+                        const _DescriptionTextField(),
+                        const SizedBox(height: Dimens.xxLarge * 2),
+                        OnboardingNextButton(pageController: _pageController),
+                        const SizedBox(height: Dimens.medium),
+                        OnboardingBackButton(pageController: _pageController),
+                      ],
                     ),
-                    const SizedBox(height: Dimens.medium),
-                    Text(
-                      '${context.l10n.descriptionSubtitle} ${state.user.profileType == ProfileType.mentor ? context.l10n.descriptionSubtitleMentor : context.l10n.descriptionSubtitleMentee}',
-                      style: context.textTheme.bodyMedium!.copyWith(
-                        color: context.colorScheme.surface,
-                      ),
-                    ),
-                    const SizedBox(height: Dimens.xxLarge * 2),
-                    const _DescriptionTextField(),
-                    const SizedBox(height: Dimens.xxLarge),
-                    OnboardingNextButton(pageController: _pageController),
-                    const SizedBox(height: Dimens.medium),
-                    OnboardingBackButton(pageController: _pageController),
-                  ],
-                ),
+                  );
+                },
               );
             },
           ),

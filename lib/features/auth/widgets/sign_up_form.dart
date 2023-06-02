@@ -75,6 +75,7 @@ class _SignUpFormState extends State<SignUpForm> {
                         ),
                         const SizedBox(height: Dimens.medium),
                         TextFormField(
+                          keyboardType: TextInputType.emailAddress,
                           initialValue: state.email.value,
                           onChanged: (value) =>
                               context.read<SignUpCubit>().emailChanged(value),
@@ -182,45 +183,52 @@ class _SignUpFormState extends State<SignUpForm> {
                   ],
                 ),
               ),
-              // const SizedBox(height: Dimens.xLarge),
-              SizedBox(
-                width: context.width * 0.3,
-                height: context.height * 0.075,
-                child: ElevatedButton(
-                  onPressed: () {
-                    if (_pageController.page == 0) {
-                      context.read<SignUpCubit>().validateEmail();
-                      if (state.email.isValid) {
-                        _pageController.nextPage(
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeIn,
-                        );
-                      }
-                    }
-                    if (_pageController.page == 1) {
-                      context.read<SignUpCubit>().validatePassword();
-                      if (state.password.isValid) {
-                        //show snackbar with message
-                        context
-                            .read<SignUpCubit>()
-                            .signUpWithEmailAndPassword();
-                      }
-                    }
-                  },
-                  child: (state.status == FormzSubmissionStatus.inProgress ||
-                              state.status == FormzSubmissionStatus.success) &&
-                          context.read<AuthBloc>().state ==
-                              const AuthState.unauthenticated()
-                      ? CircularProgressIndicator(
-                          color: context.colorScheme.secondary,
-                        )
-                      : Text(
-                          context.l10n.continueText,
-                          style: context.textTheme.bodyMedium!.copyWith(
-                            color: context.colorScheme.onPrimary,
-                          ),
-                        ),
-                ),
+              LayoutBuilder(
+                builder: (context, boxConstraints) {
+                  return SizedBox(
+                    width: boxConstraints.maxWidth > Resolutions.mobileMaxWidth
+                        ? context.width * 0.3
+                        : context.width * 0.9,
+                    height: context.height * 0.075,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (_pageController.page == 0) {
+                          context.read<SignUpCubit>().validateEmail();
+                          if (state.email.isValid) {
+                            _pageController.nextPage(
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.easeIn,
+                            );
+                          }
+                        }
+                        if (_pageController.page == 1) {
+                          context.read<SignUpCubit>().validatePassword();
+                          if (state.password.isValid) {
+                            //show snackbar with message
+                            context
+                                .read<SignUpCubit>()
+                                .signUpWithEmailAndPassword();
+                          }
+                        }
+                      },
+                      child:
+                          (state.status == FormzSubmissionStatus.inProgress ||
+                                      state.status ==
+                                          FormzSubmissionStatus.success) &&
+                                  context.read<AuthBloc>().state ==
+                                      const AuthState.unauthenticated()
+                              ? CircularProgressIndicator(
+                                  color: context.colorScheme.secondary,
+                                )
+                              : Text(
+                                  context.l10n.continueText,
+                                  style: context.textTheme.bodyMedium!.copyWith(
+                                    color: context.colorScheme.onPrimary,
+                                  ),
+                                ),
+                    ),
+                  );
+                },
               ),
             ],
           );

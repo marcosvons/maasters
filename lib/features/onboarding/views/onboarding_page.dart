@@ -42,28 +42,37 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 .pushReplacement<void, void>(SignUpPage.route()),
           );
         },
-        child: Scaffold(
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(context.height * 0.1),
-            child: const Header(),
-          ),
-          body: BlocBuilder<OnboardingCubit, OnboardingState>(
-            builder: (context, state) {
-              return PageView(
-                controller: _pageController,
-                physics: const NeverScrollableScrollPhysics(),
-                children: [
-                  OnboardingProfileSelection(_pageController),
-                  OnboardingFirstProfileInformation(_pageController),
-                  OnboardingSecondProfileInformation(_pageController),
-                  OnboardingProfessionalInformation(_pageController),
-                  if (state.user.profileType == ProfileType.mentee)
-                    OnboardingObjective(_pageController),
-                  OnboardingDescription(_pageController),
-                ],
-              );
-            },
-          ),
+        child: LayoutBuilder(
+          builder: (context, boxConstraints) {
+            return Scaffold(
+              appBar: boxConstraints.maxWidth > Resolutions.mobileMaxWidth
+                  ? PreferredSize(
+                      preferredSize: Size.fromHeight(context.height * 0.1),
+                      child: const Header(),
+                    )
+                  : null,
+              body: SafeArea(
+                bottom: false,
+                child: BlocBuilder<OnboardingCubit, OnboardingState>(
+                  builder: (context, state) {
+                    return PageView(
+                      controller: _pageController,
+                      physics: const NeverScrollableScrollPhysics(),
+                      children: [
+                        OnboardingProfileSelection(_pageController),
+                        OnboardingFirstProfileInformation(_pageController),
+                        OnboardingSecondProfileInformation(_pageController),
+                        OnboardingProfessionalInformation(_pageController),
+                        if (state.user.profileType == ProfileType.mentee)
+                          OnboardingObjective(_pageController),
+                        OnboardingDescription(_pageController),
+                      ],
+                    );
+                  },
+                ),
+              ),
+            );
+          },
         ),
       ),
     );

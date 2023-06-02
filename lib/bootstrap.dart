@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:maasters/core/injector/dependency_injector.dart' as injector;
 
 class AppBlocObserver extends BlocObserver {
@@ -27,7 +28,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   };
 
   Bloc.observer = const AppBlocObserver();
-
+  await Hive.initFlutter();
   await injector.initDependencies();
 
   await runZonedGuarded(

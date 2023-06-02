@@ -23,12 +23,15 @@ class HomePage extends StatelessWidget {
         );
       },
       child: Scaffold(
-        body: Container(
-          color: Colors.green,
-          child: ElevatedButton(
-            child: const Text('Logout'),
-            onPressed: () =>
-                context.read<AuthBloc>().add(const AuthEvent.logoutRequested()),
+        body: SafeArea(
+          child: Container(
+            color: Colors.green,
+            child: ElevatedButton(
+              child: const Text('Logout'),
+              onPressed: () => context
+                  .read<AuthBloc>()
+                  .add(const AuthEvent.logoutRequested()),
+            ),
           ),
         ),
       ),
