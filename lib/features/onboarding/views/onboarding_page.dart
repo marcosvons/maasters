@@ -32,9 +32,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<OnboardingCubit>(
-      create: (context) =>
-          OnboardingCubit(user: context.read<AuthBloc>().state.user!),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<OnboardingCubit>(
+          create: (context) =>
+              OnboardingCubit(user: context.read<AuthBloc>().state.user!),
+        ),
+      ],
       child: BlocListener<AuthBloc, AuthState>(
         listener: (context, state) {
           state.whenOrNull(

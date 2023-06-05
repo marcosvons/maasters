@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
 import 'package:maasters/l10n/l10n.dart';
+import 'package:mentorships/mentorships.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -22,6 +23,11 @@ class App extends StatelessWidget {
         BlocProvider<UserBloc>(
           create: (context) =>
               UserBloc(authRepository: getIt<IAuthRepository>()),
+        ),
+        BlocProvider<MentorshipsBloc>(
+          create: (context) => MentorshipsBloc(
+            mentorshipsRepository: getIt<MentorshipsRepository>(),
+          ),
         ),
       ],
       child: const AppStartUp(),

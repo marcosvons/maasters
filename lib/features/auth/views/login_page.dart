@@ -29,6 +29,11 @@ class LoginPage extends StatelessWidget {
               state.whenOrNull(
                 authenticated: (user) {
                   if (user.onboardingCompleted) {
+                    context.read<MentorshipsBloc>().add(
+                          MentorshipsEvent.getMentors(
+                            interest: user.areasOfInterest,
+                          ),
+                        );
                     Navigator.of(context)
                         .pushReplacement<void, void>(HomePage.route());
                   } else {

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maasters/core/core.dart';
 import 'package:maasters/features/features.dart';
+import 'package:maasters/features/home/bloc/mentorships_bloc.dart';
 import 'package:maasters/l10n/l10n.dart';
 
 class OnboardingNextButton extends StatelessWidget {
@@ -121,6 +122,12 @@ class OnboardingNextButton extends StatelessWidget {
                     .user
                     .copyWith(onboardingCompleted: true),
                 image: context.read<OnboardingCubit>().state.image,
+              ),
+            );
+        context.read<MentorshipsBloc>().add(
+              MentorshipsEvent.getMentors(
+                interest:
+                    context.read<OnboardingCubit>().state.user.areasOfInterest,
               ),
             );
         break;

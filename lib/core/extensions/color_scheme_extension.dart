@@ -5,4 +5,5 @@ extension ColorSchemeExtension on ColorScheme {
   Color get disabledButtonBackground => const Color(0xFFEBEBE4);
   Color get inputBorder => const Color(0xFFE3E6EA);
   Color get hintText => const Color(0xFF808080);
+  Color get filterBackgroundColor => const Color(0xFFF7F7FD);
 }

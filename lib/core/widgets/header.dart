@@ -10,6 +10,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      shadowColor: context.colorScheme.primary,
       toolbarHeight: context.height * 0.1,
       title: Padding(
         padding: EdgeInsets.symmetric(horizontal: context.width * 0.1),
@@ -26,16 +27,55 @@ class Header extends StatelessWidget {
                   height: context.height * 0.075,
                 ),
                 state.maybeWhen(
-                  orElse: SizedBox.shrink,
-                  authenticated: (_) => IconButton(
-                    icon: Icon(
-                      Icons.logout,
-                      color: context.colorScheme.primary,
-                    ),
-                    onPressed: () => context
-                        .read<AuthBloc>()
-                        .add(const AuthEvent.logoutRequested()),
-                  ),
+                  orElse: () => const SizedBox.shrink(),
+                  authenticated: (user) => user.onboardingCompleted
+                      ? LayoutBuilder(
+                          builder: (context, boxConstraints) {
+                            return Row(
+                              children: [
+                                CircleAvatar(
+                                  backgroundColor:
+                                      context.colorScheme.onTertiary,
+                                  child: SvgPicture.asset(
+                                    boxConstraints.maxWidth >
+                                            Resolutions.mobileMaxWidth
+                                        ? AppIcons.notifications
+                                        : AppIcons.notificationsMobile,
+                                    height: Dimens.large,
+                                  ),
+                                ),
+                                const SizedBox(width: Dimens.medium),
+                                CircleAvatar(
+                                  radius: context.height * 0.03,
+                                  backgroundImage: user.photoUrl.isNotEmpty
+                                      ? NetworkImage(user.photoUrl)
+                                      : null,
+                                  backgroundColor: context.colorScheme.tertiary,
+                                  child: user.photoUrl.isEmpty
+                                      ? Text(
+                                          user.firstName[0],
+                                          style: context
+                                              .textTheme.displayMedium!
+                                              .copyWith(
+                                            color:
+                                                context.colorScheme.secondary,
+                                          ),
+                                        )
+                                      : null,
+                                ),
+                              ],
+                            );
+                          },
+                        )
+                      : IconButton(
+                          icon: Icon(
+                            Icons.logout,
+                            color: context.colorScheme.primary,
+                          ),
+                          onPressed: () => context
+                              .read<AuthBloc>()
+                              .add(const AuthEvent.logoutRequested()),
+                        ),
                 )
               ],
             );
