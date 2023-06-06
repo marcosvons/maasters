@@ -39,6 +39,18 @@ class Header extends StatelessWidget {
                                   child: SvgPicture.asset(
                                     boxConstraints.maxWidth >
                                             Resolutions.mobileMaxWidth
+                                        ? AppIcons.messages
+                                        : AppIcons.messagesMobile,
+                                    height: Dimens.large,
+                                  ),
+                                ),
+                                const SizedBox(width: Dimens.medium),
+                                CircleAvatar(
+                                  backgroundColor:
+                                      context.colorScheme.onTertiary,
+                                  child: SvgPicture.asset(
+                                    boxConstraints.maxWidth >
+                                            Resolutions.mobileMaxWidth
                                         ? AppIcons.notifications
                                         : AppIcons.notificationsMobile,
                                     height: Dimens.large,

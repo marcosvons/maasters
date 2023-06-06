@@ -32,6 +32,7 @@ class LoginPage extends StatelessWidget {
                     context.read<MentorshipsBloc>().add(
                           MentorshipsEvent.getMentors(
                             interest: user.areasOfInterest,
+                            userId: user.id,
                           ),
                         );
                     Navigator.of(context)

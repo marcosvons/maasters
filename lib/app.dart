@@ -53,6 +53,12 @@ class AppStartUp extends StatelessWidget {
           home: state.when(
             authenticated: (user) {
               if (user.onboardingCompleted) {
+                context.read<MentorshipsBloc>().add(
+                      MentorshipsEvent.getMentors(
+                        interest: user.areasOfInterest,
+                        userId: user.id,
+                      ),
+                    );
                 return const HomePage();
               } else {
                 return const OnboardingPage();

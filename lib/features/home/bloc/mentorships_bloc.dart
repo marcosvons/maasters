@@ -29,10 +29,8 @@ class MentorshipsBloc extends Bloc<MentorshipsEvent, MentorshipsState> {
     Emitter<MentorshipsState> emit,
   ) async {
     emit(const MentorshipsState.loading());
-    final possibleMentorsListOrFailure =
-        await _mentorshipsRepository.getMentors(
-      interests: event.interest,
-    );
+    final possibleMentorsListOrFailure = await _mentorshipsRepository
+        .getMentors(interests: event.interest, userId: event.userId);
     possibleMentorsListOrFailure.fold(
       (failure) => emit(const MentorshipsState.error()),
       (mentors) => emit(MentorshipsState.loaded(mentors: mentors)),

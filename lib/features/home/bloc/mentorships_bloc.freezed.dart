@@ -19,19 +19,22 @@ mixin _$MentorshipsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<SpecificInterest> interests) addMentor,
-    required TResult Function(List<SpecificInterest> interest) getMentors,
+    required TResult Function(List<SpecificInterest> interest, String userId)
+        getMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<SpecificInterest> interests)? addMentor,
-    TResult? Function(List<SpecificInterest> interest)? getMentors,
+    TResult? Function(List<SpecificInterest> interest, String userId)?
+        getMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<SpecificInterest> interests)? addMentor,
-    TResult Function(List<SpecificInterest> interest)? getMentors,
+    TResult Function(List<SpecificInterest> interest, String userId)?
+        getMentors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -146,7 +149,8 @@ class _$_AddMentor implements _AddMentor {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<SpecificInterest> interests) addMentor,
-    required TResult Function(List<SpecificInterest> interest) getMentors,
+    required TResult Function(List<SpecificInterest> interest, String userId)
+        getMentors,
   }) {
     return addMentor(interests);
   }
@@ -155,7 +159,8 @@ class _$_AddMentor implements _AddMentor {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<SpecificInterest> interests)? addMentor,
-    TResult? Function(List<SpecificInterest> interest)? getMentors,
+    TResult? Function(List<SpecificInterest> interest, String userId)?
+        getMentors,
   }) {
     return addMentor?.call(interests);
   }
@@ -164,7 +169,8 @@ class _$_AddMentor implements _AddMentor {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<SpecificInterest> interests)? addMentor,
-    TResult Function(List<SpecificInterest> interest)? getMentors,
+    TResult Function(List<SpecificInterest> interest, String userId)?
+        getMentors,
     required TResult orElse(),
   }) {
     if (addMentor != null) {
@@ -221,7 +227,7 @@ abstract class _$$_GetMentorsCopyWith<$Res> {
           _$_GetMentors value, $Res Function(_$_GetMentors) then) =
       __$$_GetMentorsCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SpecificInterest> interest});
+  $Res call({List<SpecificInterest> interest, String userId});
 }
 
 /// @nodoc
@@ -236,12 +242,17 @@ class __$$_GetMentorsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? interest = null,
+    Object? userId = null,
   }) {
     return _then(_$_GetMentors(
       interest: null == interest
           ? _value._interest
           : interest // ignore: cast_nullable_to_non_nullable
               as List<SpecificInterest>,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -249,7 +260,8 @@ class __$$_GetMentorsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_GetMentors implements _GetMentors {
-  const _$_GetMentors({required final List<SpecificInterest> interest})
+  const _$_GetMentors(
+      {required final List<SpecificInterest> interest, required this.userId})
       : _interest = interest;
 
   final List<SpecificInterest> _interest;
@@ -260,8 +272,11 @@ class _$_GetMentors implements _GetMentors {
   }
 
   @override
+  final String userId;
+
+  @override
   String toString() {
-    return 'MentorshipsEvent.getMentors(interest: $interest)';
+    return 'MentorshipsEvent.getMentors(interest: $interest, userId: $userId)';
   }
 
   @override
@@ -269,12 +284,13 @@ class _$_GetMentors implements _GetMentors {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GetMentors &&
-            const DeepCollectionEquality().equals(other._interest, _interest));
+            const DeepCollectionEquality().equals(other._interest, _interest) &&
+            (identical(other.userId, userId) || other.userId == userId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_interest));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_interest), userId);
 
   @JsonKey(ignore: true)
   @override
@@ -286,29 +302,32 @@ class _$_GetMentors implements _GetMentors {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<SpecificInterest> interests) addMentor,
-    required TResult Function(List<SpecificInterest> interest) getMentors,
+    required TResult Function(List<SpecificInterest> interest, String userId)
+        getMentors,
   }) {
-    return getMentors(interest);
+    return getMentors(interest, userId);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(List<SpecificInterest> interests)? addMentor,
-    TResult? Function(List<SpecificInterest> interest)? getMentors,
+    TResult? Function(List<SpecificInterest> interest, String userId)?
+        getMentors,
   }) {
-    return getMentors?.call(interest);
+    return getMentors?.call(interest, userId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(List<SpecificInterest> interests)? addMentor,
-    TResult Function(List<SpecificInterest> interest)? getMentors,
+    TResult Function(List<SpecificInterest> interest, String userId)?
+        getMentors,
     required TResult orElse(),
   }) {
     if (getMentors != null) {
-      return getMentors(interest);
+      return getMentors(interest, userId);
     }
     return orElse();
   }
@@ -346,10 +365,12 @@ class _$_GetMentors implements _GetMentors {
 }
 
 abstract class _GetMentors implements MentorshipsEvent {
-  const factory _GetMentors({required final List<SpecificInterest> interest}) =
-      _$_GetMentors;
+  const factory _GetMentors(
+      {required final List<SpecificInterest> interest,
+      required final String userId}) = _$_GetMentors;
 
   List<SpecificInterest> get interest;
+  String get userId;
   @JsonKey(ignore: true)
   _$$_GetMentorsCopyWith<_$_GetMentors> get copyWith =>
       throw _privateConstructorUsedError;

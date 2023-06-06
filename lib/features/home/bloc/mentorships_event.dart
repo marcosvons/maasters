@@ -7,5 +7,6 @@ class MentorshipsEvent with _$MentorshipsEvent {
   }) = _AddMentor;
   const factory MentorshipsEvent.getMentors({
     required List<SpecificInterest> interest,
+    required String userId,
   }) = _GetMentors;
 }

@@ -6,6 +6,11 @@ abstract class AppIcons {
   static const String notifications = 'icons/notifications.svg';
   static const String search = 'icons/search.svg';
   static const String filter = 'icons/filter.svg';
+  static const String messages = 'icons/messages.svg';
+  static const String noProfileImage = 'icons/no_profile_image.svg';
+  static const String job = 'icons/job.svg';
+  static const String experience = 'icons/experience.svg';
+  static const String title = 'icons/title.svg';
 
   // MOBILE
   static const String blueLogoMobile = 'assets/icons/logo_blue.svg';
@@ -14,4 +19,10 @@ abstract class AppIcons {
   static const String notificationsMobile = 'assets/icons/notifications.svg';
   static const String searchMobile = 'assets/icons/search.svg';
   static const String filterMobile = 'assets/icons/filter.svg';
+  static const String messagesMobile = 'assets/icons/messages.svg';
+  static const String noProfileImageMobile =
+      'assets/icons/no_profile_image.svg';
+  static const String jobMobile = 'assets/icons/job.svg';
+  static const String experienceMobile = 'assets/icons/experience.svg';
+  static const String titleMobile = 'assets/icons/title.svg';
 }

@@ -8,6 +8,7 @@ import 'package:errors/errors.dart';
 abstract class IMentorshipsRepository {
   Future<Either<Failure, List<User>>> getMentors({
     required List<SpecificInterest> interests,
+    required String userId,
   });
 }
 
@@ -18,9 +19,9 @@ class MentorshipsRepository implements IMentorshipsRepository {
   final FirebaseFirestore _firestore;
 
   @override
-  Future<Either<Failure, List<User>>> getMentors({
-    required List<SpecificInterest> interests,
-  }) async {
+  Future<Either<Failure, List<User>>> getMentors(
+      {required List<SpecificInterest> interests,
+      required String userId}) async {
     try {
       final mentors = <User>[];
       print(interests[0].toString().split('.').last);
@@ -43,7 +44,7 @@ class MentorshipsRepository implements IMentorshipsRepository {
                     documentSnapshot.data() as Map<String, dynamic>,
                   ).toModel();
 
-                  if (!mentors.contains(mentor)) {
+                  if (!mentors.contains(mentor) && mentor.id != userId) {
                     mentors.add(mentor);
                   }
                 },

@@ -128,6 +128,7 @@ class OnboardingNextButton extends StatelessWidget {
               MentorshipsEvent.getMentors(
                 interest:
                     context.read<OnboardingCubit>().state.user.areasOfInterest,
+                userId: context.read<OnboardingCubit>().state.user.id,
               ),
             );
         break;
