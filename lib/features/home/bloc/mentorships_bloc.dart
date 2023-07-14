@@ -15,6 +15,7 @@ class MentorshipsBloc extends Bloc<MentorshipsEvent, MentorshipsState> {
         super(const _Initial()) {
     on<_AddMentor>(_addMentor);
     on<_GetMentors>(_getMentors);
+    on<_SearchMentors>(_searchMentors);
   }
 
   final IMentorshipsRepository _mentorshipsRepository;
@@ -33,7 +34,43 @@ class MentorshipsBloc extends Bloc<MentorshipsEvent, MentorshipsState> {
         .getMentors(interests: event.interest, userId: event.userId);
     possibleMentorsListOrFailure.fold(
       (failure) => emit(const MentorshipsState.error()),
-      (mentors) => emit(MentorshipsState.loaded(mentors: mentors)),
+      (mentors) => emit(
+        MentorshipsState.loaded(
+          mentors: mentors,
+          searchedMentors: mentors,
+        ),
+      ),
+    );
+  }
+
+  FutureOr<void> _searchMentors(
+    _SearchMentors event,
+    Emitter<MentorshipsState> emit,
+  ) {
+    state.mapOrNull(
+      loaded: (state) {
+        final searchedMentors = state.mentors.where((mentor) {
+          final mentorName = mentor.firstName.toLowerCase();
+          final mentorLastName = mentor.lastName.toLowerCase();
+          final mentorInterests = mentor.areasOfInterest
+              .map((interest) => interest.name.toLowerCase())
+              .toList();
+          final mentorCompany = mentor.companyOrSchool.toLowerCase();
+          final query = event.query.toLowerCase();
+          return mentorName.contains(query) ||
+              mentorLastName.contains(query) ||
+              mentorInterests
+                  .where((interest) => interest.contains(query))
+                  .isNotEmpty ||
+              mentorCompany.contains(query);
+        }).toList();
+        return emit(
+          MentorshipsState.loaded(
+            mentors: state.mentors,
+            searchedMentors: searchedMentors,
+          ),
+        );
+      },
     );
   }
 }

@@ -15,6 +15,7 @@ class AuthFailure with _$AuthFailure {
   const factory AuthFailure.invalidCredentialsError() = InvalidCredentialsError;
   const factory AuthFailure.tokenExpiredError() = TokenExpiredError;
   const factory AuthFailure.unexpectedError() = UnexpectedError;
-  const factory AuthFailure.googleSignInError() = GoogleSignInError;
+  const factory AuthFailure.googleSignInError({required String error}) =
+      GoogleSignInError;
   const factory AuthFailure.unknownError() = UnknownError;
 }

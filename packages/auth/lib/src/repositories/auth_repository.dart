@@ -180,7 +180,7 @@ class AuthRepository implements IAuthRepository {
           await _firebaseAuth.signInWithPopup(googleProvider);
       return Right(userCredential);
     } catch (e) {
-      return const Left(AuthFailure());
+      return Left(AuthFailure.googleSignInError(error: e.toString()));
     }
   }
 
@@ -206,7 +206,7 @@ class AuthRepository implements IAuthRepository {
 
       return Right(userCredential);
     } catch (e) {
-      return const Left(AuthFailure.googleSignInError());
+      return Left(AuthFailure.googleSignInError(error: e.toString()));
     }
   }
 

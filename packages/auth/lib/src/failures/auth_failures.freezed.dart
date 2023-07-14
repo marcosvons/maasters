@@ -29,7 +29,7 @@ mixin _$AuthFailure {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) =>
       throw _privateConstructorUsedError;
@@ -46,7 +46,7 @@ mixin _$AuthFailure {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ mixin _$AuthFailure {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) =>
@@ -191,7 +191,7 @@ class _$_AuthFailure implements _AuthFailure {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return $default();
@@ -211,7 +211,7 @@ class _$_AuthFailure implements _AuthFailure {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return $default?.call();
@@ -231,7 +231,7 @@ class _$_AuthFailure implements _AuthFailure {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -361,7 +361,7 @@ class _$InternalServerError implements InternalServerError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return internalServerError();
@@ -381,7 +381,7 @@ class _$InternalServerError implements InternalServerError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return internalServerError?.call();
@@ -401,7 +401,7 @@ class _$InternalServerError implements InternalServerError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -531,7 +531,7 @@ class _$NetworkError implements NetworkError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return networkError();
@@ -551,7 +551,7 @@ class _$NetworkError implements NetworkError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return networkError?.call();
@@ -571,7 +571,7 @@ class _$NetworkError implements NetworkError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -701,7 +701,7 @@ class _$CacheError implements CacheError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return cacheError();
@@ -721,7 +721,7 @@ class _$CacheError implements CacheError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return cacheError?.call();
@@ -741,7 +741,7 @@ class _$CacheError implements CacheError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -871,7 +871,7 @@ class _$UnauthorizedError implements UnauthorizedError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return unauthorizedError();
@@ -891,7 +891,7 @@ class _$UnauthorizedError implements UnauthorizedError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return unauthorizedError?.call();
@@ -911,7 +911,7 @@ class _$UnauthorizedError implements UnauthorizedError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -1042,7 +1042,7 @@ class _$EmailAlreadyExistsError implements EmailAlreadyExistsError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return emailAlreadyExistsError();
@@ -1062,7 +1062,7 @@ class _$EmailAlreadyExistsError implements EmailAlreadyExistsError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return emailAlreadyExistsError?.call();
@@ -1082,7 +1082,7 @@ class _$EmailAlreadyExistsError implements EmailAlreadyExistsError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -1212,7 +1212,7 @@ class _$UserNotFoundError implements UserNotFoundError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return userNotFoundError();
@@ -1232,7 +1232,7 @@ class _$UserNotFoundError implements UserNotFoundError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return userNotFoundError?.call();
@@ -1252,7 +1252,7 @@ class _$UserNotFoundError implements UserNotFoundError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -1382,7 +1382,7 @@ class _$NotFoundError implements NotFoundError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return notFoundError();
@@ -1402,7 +1402,7 @@ class _$NotFoundError implements NotFoundError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return notFoundError?.call();
@@ -1422,7 +1422,7 @@ class _$NotFoundError implements NotFoundError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -1553,7 +1553,7 @@ class _$InvalidCredentialsError implements InvalidCredentialsError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return invalidCredentialsError();
@@ -1573,7 +1573,7 @@ class _$InvalidCredentialsError implements InvalidCredentialsError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return invalidCredentialsError?.call();
@@ -1593,7 +1593,7 @@ class _$InvalidCredentialsError implements InvalidCredentialsError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -1723,7 +1723,7 @@ class _$TokenExpiredError implements TokenExpiredError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return tokenExpiredError();
@@ -1743,7 +1743,7 @@ class _$TokenExpiredError implements TokenExpiredError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return tokenExpiredError?.call();
@@ -1763,7 +1763,7 @@ class _$TokenExpiredError implements TokenExpiredError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -1893,7 +1893,7 @@ class _$UnexpectedError implements UnexpectedError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return unexpectedError();
@@ -1913,7 +1913,7 @@ class _$UnexpectedError implements UnexpectedError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return unexpectedError?.call();
@@ -1933,7 +1933,7 @@ class _$UnexpectedError implements UnexpectedError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
@@ -2019,6 +2019,8 @@ abstract class _$$GoogleSignInErrorCopyWith<$Res> {
   factory _$$GoogleSignInErrorCopyWith(
           _$GoogleSignInError value, $Res Function(_$GoogleSignInError) then) =
       __$$GoogleSignInErrorCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String error});
 }
 
 /// @nodoc
@@ -2028,26 +2030,50 @@ class __$$GoogleSignInErrorCopyWithImpl<$Res>
   __$$GoogleSignInErrorCopyWithImpl(
       _$GoogleSignInError _value, $Res Function(_$GoogleSignInError) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$GoogleSignInError(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$GoogleSignInError implements GoogleSignInError {
-  const _$GoogleSignInError();
+  const _$GoogleSignInError({required this.error});
+
+  @override
+  final String error;
 
   @override
   String toString() {
-    return 'AuthFailure.googleSignInError()';
+    return 'AuthFailure.googleSignInError(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GoogleSignInError);
+        (other.runtimeType == runtimeType &&
+            other is _$GoogleSignInError &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, error);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GoogleSignInErrorCopyWith<_$GoogleSignInError> get copyWith =>
+      __$$GoogleSignInErrorCopyWithImpl<_$GoogleSignInError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2063,10 +2089,10 @@ class _$GoogleSignInError implements GoogleSignInError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
-    return googleSignInError();
+    return googleSignInError(error);
   }
 
   @override
@@ -2083,10 +2109,10 @@ class _$GoogleSignInError implements GoogleSignInError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
-    return googleSignInError?.call();
+    return googleSignInError?.call(error);
   }
 
   @override
@@ -2103,12 +2129,12 @@ class _$GoogleSignInError implements GoogleSignInError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {
     if (googleSignInError != null) {
-      return googleSignInError();
+      return googleSignInError(error);
     }
     return orElse();
   }
@@ -2181,7 +2207,13 @@ class _$GoogleSignInError implements GoogleSignInError {
 }
 
 abstract class GoogleSignInError implements AuthFailure {
-  const factory GoogleSignInError() = _$GoogleSignInError;
+  const factory GoogleSignInError({required final String error}) =
+      _$GoogleSignInError;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$$GoogleSignInErrorCopyWith<_$GoogleSignInError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2233,7 +2265,7 @@ class _$UnknownError implements UnknownError {
     required TResult Function() invalidCredentialsError,
     required TResult Function() tokenExpiredError,
     required TResult Function() unexpectedError,
-    required TResult Function() googleSignInError,
+    required TResult Function(String error) googleSignInError,
     required TResult Function() unknownError,
   }) {
     return unknownError();
@@ -2253,7 +2285,7 @@ class _$UnknownError implements UnknownError {
     TResult? Function()? invalidCredentialsError,
     TResult? Function()? tokenExpiredError,
     TResult? Function()? unexpectedError,
-    TResult? Function()? googleSignInError,
+    TResult? Function(String error)? googleSignInError,
     TResult? Function()? unknownError,
   }) {
     return unknownError?.call();
@@ -2273,7 +2305,7 @@ class _$UnknownError implements UnknownError {
     TResult Function()? invalidCredentialsError,
     TResult Function()? tokenExpiredError,
     TResult Function()? unexpectedError,
-    TResult Function()? googleSignInError,
+    TResult Function(String error)? googleSignInError,
     TResult Function()? unknownError,
     required TResult orElse(),
   }) {

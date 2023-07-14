@@ -23,7 +23,7 @@ class Header extends StatelessWidget {
               ),
               children: [
                 SvgPicture.asset(
-                  AppIcons.blueLogo,
+                  AppIcons.blueLogoMobile,
                   height: context.height * 0.075,
                 ),
                 state.maybeWhen(

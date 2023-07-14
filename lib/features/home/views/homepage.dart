@@ -101,6 +101,12 @@ class HomePage extends StatelessWidget {
                                         color: context.colorScheme.surface,
                                       ),
                                     ),
+                                    onChanged: (value) =>
+                                        context.read<MentorshipsBloc>().add(
+                                              MentorshipsEvent.searchMentors(
+                                                query: value,
+                                              ),
+                                            ),
                                   ),
                                 ),
                                 const SizedBox(width: Dimens.xLarge),
@@ -183,10 +189,19 @@ class _HomePageBody extends StatelessWidget {
           loading: () => const Center(
             child: CircularProgressIndicator(),
           ),
-          loaded: (mentorList) => _MentorsList(
-            mentors: mentorList,
-            boxConstraints: boxConstraints,
-          ),
+          loaded: (mentorList, searchedMentors) {
+            if (searchedMentors.length == mentorList.length) {
+              return _MentorsList(
+                mentors: mentorList,
+                boxConstraints: boxConstraints,
+              );
+            } else {
+              return _MentorsList(
+                mentors: searchedMentors,
+                boxConstraints: boxConstraints,
+              );
+            }
+          },
           error: () => Center(
             child: Container(
               color: Colors.red,
@@ -222,7 +237,7 @@ class _MentorsList extends StatelessWidget {
               boxConstraints.maxWidth > Resolutions.mobileMaxWidth ? 3 : 1,
           crossAxisSpacing: Dimens.xLarge,
           mainAxisSpacing: Dimens.xLarge,
-          childAspectRatio: 2 / 3,
+          childAspectRatio: 0.65,
         ),
         itemBuilder: (context, index) {
           return Container(
@@ -268,11 +283,11 @@ class _MentorsList extends StatelessWidget {
                               ),
                             ),
                             height: context.height * 0.15,
-                            width: context.width * 0.15,
+                            width: context.width * 0.175,
                           )
                         : SizedBox(
                             height: context.height * 0.15,
-                            width: context.width * 0.15,
+                            width: context.width * 0.175,
                             child: SvgPicture.asset(AppIcons.noProfileImage),
                           ),
                   ),
@@ -286,49 +301,31 @@ class _MentorsList extends StatelessWidget {
                   const SizedBox(
                     height: Dimens.small,
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SvgPicture.asset(
-                        AppIcons.job,
-                        width: Dimens.medium,
-                        height: Dimens.medium,
-                      ),
-                      const SizedBox(
-                        width: Dimens.small,
-                      ),
-                      Expanded(
-                        child: Text(
-                          '${mentors[index].title} en ${mentors[index].companyOrSchool}',
-                          style: context.textTheme.bodySmall,
-                        ),
-                      ),
-                    ],
+                  _MentorInformation(
+                    text:
+                        '${mentors[index].title} en ${mentors[index].companyOrSchool}',
+                    icon: AppIcons.job,
                   ),
                   const SizedBox(
                     height: Dimens.medium,
                   ),
-                  if (mentors[index].yearsOfProfesionalExperience > 1)
-                    Text(
-                      '${mentors[index].yearsOfProfesionalExperience} años de experiencia',
-                      style: context.textTheme.bodySmall,
-                    )
-                  else
-                    Text(
-                      '${mentors[index].yearsOfProfesionalExperience} año de experiencia',
-                      style: context.textTheme.bodySmall,
-                    ),
+                  _MentorInformation(
+                    text: mentors[index].yearsOfProfesionalExperience > 1
+                        ? '${mentors[index].yearsOfProfesionalExperience} años de experiencia'
+                        : '${mentors[index].yearsOfProfesionalExperience} año de experiencia',
+                    icon: AppIcons.experience,
+                  ),
                   const SizedBox(
                     height: Dimens.medium,
                   ),
-                  Text(
-                    mentors[index]
+                  _MentorInformation(
+                    text: mentors[index]
                         .areasOfInterest
                         .map(
                           (interest) => interest.name,
                         )
                         .join(', '),
-                    style: context.textTheme.bodySmall,
+                    icon: AppIcons.title,
                   ),
                   const SizedBox(
                     height: Dimens.large,
@@ -373,11 +370,11 @@ class _MentorsList extends StatelessWidget {
                             width: Dimens.small,
                           ),
                           SizedBox(
-                            width: context.width * 0.0625,
+                            width: context.width * 0.05,
                             height: context.height * 0.05,
                             child: ElevatedButton(
                               child: Text(
-                                'Ver más',
+                                'Más',
                                 style: context.textTheme.bodySmall!.copyWith(
                                   color: context.colorScheme.secondary,
                                 ),
@@ -395,6 +392,39 @@ class _MentorsList extends StatelessWidget {
           );
         },
       ),
+    );
+  }
+}
+
+class _MentorInformation extends StatelessWidget {
+  const _MentorInformation({
+    required this.text,
+    required this.icon,
+  });
+
+  final String text;
+  final String icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SvgPicture.asset(
+          icon,
+          width: Dimens.medium,
+          height: Dimens.medium,
+        ),
+        const SizedBox(
+          width: Dimens.small,
+        ),
+        Expanded(
+          child: Text(
+            text,
+            style: context.textTheme.bodySmall,
+          ),
+        ),
+      ],
     );
   }
 }

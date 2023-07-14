@@ -40,7 +40,7 @@ class _SignUpFormState extends State<SignUpForm> {
               content: Text(
                 state.failure == const AuthFailure.emailAlreadyExistsError()
                     ? context.l10n.emailAlreadyExistsError
-                    : context.l10n.userCreationError,
+                    : state.failure.toString(),
                 textAlign: TextAlign.center,
                 style: context.textTheme.bodyLarge!.copyWith(
                   color: context.colorScheme.secondary,

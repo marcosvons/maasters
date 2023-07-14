@@ -21,6 +21,7 @@ mixin _$MentorshipsEvent {
     required TResult Function(List<SpecificInterest> interests) addMentor,
     required TResult Function(List<SpecificInterest> interest, String userId)
         getMentors,
+    required TResult Function(String query) searchMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$MentorshipsEvent {
     TResult? Function(List<SpecificInterest> interests)? addMentor,
     TResult? Function(List<SpecificInterest> interest, String userId)?
         getMentors,
+    TResult? Function(String query)? searchMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$MentorshipsEvent {
     TResult Function(List<SpecificInterest> interests)? addMentor,
     TResult Function(List<SpecificInterest> interest, String userId)?
         getMentors,
+    TResult Function(String query)? searchMentors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -42,18 +45,21 @@ mixin _$MentorshipsEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddMentor value) addMentor,
     required TResult Function(_GetMentors value) getMentors,
+    required TResult Function(_SearchMentors value) searchMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddMentor value)? addMentor,
     TResult? Function(_GetMentors value)? getMentors,
+    TResult? Function(_SearchMentors value)? searchMentors,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddMentor value)? addMentor,
     TResult Function(_GetMentors value)? getMentors,
+    TResult Function(_SearchMentors value)? searchMentors,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -151,6 +157,7 @@ class _$_AddMentor implements _AddMentor {
     required TResult Function(List<SpecificInterest> interests) addMentor,
     required TResult Function(List<SpecificInterest> interest, String userId)
         getMentors,
+    required TResult Function(String query) searchMentors,
   }) {
     return addMentor(interests);
   }
@@ -161,6 +168,7 @@ class _$_AddMentor implements _AddMentor {
     TResult? Function(List<SpecificInterest> interests)? addMentor,
     TResult? Function(List<SpecificInterest> interest, String userId)?
         getMentors,
+    TResult? Function(String query)? searchMentors,
   }) {
     return addMentor?.call(interests);
   }
@@ -171,6 +179,7 @@ class _$_AddMentor implements _AddMentor {
     TResult Function(List<SpecificInterest> interests)? addMentor,
     TResult Function(List<SpecificInterest> interest, String userId)?
         getMentors,
+    TResult Function(String query)? searchMentors,
     required TResult orElse(),
   }) {
     if (addMentor != null) {
@@ -184,6 +193,7 @@ class _$_AddMentor implements _AddMentor {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddMentor value) addMentor,
     required TResult Function(_GetMentors value) getMentors,
+    required TResult Function(_SearchMentors value) searchMentors,
   }) {
     return addMentor(this);
   }
@@ -193,6 +203,7 @@ class _$_AddMentor implements _AddMentor {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddMentor value)? addMentor,
     TResult? Function(_GetMentors value)? getMentors,
+    TResult? Function(_SearchMentors value)? searchMentors,
   }) {
     return addMentor?.call(this);
   }
@@ -202,6 +213,7 @@ class _$_AddMentor implements _AddMentor {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddMentor value)? addMentor,
     TResult Function(_GetMentors value)? getMentors,
+    TResult Function(_SearchMentors value)? searchMentors,
     required TResult orElse(),
   }) {
     if (addMentor != null) {
@@ -304,6 +316,7 @@ class _$_GetMentors implements _GetMentors {
     required TResult Function(List<SpecificInterest> interests) addMentor,
     required TResult Function(List<SpecificInterest> interest, String userId)
         getMentors,
+    required TResult Function(String query) searchMentors,
   }) {
     return getMentors(interest, userId);
   }
@@ -314,6 +327,7 @@ class _$_GetMentors implements _GetMentors {
     TResult? Function(List<SpecificInterest> interests)? addMentor,
     TResult? Function(List<SpecificInterest> interest, String userId)?
         getMentors,
+    TResult? Function(String query)? searchMentors,
   }) {
     return getMentors?.call(interest, userId);
   }
@@ -324,6 +338,7 @@ class _$_GetMentors implements _GetMentors {
     TResult Function(List<SpecificInterest> interests)? addMentor,
     TResult Function(List<SpecificInterest> interest, String userId)?
         getMentors,
+    TResult Function(String query)? searchMentors,
     required TResult orElse(),
   }) {
     if (getMentors != null) {
@@ -337,6 +352,7 @@ class _$_GetMentors implements _GetMentors {
   TResult map<TResult extends Object?>({
     required TResult Function(_AddMentor value) addMentor,
     required TResult Function(_GetMentors value) getMentors,
+    required TResult Function(_SearchMentors value) searchMentors,
   }) {
     return getMentors(this);
   }
@@ -346,6 +362,7 @@ class _$_GetMentors implements _GetMentors {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_AddMentor value)? addMentor,
     TResult? Function(_GetMentors value)? getMentors,
+    TResult? Function(_SearchMentors value)? searchMentors,
   }) {
     return getMentors?.call(this);
   }
@@ -355,6 +372,7 @@ class _$_GetMentors implements _GetMentors {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_AddMentor value)? addMentor,
     TResult Function(_GetMentors value)? getMentors,
+    TResult Function(_SearchMentors value)? searchMentors,
     required TResult orElse(),
   }) {
     if (getMentors != null) {
@@ -377,12 +395,156 @@ abstract class _GetMentors implements MentorshipsEvent {
 }
 
 /// @nodoc
+abstract class _$$_SearchMentorsCopyWith<$Res> {
+  factory _$$_SearchMentorsCopyWith(
+          _$_SearchMentors value, $Res Function(_$_SearchMentors) then) =
+      __$$_SearchMentorsCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String query});
+}
+
+/// @nodoc
+class __$$_SearchMentorsCopyWithImpl<$Res>
+    extends _$MentorshipsEventCopyWithImpl<$Res, _$_SearchMentors>
+    implements _$$_SearchMentorsCopyWith<$Res> {
+  __$$_SearchMentorsCopyWithImpl(
+      _$_SearchMentors _value, $Res Function(_$_SearchMentors) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? query = null,
+  }) {
+    return _then(_$_SearchMentors(
+      query: null == query
+          ? _value.query
+          : query // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SearchMentors implements _SearchMentors {
+  const _$_SearchMentors({required this.query});
+
+  @override
+  final String query;
+
+  @override
+  String toString() {
+    return 'MentorshipsEvent.searchMentors(query: $query)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SearchMentors &&
+            (identical(other.query, query) || other.query == query));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, query);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SearchMentorsCopyWith<_$_SearchMentors> get copyWith =>
+      __$$_SearchMentorsCopyWithImpl<_$_SearchMentors>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(List<SpecificInterest> interests) addMentor,
+    required TResult Function(List<SpecificInterest> interest, String userId)
+        getMentors,
+    required TResult Function(String query) searchMentors,
+  }) {
+    return searchMentors(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(List<SpecificInterest> interests)? addMentor,
+    TResult? Function(List<SpecificInterest> interest, String userId)?
+        getMentors,
+    TResult? Function(String query)? searchMentors,
+  }) {
+    return searchMentors?.call(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(List<SpecificInterest> interests)? addMentor,
+    TResult Function(List<SpecificInterest> interest, String userId)?
+        getMentors,
+    TResult Function(String query)? searchMentors,
+    required TResult orElse(),
+  }) {
+    if (searchMentors != null) {
+      return searchMentors(query);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AddMentor value) addMentor,
+    required TResult Function(_GetMentors value) getMentors,
+    required TResult Function(_SearchMentors value) searchMentors,
+  }) {
+    return searchMentors(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AddMentor value)? addMentor,
+    TResult? Function(_GetMentors value)? getMentors,
+    TResult? Function(_SearchMentors value)? searchMentors,
+  }) {
+    return searchMentors?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AddMentor value)? addMentor,
+    TResult Function(_GetMentors value)? getMentors,
+    TResult Function(_SearchMentors value)? searchMentors,
+    required TResult orElse(),
+  }) {
+    if (searchMentors != null) {
+      return searchMentors(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchMentors implements MentorshipsEvent {
+  const factory _SearchMentors({required final String query}) =
+      _$_SearchMentors;
+
+  String get query;
+  @JsonKey(ignore: true)
+  _$$_SearchMentorsCopyWith<_$_SearchMentors> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$MentorshipsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> mentors) loaded,
+    required TResult Function(List<User> mentors, List<User> searchedMentors)
+        loaded,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
@@ -390,7 +552,7 @@ mixin _$MentorshipsState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<User> mentors)? loaded,
+    TResult? Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -398,7 +560,7 @@ mixin _$MentorshipsState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> mentors)? loaded,
+    TResult Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -487,7 +649,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> mentors) loaded,
+    required TResult Function(List<User> mentors, List<User> searchedMentors)
+        loaded,
     required TResult Function() error,
   }) {
     return initial();
@@ -498,7 +661,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<User> mentors)? loaded,
+    TResult? Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult? Function()? error,
   }) {
     return initial?.call();
@@ -509,7 +672,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> mentors)? loaded,
+    TResult Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -600,7 +763,8 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> mentors) loaded,
+    required TResult Function(List<User> mentors, List<User> searchedMentors)
+        loaded,
     required TResult Function() error,
   }) {
     return loading();
@@ -611,7 +775,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<User> mentors)? loaded,
+    TResult? Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -622,7 +786,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> mentors)? loaded,
+    TResult Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -679,7 +843,7 @@ abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<User> mentors});
+  $Res call({List<User> mentors, List<User> searchedMentors});
 }
 
 /// @nodoc
@@ -693,11 +857,16 @@ class __$$_LoadedCopyWithImpl<$Res>
   @override
   $Res call({
     Object? mentors = null,
+    Object? searchedMentors = null,
   }) {
     return _then(_$_Loaded(
       mentors: null == mentors
           ? _value._mentors
           : mentors // ignore: cast_nullable_to_non_nullable
+              as List<User>,
+      searchedMentors: null == searchedMentors
+          ? _value._searchedMentors
+          : searchedMentors // ignore: cast_nullable_to_non_nullable
               as List<User>,
     ));
   }
@@ -706,7 +875,11 @@ class __$$_LoadedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Loaded implements _Loaded {
-  const _$_Loaded({required final List<User> mentors}) : _mentors = mentors;
+  const _$_Loaded(
+      {required final List<User> mentors,
+      required final List<User> searchedMentors})
+      : _mentors = mentors,
+        _searchedMentors = searchedMentors;
 
   final List<User> _mentors;
   @override
@@ -715,9 +888,16 @@ class _$_Loaded implements _Loaded {
     return EqualUnmodifiableListView(_mentors);
   }
 
+  final List<User> _searchedMentors;
+  @override
+  List<User> get searchedMentors {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_searchedMentors);
+  }
+
   @override
   String toString() {
-    return 'MentorshipsState.loaded(mentors: $mentors)';
+    return 'MentorshipsState.loaded(mentors: $mentors, searchedMentors: $searchedMentors)';
   }
 
   @override
@@ -725,12 +905,16 @@ class _$_Loaded implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loaded &&
-            const DeepCollectionEquality().equals(other._mentors, _mentors));
+            const DeepCollectionEquality().equals(other._mentors, _mentors) &&
+            const DeepCollectionEquality()
+                .equals(other._searchedMentors, _searchedMentors));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_mentors));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_mentors),
+      const DeepCollectionEquality().hash(_searchedMentors));
 
   @JsonKey(ignore: true)
   @override
@@ -743,10 +927,11 @@ class _$_Loaded implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> mentors) loaded,
+    required TResult Function(List<User> mentors, List<User> searchedMentors)
+        loaded,
     required TResult Function() error,
   }) {
-    return loaded(mentors);
+    return loaded(mentors, searchedMentors);
   }
 
   @override
@@ -754,10 +939,10 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<User> mentors)? loaded,
+    TResult? Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult? Function()? error,
   }) {
-    return loaded?.call(mentors);
+    return loaded?.call(mentors, searchedMentors);
   }
 
   @override
@@ -765,12 +950,12 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> mentors)? loaded,
+    TResult Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(mentors);
+      return loaded(mentors, searchedMentors);
     }
     return orElse();
   }
@@ -814,9 +999,12 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements MentorshipsState {
-  const factory _Loaded({required final List<User> mentors}) = _$_Loaded;
+  const factory _Loaded(
+      {required final List<User> mentors,
+      required final List<User> searchedMentors}) = _$_Loaded;
 
   List<User> get mentors;
+  List<User> get searchedMentors;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -860,7 +1048,8 @@ class _$_Error implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<User> mentors) loaded,
+    required TResult Function(List<User> mentors, List<User> searchedMentors)
+        loaded,
     required TResult Function() error,
   }) {
     return error();
@@ -871,7 +1060,7 @@ class _$_Error implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<User> mentors)? loaded,
+    TResult? Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -882,7 +1071,7 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<User> mentors)? loaded,
+    TResult Function(List<User> mentors, List<User> searchedMentors)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {

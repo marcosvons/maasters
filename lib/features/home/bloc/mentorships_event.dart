@@ -9,4 +9,6 @@ class MentorshipsEvent with _$MentorshipsEvent {
     required List<SpecificInterest> interest,
     required String userId,
   }) = _GetMentors;
+  const factory MentorshipsEvent.searchMentors({required String query}) =
+      _SearchMentors;
 }
