@@ -41,6 +41,7 @@ class HomePage extends StatelessWidget {
                     builder: (context, boxConstraints) {
                       return Padding(
                         padding: EdgeInsets.symmetric(
+                          vertical: context.height * 0.05,
                           horizontal: context.width * 0.2,
                         ),
                         child: Column(
@@ -150,11 +151,19 @@ class HomePage extends StatelessWidget {
                             _HomePageBody(
                               boxConstraints: boxConstraints,
                             ),
-                            GestureDetector(
-                              child: const Text('Logout'),
-                              onTap: () => context
-                                  .read<AuthBloc>()
-                                  .add(const AuthEvent.logoutRequested()),
+                            SizedBox(height: context.height * 0.1),
+                            Center(
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                  bottom: context.height * 0.05,
+                                ),
+                                child: ElevatedButton(
+                                  child: const Text('Logout'),
+                                  onPressed: () => context
+                                      .read<AuthBloc>()
+                                      .add(const AuthEvent.logoutRequested()),
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -282,11 +291,11 @@ class _MentorsList extends StatelessWidget {
                                 fit: BoxFit.cover,
                               ),
                             ),
-                            height: context.height * 0.15,
+                            height: context.height * 0.2,
                             width: context.width * 0.175,
                           )
                         : SizedBox(
-                            height: context.height * 0.15,
+                            height: context.height * 0.175,
                             width: context.width * 0.175,
                             child: SvgPicture.asset(AppIcons.noProfileImage),
                           ),
@@ -422,6 +431,8 @@ class _MentorInformation extends StatelessWidget {
           child: Text(
             text,
             style: context.textTheme.bodySmall,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
       ],
