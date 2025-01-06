@@ -69,7 +69,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '363155223436',
     projectId: 'maasters-dev',
     storageBucket: 'maasters-dev.appspot.com',
-    iosClientId: '363155223436-e6ln2iiupqj9qf9b8rocfnube4qt47jc.apps.googleusercontent.com',
+    iosClientId:
+        '363155223436-e6ln2iiupqj9qf9b8rocfnube4qt47jc.apps.googleusercontent.com',
     iosBundleId: 'com.example.verygoodcore.maasters.dev',
   );
 }
