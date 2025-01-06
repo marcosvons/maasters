@@ -8,20 +8,20 @@ environment:
 
 dependencies:
   bloc: ^8.1.1
-  cloud_firestore: ^4.7.1
+  cloud_firestore: ^5.6.0
   dartz: ^0.10.1
   dio: ^5.1.2
-  firebase_auth: ^4.6.1
-  firebase_core: ^2.4.0
+  firebase_auth: ^5.3.4
+  firebase_core: ^3.9.0
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
   flutter_localizations:
     sdk: flutter
-  formz: ^0.6.0
+  formz: ^0.8.0
   freezed_annotation: ^2.2.0
-  get_it: ^7.6.0
-  intl: ^0.17.0
+  get_it: ^8.0.3
+  intl: ^0.19.0
   json_annotation: ^4.7.0
 
 dev_dependencies:
@@ -31,13 +31,13 @@ dev_dependencies:
     sdk: flutter
   freezed: ^2.2.0
   json_serializable: ^6.5.4
-  mocktail: ^0.3.0
-  very_good_analysis: ^3.1.0
+  mocktail: ^1.0.4
+  very_good_analysis: ^7.0.0
 
 flutter:
   uses-material-design: true
   generate: true
   
   assets:
-    - assets/images/
+    # - assets/images/
     - assets/icons/
